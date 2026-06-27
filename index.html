@@ -77,7 +77,7 @@
   /* portrait */
   .portrait{position:relative;}
   .portrait .frame{position:relative;z-index:2;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line-2);background:var(--paper-2);box-shadow:0 30px 60px rgba(27,25,22,.18);}
-  .portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;filter:grayscale(8%) contrast(1.02);}
+  .portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;filter:grayscale(8%) contrast(1.02);transform:scaleX(-1);}
   .portrait::before{content:"";position:absolute;z-index:1;left:-18px;bottom:-18px;width:62%;height:62%;background:var(--accent);opacity:.14;}
   .portrait .tagline{position:absolute;z-index:3;right:-10px;bottom:18px;background:var(--ink);color:var(--paper);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:.55rem .9rem;}
 
@@ -193,6 +193,7 @@
   .cform{display:grid;gap:1rem;}
   .cform .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
   .cform label{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,235,227,.6);margin-bottom:.4rem;}
+  .cform .req{color:var(--accent);}
   .cform input,.cform textarea{width:100%;background:rgba(239,235,227,.06);border:1px solid rgba(239,235,227,.18);color:var(--paper);padding:.7rem .8rem;font-family:inherit;font-size:.95rem;border-radius:0;}
   .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--accent);background:rgba(239,235,227,.1);}
   .cform textarea{min-height:120px;resize:vertical;}
@@ -623,10 +624,10 @@
     <div class="contact-wrap">
       <form class="cform" id="cform" novalidate>
         <div class="row">
-          <div><label for="cf-name">Name/Organization</label><input id="cf-name" type="text" autocomplete="name" required></div>
-          <div><label for="cf-email">Email</label><input id="cf-email" type="email" autocomplete="email" required></div>
+          <div><label for="cf-name">Name/Organization <span class="req">*</span></label><input id="cf-name" type="text" autocomplete="name" required></div>
+          <div><label for="cf-email">Email <span class="req">*</span></label><input id="cf-email" type="email" autocomplete="email" required></div>
         </div>
-        <div><label for="cf-message">Message</label><textarea id="cf-message" required></textarea></div>
+        <div><label for="cf-message">Message <span class="req">*</span></label><textarea id="cf-message" required></textarea></div>
         <!-- honeypot: invisible to people, bots tend to fill it -->
         <input class="hp" type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="human">
