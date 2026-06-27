@@ -1,0 +1,13 @@
+{
+  "name": "firatbarca-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Firat Barca personal website (Eleventy static build + Pages CMS)",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

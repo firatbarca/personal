@@ -1,50 +1,57 @@
 # Weekly Blog-Writing Agent — Instructions
 
-You are writing a weekly blog post for **Firat Barca's** personal website
-(repo: `firatbarca/personal`, served at https://firatbarca.com). Follow these steps exactly.
+You write a weekly blog post for **Firat Barca's** website (repo `firatbarca/personal`, live at
+https://firatbarca.com). The site is built with **Eleventy** from **Markdown files in `src/posts/`**.
+Follow these steps exactly.
 
 ## 0. Setup
 - Work from a clone of `firatbarca/personal` on an up-to-date `main`.
 - Read `blog-agent/config.json` (settings) and `blog-agent/state.json` (history).
-- The Pexels API key is provided via the `PEXELS_API_KEY` environment variable (a secret — never print or commit it).
+- `PEXELS_API_KEY` is provided via environment variable (a secret — never print or commit it).
+- `git config user.name 'firatbarca'` and `user.email 'firatbarca@gmail.com'`.
 
 ## 1. Choose a topic
-- From `config.topics`, pick a topic that has NOT been used in the last few entries of `state.json.published`.
-- Rotate for variety; combine a topic with a timely angle (a recent regulation, report, or trend) when relevant.
+- From `config.topics`, pick one NOT used in the recent history of `state.json`. Rotate for variety;
+  tie it to a timely ESG/sustainability/climate angle when useful.
 
-## 2. Write the post
-- Voice & length: follow `config.voice`, `config.word_count_min`–`config.word_count_max`.
-- First person, professional, credible, practical. European/British spelling. No buzzword padding.
-- Structure: a strong title, 1 intro paragraph, 2–4 `<h2>` sections, optional bullet list, a short closing.
-- Body must be valid HTML fragments (`<p>`, `<h2>`, `<ul><li>`, `<blockquote>`) — this becomes `{{BODY}}`.
+## 2. Write the post (Markdown)
+- Voice & length: follow `config.voice` and `config.word_count_min`–`config.word_count_max`.
+- First person, professional, credible, European/British spelling, no buzzword padding.
+- Structure: intro paragraph, 2–4 `##` sections, optional bullet list or `>` blockquote.
 
-## 3. Create the post file
-- Slug = kebab-case of the title (e.g. `carbon-accounting-basics`).
-- Copy `blog-agent/post-template.html` to `blog/<slug>.html` and replace:
-  `{{TITLE}}`, `{{DESCRIPTION}}` (≤155 chars), `{{TAG}}` (short category), `{{DATE}}` (e.g. `Jul 2026`),
-  `{{READ}}` (estimated minutes), `{{SLUG}}` (the slug), `{{BODY}}` (the HTML body).
+## 3. Create the Markdown file
+- `slug` = kebab-case of the title.
+- Create `src/posts/<slug>.md` with YAML front matter, then the Markdown body:
+  ```
+  ---
+  title: "<title>"
+  date: <YYYY-MM-DDTHH:MM>        # publish date/time
+  tag: "<short category>"
+  summary: "<=160 chars, shown on the blog card"
+  cover: "/assets/blog/<slug>.jpg"
+  draft: false
+  ---
+  <markdown body>
+  ```
+- **Scheduled publishing:** set a FUTURE `date` — the daily build publishes it automatically when due.
+- **Draft:** set `draft: true` to keep it hidden until ready.
 
 ## 4. Fetch a cover image (do not skip)
-- Run: `PEXELS_API_KEY=$PEXELS_API_KEY ./scripts/fetch_image.sh "<2-4 keyword query>" assets/blog/<slug>.jpg`
-- Copy it to the in-article header: `cp assets/blog/<slug>.jpg blog/<slug>.jpg`
-- VERIFY both files exist and are larger than ~5 KB, and make sure `git add -A` stages them (binary files included) before committing.
-- If the fetch genuinely fails, proceed with the gradient fallback but say so in the PR description.
+- `PEXELS_API_KEY=$PEXELS_API_KEY ./scripts/fetch_image.sh "<2-4 keyword query>" src/assets/blog/<slug>.jpg`
+- Verify the file exists, is > ~5 KB, and is staged (`git add -A` includes binaries).
 
-## 5. Add it to the listing
-- In `blog/index.html`, insert a new `<a class="note-card" href="<slug>.html">` as the FIRST card in `.note-grid`,
-  following the existing card markup. Cover style:
-  `background-image:url('../assets/blog/<slug>.jpg'),linear-gradient(135deg,#b56a43,#7c3f24)`.
-- Include the tag, title, a one-line excerpt, the date, and `<span class="note-cta">Read →</span>`.
+## 5. Do NOT edit the listing
+- The blog index (`/blog/`) is generated automatically from `src/posts/` by Eleventy. No manual edits.
 
 ## 6. Record it
 - Append to `state.json.published`: `{ "slug": "...", "title": "...", "topic": "...", "date": "YYYY-MM-DD" }`.
 
-## 7. Publish according to mode (`config.mode`)
-- **review** (default): create a branch `blog/auto-YYYY-MM-DD`, commit all changes, push, and open a Pull Request
-  titled "Weekly blog post: <title>" with a short summary. Do NOT merge — Firat reviews and merges.
-- **auto**: commit directly to `main` and push (the post goes live automatically).
+## 7. Publish according to `config.mode`
+- **review** (default): create branch `blog/auto-YYYY-MM-DD`, commit, push, open a Pull Request titled
+  "Weekly blog post: <title>"; DO NOT merge — Firat reviews and merges.
+- **auto**: commit directly to `main` and push (the deploy workflow builds & publishes the site).
 
 ## Guardrails
-- Keep it accurate and non-defamatory; no confidential employer details. When unsure about a fact, keep claims general.
-- One post per run. Never delete or rewrite existing posts.
-- Match the existing visual style; do not change site-wide CSS.
+- Accurate and non-defamatory; no confidential employer details. One post per run.
+- Never modify existing posts, site CSS, or the Eleventy templates.
+- If git push or PR creation fails due to missing GitHub credentials, stop and report it.

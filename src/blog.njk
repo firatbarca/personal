@@ -1,0 +1,61 @@
+---
+permalink: /blog/index.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Blog — Firat Barca</title>
+<meta name="description" content="Writing by Firat Barca on ESG &amp; sustainability reporting, climate policy and human migration, and data &amp; reporting practice." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/blog/style.css" />
+<style>
+  .listing{max-width:1000px;margin:0 auto;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,5vw,2rem) 5rem;}
+  .listing .head{margin-bottom:1rem;}
+  .listing .kicker{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
+  .listing h1{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:600;margin:.8rem 0 .6rem;color:var(--ink);}
+  .listing .sub{color:var(--soft);font-size:1.05rem;max-width:56ch;}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="in">
+    <a class="brand" href="/index.html">Firat Barca<span>.</span></a>
+    <a class="back" href="/index.html">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      Home
+    </a>
+  </div>
+</div>
+
+<main class="listing">
+  <div class="head">
+    <span class="kicker">Writing</span>
+    <h1>Blog</h1>
+    <p class="sub">Notes on ESG &amp; sustainability reporting, climate policy and human migration, and data &amp; reporting practice.</p>
+  </div>
+
+  <div class="note-grid">
+    {% for post in collections.posts | reverse %}
+    <a class="note-card" href="{{ post.url }}">
+      <div class="note-cover" style="background-image:url('{{ post.data.cover }}'),linear-gradient(135deg,#b56a43,#7c3f24)"><span class="ctag">{{ post.data.tag }}</span></div>
+      <div class="note-body">
+        <h2>{{ post.data.title }}</h2>
+        <p>{{ post.data.summary }}</p>
+        <div class="note-meta"><span class="note-date">{{ post.data.date | postDate }} · {{ post.templateContent | readingTime }} min</span><span class="note-cta">Read →</span></div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <div class="list-cta">
+    <a href="/index.html#contact">Have a topic you'd like me to cover? Get in touch →</a>
+  </div>
+</main>
+
+</body>
+</html>
