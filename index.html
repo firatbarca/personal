@@ -208,6 +208,13 @@
   .cform .note.ok{color:#9fd3b0;}
   .cform .note.err{color:#f0a982;}
   .f-side-lead{color:rgba(239,235,227,.7);font-size:.95rem;margin:0 0 1rem;}
+  .cform button:disabled{opacity:.6;cursor:default;}
+  .cform-done{border:1px solid rgba(159,211,176,.45);background:rgba(159,211,176,.08);padding:1.8rem;}
+  .cform-done-icon{width:48px;height:48px;border-radius:50%;background:#9fd3b0;color:#10271f;display:grid;place-items:center;font-size:1.6rem;font-weight:700;margin-bottom:1rem;}
+  .cform-done h3{color:var(--paper);font-size:1.5rem;margin:0 0 .5rem;}
+  .cform-done p{color:rgba(239,235,227,.78);margin:0 0 1.3rem;font-size:.98rem;}
+  .cform-done button{background:transparent;color:var(--paper);border:1px solid rgba(239,235,227,.3);padding:.6rem 1.2rem;font-weight:600;cursor:pointer;transition:border-color .2s ease;}
+  .cform-done button:hover{border-color:var(--accent);}
   @media (max-width:760px){.contact-wrap{grid-template-columns:1fr;}.cform .row{grid-template-columns:1fr;}}
 
   /* reveal */
@@ -622,6 +629,7 @@
     </div>
 
     <div class="contact-wrap">
+      <div class="cform-col">
       <form class="cform" id="cform" novalidate>
         <div class="row">
           <div><label for="cf-name">Name/Organization <span class="req">*</span></label><input id="cf-name" type="text" autocomplete="name" required></div>
@@ -637,6 +645,13 @@
         <button type="submit">Send message</button>
         <p class="note" id="cmsg">Protected by a simple human check &amp; spam trap. Nothing is sent until you submit.</p>
       </form>
+      <div class="cform-done" id="cform-done" hidden>
+        <div class="cform-done-icon">✓</div>
+        <h3 id="cform-done-h">Message sent</h3>
+        <p id="cform-done-p">Thanks — your message has been sent. I'll get back to you as soon as I can.</p>
+        <button type="button" id="cform-again">Send another message</button>
+      </div>
+      </div>
 
       <div class="f-side">
         <p class="f-side-lead">Prefer email or LinkedIn? Reach me directly:</p>
@@ -693,11 +708,23 @@
   (function(){
     const form = document.getElementById('cform'); if(!form) return;
     const q = document.getElementById('cq'), msg = document.getElementById('cmsg');
+    const done = document.getElementById('cform-done'), doneP = document.getElementById('cform-done-p');
+    const btn = form.querySelector('button[type="submit"]');
     const W3F_KEY = '7fa191dd-d034-4320-a8bc-12d103fc6db1';
     const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
     let a = 0, b = 0;
     const newQ = () => { a = 2 + Math.floor(Math.random()*7); b = 1 + Math.floor(Math.random()*8); q.textContent = 'what is ' + a + ' + ' + b + '?'; };
     newQ();
+    function showDone(name){
+      doneP.textContent = 'Thanks, ' + name + ' — your message has been sent. I’ll get back to you as soon as I can.';
+      form.style.display = 'none'; done.hidden = false;
+      done.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+    const again = document.getElementById('cform-again');
+    if (again) again.addEventListener('click', () => {
+      done.hidden = true; form.style.display = ''; form.reset(); newQ();
+      msg.className='note'; msg.textContent='Protected by a simple human check & spam trap. Nothing is sent until you submit.';
+    });
     form.addEventListener('submit', async function(e){
       e.preventDefault();
       if (document.getElementById('cf-company').value) return; // honeypot tripped → ignore bot
@@ -714,21 +741,22 @@
         const subject = encodeURIComponent('Website contact — ' + name);
         const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
         window.location.href = 'mailto:firatbarca@gmail.com?subject=' + subject + '&body=' + body;
-        msg.className='note ok'; msg.textContent='Opening your email app to send — thank you, ' + name + '!';
-        return;
+        showDone(name); return;
       }
 
       // Real delivery → arrives directly in your inbox
-      msg.className='note'; msg.textContent='Sending…';
+      const old = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…';
+      msg.className='note'; msg.textContent='Sending your message…';
       try{
         const res = await fetch('https://api.web3forms.com/submit', {
           method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
           body: JSON.stringify({ access_key:W3F_KEY, subject:'Website contact — '+name, from_name:name, name:name, email:email, message:message })
         });
         const data = await res.json();
-        if (data.success){ msg.className='note ok'; msg.textContent='Thank you, '+name+' — your message has been sent.'; form.reset(); newQ(); }
-        else { msg.className='note err'; msg.textContent='Sorry, something went wrong. Please email me directly.'; }
-      }catch(err){ msg.className='note err'; msg.textContent='Network error. Please email me directly.'; }
+        if (data.success){ showDone(name); }
+        else { msg.className='note err'; msg.textContent='Sorry, something went wrong — please email me directly at firatbarca[at]gmail.com.'; }
+      }catch(err){ msg.className='note err'; msg.textContent='Network error — please email me directly at firatbarca[at]gmail.com.'; }
+      finally{ btn.disabled = false; btn.textContent = old; }
     });
   })();
 </script>
