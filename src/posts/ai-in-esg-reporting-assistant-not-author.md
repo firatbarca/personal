@@ -33,7 +33,7 @@ Three failure modes recur. The first is the **broken audit trail**: if a figure 
 
 ## A practical rule
 
-My working rule is simple: **AI can touch the inputs, but a human owns the output.** Concretely, that means a few non-negotiables.
+The working rule is simple: **AI can touch the inputs, but a human owns the output.** Concretely, that means a few non-negotiables.
 
 - Every AI-assisted step is logged — which tool, which version, on which data — so the trail survives staff turnover and the next audit.
 - Any figure heading for a disclosure is reconciled against source data by a person who can explain it, not just approve it.
