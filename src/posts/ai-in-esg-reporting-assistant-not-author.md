@@ -1,12 +1,13 @@
 ---
 title: "AI in ESG reporting: assistant, not author"
-date: 2026-06-27
-tag: "ESG & AI"
-summary: "Where AI genuinely speeds up sustainability reporting — and where it quietly creates risk. A practical rule: AI can touch the inputs, but a human owns the output."
-cover: "/assets/blog/ai-in-esg-reporting-assistant-not-author.jpg"
+date: 2026-06-28T00:43
+tag: ESG & AI
+summary: "Where AI genuinely speeds up sustainability reporting — and where it
+  quietly creates risk. A practical rule: AI can touch the inputs, but a human
+  owns the output."
+cover: /assets/blog/ai-in-esg-reporting-assistant-not-author.jpg
 draft: false
 ---
-
 Walk any sustainability software stand this year and you will hear the same promise: artificial intelligence will read your invoices, draft your disclosures, and hand you a finished sustainability statement. After a few cycles of reporting across dozens of countries, I have learned to listen to that promise with one hand on my wallet. AI is genuinely useful in ESG work — I use it — but it earns its place as an **assistant**, never as the author of record.
 
 The distinction matters more now that the **EU AI Act** is phasing into force and auditors are starting to ask not just for your numbers, but for the provenance of the tools that produced them. So it is worth being precise about where these systems help and where they quietly create risk.
@@ -38,7 +39,7 @@ My working rule is simple: **AI can touch the inputs, but a human owns the outpu
 - Any figure heading for a disclosure is reconciled against source data by a person who can explain it, not just approve it.
 - Models assist with reconciliation and validation; they do not get the final word on a published number.
 
-None of this is anti-technology. The same automation mindset that, in my own work, lifted reporting efficiency by more than 40% is exactly what makes AI worth adopting — carefully. The teams that will struggle are the ones that treat the model as an oracle. The teams that will pull ahead are the ones that treat it as a very fast, very tireless junior colleague: enormously helpful, occasionally confidently wrong, and never the one whose name goes on the report.
+None of this is anti-technology. The teams that will struggle are the ones that treat the model as an oracle. The teams that will pull ahead are the ones that treat it as a very fast, very tireless junior colleague: enormously helpful, occasionally confidently wrong, and never the one whose name goes on the report.
 
 ## The point of accountability
 
