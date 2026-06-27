@@ -1,16 +1,28 @@
 // Shared data for every post in src/posts/.
-// Drafts and future-dated posts are not written and excluded from collections —
-// this is what gives us "drafts" and "scheduled publishing" on a static site.
+// Publishing rule (timezone-safe): a post is published when it is NOT a draft and its
+// publish DAY is today or earlier in the author's timezone. Comparing by calendar day
+// (not exact UTC time) avoids the "saved local time looks like the future in UTC" bug.
+// This is what gives us "drafts" (draft: true) and "scheduled publishing" (a future date).
+
+const AUTHOR_TZ = "Europe/Warsaw";
+
+function todayInTZ() {
+  // en-CA formats as YYYY-MM-DD
+  return new Intl.DateTimeFormat("en-CA", { timeZone: AUTHOR_TZ }).format(new Date());
+}
+function postDay(date) {
+  return String(date).slice(0, 10); // calendar-day portion of the front-matter date
+}
+function isHidden(data) {
+  return data.draft === true || postDay(data.date) > todayInTZ();
+}
+
 module.exports = {
   layout: "post.njk",
   tags: "posts",
   eleventyComputed: {
-    permalink: (data) => {
-      if (data.draft === true) return false;
-      if (new Date(data.date) > new Date()) return false;
-      return `/blog/${data.page.fileSlug}/index.html`;
-    },
-    eleventyExcludeFromCollections: (data) =>
-      data.draft === true || new Date(data.date) > new Date(),
+    permalink: (data) =>
+      isHidden(data) ? false : `/blog/${data.page.fileSlug}/index.html`,
+    eleventyExcludeFromCollections: (data) => isHidden(data),
   },
 };

@@ -22,11 +22,10 @@ content:
         type: string
         required: true
       - name: date
-        label: Publish date & time
+        label: Publish date (today or earlier = live; a future date = scheduled)
         type: date
         options:
-          format: "yyyy-MM-dd'T'HH:mm"
-          time: true
+          format: "yyyy-MM-dd"
       - name: tag
         label: Tag / category
         type: string
