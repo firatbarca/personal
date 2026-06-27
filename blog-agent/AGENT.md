@@ -24,9 +24,11 @@ You are writing a weekly blog post for **Firat Barca's** personal website
   `{{TITLE}}`, `{{DESCRIPTION}}` (≤155 chars), `{{TAG}}` (short category), `{{DATE}}` (e.g. `Jul 2026`),
   `{{READ}}` (estimated minutes), `{{SLUG}}` (the slug), `{{BODY}}` (the HTML body).
 
-## 4. Fetch a cover image
+## 4. Fetch a cover image (do not skip)
 - Run: `PEXELS_API_KEY=$PEXELS_API_KEY ./scripts/fetch_image.sh "<2-4 keyword query>" assets/blog/<slug>.jpg`
-- Also save a copy as `blog/<slug>.jpg` (the in-article header image) — copy the same file.
+- Copy it to the in-article header: `cp assets/blog/<slug>.jpg blog/<slug>.jpg`
+- VERIFY both files exist and are larger than ~5 KB, and make sure `git add -A` stages them (binary files included) before committing.
+- If the fetch genuinely fails, proceed with the gradient fallback but say so in the PR description.
 
 ## 5. Add it to the listing
 - In `blog/index.html`, insert a new `<a class="note-card" href="<slug>.html">` as the FIRST card in `.note-grid`,
