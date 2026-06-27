@@ -42,3 +42,20 @@ article hr{border:0;border-top:1px solid var(--line);margin:2.6rem 0;}
 .post-foot a.home{font-weight:600;color:var(--ink);display:inline-flex;align-items:center;gap:.4rem;}
 .post-foot a.home:hover{color:var(--accent);text-decoration:none;}
 .post-foot .who{color:var(--muted);font-size:.9rem;}
+
+/* ---- image cards (blog + solutions listings) ---- */
+.note-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.5rem;margin-top:2.2rem;}
+.note-card{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);overflow:hidden;color:inherit;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}
+a.note-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(27,25,22,.13);text-decoration:none;}
+.note-cover{aspect-ratio:16/10;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-end;padding:.9rem;}
+.note-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,25,22,0) 45%,rgba(27,25,22,.5));}
+.note-cover .ctag{position:relative;z-index:1;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:rgba(27,25,22,.5);border:1px solid rgba(255,255,255,.28);padding:.26rem .55rem;}
+.note-body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;flex:1;}
+.note-body h2,.note-body h3{font-size:1.2rem;font-weight:600;color:var(--ink);margin:0 0 .5rem;}
+.note-body p{color:var(--soft);font-size:.92rem;margin:0 0 1.2rem;flex:1;}
+.note-meta{display:flex;justify-content:space-between;align-items:center;gap:1rem;}
+.note-date{color:var(--muted);font-size:.8rem;}
+.note-cta{font-size:.85rem;font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap;}
+.note-card.soon{opacity:.65;}
+.list-cta{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);}
+.list-cta a{font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:.4rem;}
