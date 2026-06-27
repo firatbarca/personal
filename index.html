@@ -54,8 +54,8 @@
   nav.links a:hover{color:var(--ink);}
   nav.links a::after{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.55rem;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
   nav.links a:hover::after,nav.links a.active::after{transform:scaleX(1);}
-  .nav-cta{margin-left:.6rem;border:1px solid var(--ink);border-radius:0;padding:.5rem 1rem;font-size:.8rem;font-weight:600;letter-spacing:.03em;transition:background .2s ease,color .2s ease;}
-  .nav-cta:hover{background:var(--ink);color:var(--paper);}
+  .nav-cta{margin-left:.6rem;border:1px solid var(--ink);border-radius:0;padding:.5rem 1rem;font-size:.8rem;font-weight:600;letter-spacing:.03em;transition:background .2s ease,color .2s ease,border-color .2s ease;}
+  .nav-cta:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
   .nav-cta::after{display:none;}
   .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:.4rem;}
   .menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s;}
@@ -208,6 +208,8 @@
   .cform .note.ok{color:#9fd3b0;}
   .cform .note.err{color:#f0a982;}
   .f-side-lead{color:rgba(239,235,227,.7);font-size:.95rem;margin:0 0 1rem;}
+  .f-build{margin:1.8rem 0 0;padding-top:1.4rem;border-top:1px solid rgba(239,235,227,.14);color:rgba(239,235,227,.62);font-size:.9rem;line-height:1.6;}
+  .f-build a{color:var(--accent);font-weight:600;}
   .cform button:disabled{opacity:.6;cursor:default;}
   .cform-done{border:1px solid rgba(159,211,176,.45);background:rgba(159,211,176,.08);padding:1.8rem;}
   .cform-done-icon{width:48px;height:48px;border-radius:50%;background:#9fd3b0;color:#10271f;display:grid;place-items:center;font-size:1.6rem;font-weight:700;margin-bottom:1rem;}
@@ -269,6 +271,7 @@
   @media (max-width:1279px){
     .sidenav{display:none;}
     .links .sec-link{display:block;}
+    .home-cta{display:none;} /* brand already returns home on mobile — avoid duplicate "Firat Barca" */
     .col-label{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
     .col-label .rule{display:none;}
     .col-label .lbl{margin-top:0;}
@@ -296,10 +299,10 @@
       <a class="sec-link" href="#education">Education</a>
       <a class="sec-link" href="#research">Research</a>
       <a class="sec-link" href="#expertise">Expertise</a>
-      <a class="nav-cta" href="solutions/index.html">Solutions</a>
       <a class="nav-cta" href="blog/index.html">Blog</a>
+      <a class="nav-cta" href="solutions/index.html">Solutions</a>
       <a class="nav-cta" href="#contact">Get in touch</a>
-      <a class="nav-cta" href="#top">Firat Barca</a>
+      <a class="nav-cta home-cta" href="#top">Firat Barca</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -660,6 +663,7 @@
           <a href="mailto:firatbarca@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>firatbarca[at]gmail.com</a>
           <a href="https://www.linkedin.com/in/firatbarca" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14ZM8.34 18.34v-7.2H6.06v7.2h2.28ZM7.2 10.1a1.32 1.32 0 1 0 0-2.64 1.32 1.32 0 0 0 0 2.64Zm11.14 8.24v-4.13c0-2.2-1.18-3.23-2.75-3.23a2.37 2.37 0 0 0-2.15 1.18v-1.02h-2.28v7.2h2.28v-3.98c0-1.05.2-2.07 1.5-2.07s1.32 1.2 1.32 2.14v3.91h2.28Z"/></svg>linkedin.com/in/firatbarca</a>
         </div>
+        <p class="f-build">Like this website? I designed and built it myself — if you'd like one like it for yourself or your organisation, <a href="#contact">reach out</a> and I'll gladly help.</p>
       </div>
     </div>
 
