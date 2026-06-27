@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Firat Barca — Political Science · Sustainability &amp; ESG</title>
+<meta name="description" content="Firat Barca — Ph.D. in Political Science. Sustainability &amp; ESG controlling, non-financial reporting, and climate change &amp; human migration research." />
+<meta name="author" content="Firat Barca" />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Firat Barca — Political Science · Sustainability &amp; ESG | Ph.D." />
+<meta property="og:description" content="ESG controlling, non-financial reporting, and climate change &amp; human migration research." />
+<meta property="og:image" content="assets/firat-barca.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --paper:#efebe3;
+    --paper-2:#e7e2d8;
+    --card:#f6f3ed;
+    --ink:#1b1916;
+    --ink-2:#3c3833;
+    --soft:#5f594f;
+    --muted:#938b7e;
+    --line:#d7d0c3;
+    --line-2:#c7bfae;
+    --accent:#9a4724;        /* muted terracotta, drawn from warm photo tones */
+    --accent-soft:rgba(154,71,36,.10);
+    --maxw:1060px;
+    --space:clamp(4.5rem,9vw,8rem);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:86px;}
+  body{margin:0;background:var(--paper);color:var(--ink-2);font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.015em;margin:0;color:var(--ink);}
+  a{color:var(--ink);text-decoration:none;}
+  ::selection{background:var(--accent);color:#fff;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem);}
+  .serif-it{font-family:'Fraunces',serif;font-style:italic;}
+
+  /* labels */
+  .kicker{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
+
+  /* ---------- NAV ---------- */
+  header.nav{position:sticky;top:0;z-index:100;background:rgba(239,235,227,.82);backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s ease;}
+  header.nav.scrolled{border-color:var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.7rem;letter-spacing:-.01em;}
+  .brand .dot{color:var(--accent);}
+  nav.links{display:flex;gap:.1rem;align-items:center;}
+  nav.links a{font-size:.82rem;font-weight:500;letter-spacing:.02em;color:var(--soft);padding:.5rem .7rem;position:relative;}
+  nav.links a:hover{color:var(--ink);}
+  nav.links a::after{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.55rem;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
+  nav.links a:hover::after,nav.links a.active::after{transform:scaleX(1);}
+  .nav-cta{margin-left:.6rem;border:1px solid var(--ink);border-radius:0;padding:.5rem 1rem;font-size:.8rem;font-weight:600;letter-spacing:.03em;transition:background .2s ease,color .2s ease;}
+  .nav-cta:hover{background:var(--ink);color:var(--paper);}
+  .nav-cta::after{display:none;}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:.4rem;}
+  .menu-btn span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.3s;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(2.5rem,5vw,3.5rem);}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;}
+  .hero h1{font-size:clamp(3.4rem,10vw,6.4rem);font-weight:600;letter-spacing:-.03em;color:var(--ink);margin:0;white-space:nowrap;}
+  .hero .hero-kicker{display:block;margin-top:.8rem;}
+  .hero .role{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.2rem,2.5vw,1.7rem);color:var(--soft);font-weight:400;margin:1.2rem 0 0;max-width:24ch;}
+  .hero .intro{margin:1.7rem 0 0;color:var(--soft);font-size:1.04rem;max-width:46ch;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center;margin-top:2rem;}
+  .link-arrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;font-size:.92rem;border-bottom:1px solid var(--ink);padding-bottom:.2rem;}
+  .link-arrow svg{transition:transform .2s ease;}
+  .link-arrow:hover svg{transform:translateX(4px);}
+  .btn-solid{background:var(--ink);color:var(--paper) !important;padding:.8rem 1.4rem;font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;gap:.5rem;transition:background .2s ease;}
+  .btn-solid:hover{background:var(--accent);}
+
+  /* portrait */
+  .portrait{position:relative;}
+  .portrait .frame{position:relative;z-index:2;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--line-2);background:var(--paper-2);box-shadow:0 30px 60px rgba(27,25,22,.18);}
+  .portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;filter:grayscale(8%) contrast(1.02);}
+  .portrait::before{content:"";position:absolute;z-index:1;left:-18px;bottom:-18px;width:62%;height:62%;background:var(--accent);opacity:.14;}
+  .portrait .tagline{position:absolute;z-index:3;right:-10px;bottom:18px;background:var(--ink);color:var(--paper);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:.55rem .9rem;}
+
+  /* hero contact strip */
+  .hero-contact{margin-top:2.4rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;font-size:.88rem;color:var(--soft);}
+  .hero-contact a,.hero-contact span{display:inline-flex;align-items:center;gap:.45rem;color:var(--soft);}
+  .hero-contact a:hover{color:var(--accent);}
+  .hero-contact svg{width:14px;height:14px;color:var(--accent);}
+
+  /* ---------- STAT STRIP ---------- */
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);}
+  .stat{padding:clamp(1.6rem,3vw,2.4rem) 0;text-align:center;border-left:1px solid var(--line);}
+  .stat:first-child{border-left:0;}
+  .stat .n{font-family:'Fraunces',serif;font-size:clamp(2.2rem,5vw,3.2rem);font-weight:600;color:var(--ink);line-height:1;}
+  .stat .l{color:var(--muted);font-size:.82rem;margin-top:.5rem;letter-spacing:.02em;}
+
+  /* ---------- SECTION (asymmetric) ---------- */
+  section.block{padding:var(--space) 0;border-top:1px solid var(--line);}
+  .grid2{display:grid;grid-template-columns:1fr;gap:1.4rem;}
+  .col-label{display:none;} /* per-section labels hidden on desktop; the left rail shows them */
+  .col-label .num{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--accent);font-weight:600;}
+  .col-label .lbl{display:block;margin-top:.4rem;font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);}
+  .col-label .rule{margin-top:1rem;width:38px;height:2px;background:var(--accent);}
+  .big{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:500;color:var(--ink);}
+  .lead{color:var(--soft);font-size:1.08rem;margin:1.4rem 0 0;max-width:60ch;}
+  .lead + .lead{margin-top:1.1rem;}
+  .lead strong{color:var(--ink);font-weight:600;}
+
+  /* expertise two-up */
+  .exp-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3rem);}
+  .exp-cols h3{font-size:1.15rem;color:var(--ink);margin-bottom:1rem;padding-bottom:.7rem;border-bottom:1px solid var(--line);}
+  .exp-cols ul{list-style:none;margin:0;padding:0;}
+  .exp-cols li{position:relative;padding-left:1.3rem;color:var(--soft);font-size:.95rem;margin:.6rem 0;}
+  .exp-cols li::before{content:"—";position:absolute;left:0;color:var(--accent);}
+
+  /* experience ledger */
+  .entry{display:grid;grid-template-columns:130px 1fr;gap:clamp(1rem,3vw,2.2rem);padding:2rem 0;border-top:1px solid var(--line);}
+  .entry:first-child{border-top:0;padding-top:0;}
+  .entry .yr{font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.03em;padding-top:.35rem;}
+  .entry .yr .now{display:inline-block;margin-top:.5rem;color:var(--accent);border:1px solid var(--accent);padding:.1rem .45rem;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;}
+  .entry h3{font-size:1.35rem;font-weight:600;color:var(--ink);}
+  .entry .org{color:var(--soft);font-size:.95rem;margin:.3rem 0 1rem;font-weight:500;}
+  .entry .org .sep{color:var(--muted);margin:0 .45rem;}
+  .entry ul{list-style:none;margin:0;padding:0;}
+  .entry li{position:relative;padding-left:1.3rem;color:var(--soft);font-size:.95rem;margin:.5rem 0;}
+  .entry li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;background:var(--accent);}
+  details.more{margin-top:.6rem;}
+  details.more summary{cursor:pointer;color:var(--accent);font-size:.86rem;font-weight:600;list-style:none;display:inline-flex;align-items:center;gap:.4rem;padding:.2rem 0;}
+  details.more summary::-webkit-details-marker{display:none;}
+  details.more summary .chev{transition:transform .2s ease;}
+  details.more[open] summary .chev{transform:rotate(180deg);}
+
+  /* education / teaching ledger rows */
+  .ed-row{display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:baseline;padding:1.35rem 0;border-top:1px solid var(--line);}
+  .ed-row:first-child{border-top:0;}
+  .ed-deg{font-family:'Fraunces',serif;font-size:1.18rem;font-weight:600;color:var(--ink);}
+  .ed-school{color:var(--soft);font-size:.92rem;margin-top:.25rem;}
+  .ed-focus{color:var(--muted);font-size:.88rem;margin-top:.3rem;font-style:italic;}
+  .ed-meta{color:var(--muted);font-size:.82rem;font-weight:600;white-space:nowrap;text-align:right;}
+
+  .sub-head{margin:3.5rem 0 1.5rem;font-size:.74rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);padding-bottom:.7rem;border-bottom:1px solid var(--line);}
+
+  /* certs grid */
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.4rem 2.5rem;}
+  .cert{display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:1rem 0;border-top:1px solid var(--line);align-items:baseline;}
+  .cert .yr{font-family:'Fraunces',serif;font-weight:600;color:var(--accent);font-size:.95rem;}
+  .cert b{color:var(--ink);font-weight:600;font-size:.94rem;}
+  .cert span{display:block;color:var(--muted);font-size:.82rem;margin-top:.15rem;}
+
+  /* publications */
+  .pub{display:grid;grid-template-columns:2rem 1fr;gap:1rem;padding:1.3rem 0;border-top:1px solid var(--line);align-items:baseline;}
+  .pub:first-child{border-top:0;}
+  .pub .pn{font-family:'Fraunces',serif;color:var(--accent);font-size:1.05rem;font-weight:600;}
+  .pub-title{color:var(--ink);font-weight:600;font-size:1.02rem;}
+  .pub-meta{color:var(--muted);font-size:.86rem;margin-top:.25rem;}
+
+  /* blog */
+  .blog-list{display:grid;gap:0;}
+  .blog-item{display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem;align-items:center;padding:1.6rem 0;border-top:1px solid var(--line);transition:padding-left .2s ease;}
+  a.blog-item:hover{padding-left:.6rem;}
+  .blog-item .tag{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:.25rem .55rem;white-space:nowrap;}
+  .blog-item h3{font-size:1.25rem;font-weight:600;color:var(--ink);}
+  .blog-item p{color:var(--soft);font-size:.9rem;margin:.3rem 0 0;}
+  .blog-item .meta{color:var(--muted);font-size:.8rem;white-space:nowrap;text-align:right;}
+  .blog-item.soon{opacity:.6;}
+
+  /* skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2.2rem;}
+  .skill-col h3{font-size:.95rem;letter-spacing:.04em;color:var(--ink);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--line);}
+  .tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+  .tag{font-size:.83rem;font-weight:500;color:var(--ink-2);background:var(--card);border:1px solid var(--line);padding:.36rem .72rem;}
+  .lang{display:flex;justify-content:space-between;align-items:baseline;padding:.5rem 0;border-bottom:1px solid var(--line);}
+  .lang b{color:var(--ink);font-weight:600;font-size:.92rem;}
+  .lang small{color:var(--muted);font-size:.8rem;}
+
+  /* footer */
+  footer{background:var(--ink);color:var(--paper);padding:clamp(4rem,8vw,6rem) 0 2.5rem;}
+  footer .kicker{color:var(--accent);}
+  footer h2{color:var(--paper);font-size:clamp(2.4rem,6vw,4rem);font-weight:500;margin:1rem 0 0;max-width:14ch;}
+  footer .f-lead{color:rgba(239,235,227,.7);margin:1.5rem 0 2.5rem;max-width:46ch;}
+  .f-head{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.5rem,5vw,4rem);align-items:end;}
+  .f-head .f-lead{margin:0;font-size:1.05rem;padding-bottom:.4rem;}
+  @media (max-width:760px){.f-head{grid-template-columns:1fr;gap:1rem;align-items:start;}.f-head .f-lead{padding-bottom:0;}}
+  .f-contact{display:flex;flex-wrap:wrap;gap:.9rem;}
+  .f-contact a{display:inline-flex;align-items:center;gap:.55rem;border:1px solid rgba(239,235,227,.22);color:var(--paper) !important;padding:.75rem 1.2rem;font-size:.9rem;font-weight:500;transition:background .2s ease,color .2s ease;}
+  .f-contact a:hover{background:var(--paper);color:var(--ink) !important;}
+  .f-contact svg{width:16px;height:16px;}
+  .f-bottom{margin-top:3.5rem;padding-top:1.6rem;border-top:1px solid rgba(239,235,227,.15);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;font-size:.8rem;color:rgba(239,235,227,.5);}
+
+  /* contact form */
+  .contact-wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start;margin-top:2.5rem;}
+  .cform{display:grid;gap:1rem;}
+  .cform .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .cform label{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(239,235,227,.6);margin-bottom:.4rem;}
+  .cform input,.cform textarea{width:100%;background:rgba(239,235,227,.06);border:1px solid rgba(239,235,227,.18);color:var(--paper);padding:.7rem .8rem;font-family:inherit;font-size:.95rem;border-radius:0;}
+  .cform input:focus,.cform textarea:focus{outline:none;border-color:var(--accent);background:rgba(239,235,227,.1);}
+  .cform textarea{min-height:120px;resize:vertical;}
+  .cform .hp{position:absolute !important;left:-9999px;width:1px;height:1px;opacity:0;padding:0;margin:0;}
+  .cform .human{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;}
+  .cform .human label{margin:0;text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--paper);}
+  .cform .human label #cq{font-family:'Fraunces',serif;color:var(--accent);font-weight:600;}
+  .cform .human input{width:90px;}
+  .cform button{justify-self:start;background:var(--accent);color:#fff;border:0;padding:.85rem 1.6rem;font-weight:600;font-size:.92rem;cursor:pointer;transition:background .2s ease;}
+  .cform button:hover{background:#7e3a1d;}
+  .cform .note{font-size:.8rem;color:rgba(239,235,227,.5);margin:0;}
+  .cform .note.ok{color:#9fd3b0;}
+  .cform .note.err{color:#f0a982;}
+  .f-side-lead{color:rgba(239,235,227,.7);font-size:.95rem;margin:0 0 1rem;}
+  @media (max-width:760px){.contact-wrap{grid-template-columns:1fr;}.cform .row{grid-template-columns:1fr;}}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* print / save-as-PDF */
+  @media print{
+    body{background:#fff;color:#000;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    header.nav,.menu-btn,.hero-actions,.tagline{display:none !important;}
+    .portrait::before{display:none;}
+    .portrait{max-width:240px;}
+    .portrait .frame{box-shadow:none;border:1px solid #999;}
+    .reveal{opacity:1 !important;transform:none !important;}
+    section.block{padding:1.1rem 0;border-top:1px solid #ccc;break-inside:avoid;}
+    .col-label{position:static;}
+    .grid2{grid-template-columns:150px 1fr;}
+    details.more summary{display:none !important;}
+    details.more > *{display:block !important;}
+    a{color:#000;}
+    footer{background:#fff;color:#000;border-top:1px solid #ccc;}
+    footer h2,footer .kicker{color:#000;}
+    .f-contact a{border:1px solid #999;color:#000 !important;background:#fff;}
+    .entry{break-inside:avoid;}
+    @page{margin:1.4cm;}
+  }
+
+  /* side rail nav (desktop) */
+  .sidenav{position:fixed;left:clamp(1rem,2.6vw,2.4rem);top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:1.15rem;}
+  .sidenav a{display:flex;align-items:baseline;gap:.55rem;color:var(--muted);font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:color .2s ease;}
+  .sidenav a .n{font-family:'Fraunces',serif;font-size:.7rem;color:var(--accent);opacity:.5;transition:opacity .2s ease;}
+  .sidenav a .t{position:relative;padding-bottom:3px;}
+  .sidenav a:hover{color:var(--ink);}
+  .sidenav a.active{color:var(--ink);}
+  .sidenav a.active .n{opacity:1;}
+  .sidenav a.active .t::after{content:"";position:absolute;left:0;right:-8px;bottom:0;height:1.5px;background:var(--accent);}
+  .links .sec-link{display:none;} /* section links live in the left rail on desktop */
+
+  /* responsive */
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:2.5rem;}
+    .portrait{max-width:420px;}
+    .exp-cols{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    .entry{grid-template-columns:1fr;gap:.6rem;}
+    .blog-item{grid-template-columns:1fr;gap:.5rem;}
+    .blog-item .meta{text-align:left;}
+  }
+  /* below the rail breakpoint: hamburger holds every link */
+  @media (max-width:1279px){
+    .sidenav{display:none;}
+    .links .sec-link{display:block;}
+    .col-label{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+    .col-label .rule{display:none;}
+    .col-label .lbl{margin-top:0;}
+    nav.links{position:fixed;inset:74px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:1px solid var(--line);padding:.5rem clamp(1.25rem,5vw,3rem) 1.2rem;transform:translateY(-130%);transition:transform .3s ease;box-shadow:0 20px 40px rgba(27,25,22,.12);}
+    nav.links.open{transform:translateY(0);}
+    nav.links a{padding:.85rem .2rem;border-bottom:1px solid var(--line);}
+    nav.links a::after{display:none;}
+    .nav-cta{margin:.5rem 0 0;text-align:center;border:1px solid var(--ink);}
+    .menu-btn{display:block;}
+    .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .menu-btn.open span:nth-child(2){opacity:0;}
+    .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="topnav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">Firat Barca<span class="dot">.</span></a>
+    <nav class="links" id="navlinks">
+      <a class="sec-link" href="#about">About</a>
+      <a class="sec-link" href="#experience">Experience</a>
+      <a class="sec-link" href="#education">Education</a>
+      <a class="sec-link" href="#research">Research</a>
+      <a class="sec-link" href="#expertise">Expertise</a>
+      <a class="nav-cta" href="blog/index.html">Blog</a>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+      <a class="nav-cta" href="#top">Firat Barca</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ SIDE RAIL NAV ============ -->
+<nav class="sidenav" id="sidenav" aria-label="Sections">
+  <a href="#about"><span class="n">01</span><span class="t">About</span></a>
+  <a href="#experience"><span class="n">02</span><span class="t">Experience</span></a>
+  <a href="#education"><span class="n">03</span><span class="t">Education</span></a>
+  <a href="#research"><span class="n">04</span><span class="t">Research</span></a>
+  <a href="#expertise"><span class="n">05</span><span class="t">Expertise</span></a>
+</nav>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text reveal">
+      <h1>Firat Barca</h1>
+      <span class="kicker hero-kicker">Sustainability &amp; ESG Professional</span>
+      <p class="intro">
+        Sustainability and ESG professional with over six years of experience in corporate ESG controlling,
+        governance, and non-financial reporting. Currently supporting ESG data governance and control
+        frameworks across operations in more than 90 countries.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-solid" href="#contact">Get in touch
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="link-arrow" href="#" onclick="window.print();return false;">Download CV
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+        </a>
+      </div>
+      <div class="hero-contact">
+        <a href="mailto:firatbarca@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>firatbarca[at]gmail.com</a>
+        <a href="https://www.linkedin.com/in/firatbarca" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14ZM8.34 18.34v-7.2H6.06v7.2h2.28ZM7.2 10.1a1.32 1.32 0 1 0 0-2.64 1.32 1.32 0 0 0 0 2.64Zm11.14 8.24v-4.13c0-2.2-1.18-3.23-2.75-3.23a2.37 2.37 0 0 0-2.15 1.18v-1.02h-2.28v7.2h2.28v-3.98c0-1.05.2-2.07 1.5-2.07s1.32 1.2 1.32 2.14v3.91h2.28Z"/></svg>LinkedIn</a>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Piaseczno, Poland</span>
+      </div>
+    </div>
+
+    <div class="portrait reveal">
+      <div class="frame">
+        <img src="assets/firat-barca.jpg" alt="Firat Barca" />
+      </div>
+      <span class="tagline">Ph.D. · ESG</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="block" id="about">
+  <div class="wrap grid2">
+    <div class="col-label reveal"><span class="num">01</span><span class="lbl">About</span><div class="rule"></div></div>
+    <div class="col-body reveal">
+      <h2 class="big">Connecting research with action.</h2>
+      <p class="lead">
+        Hi, I'm Firat — a political scientist and public administrator by training, and a Sustainability &amp; ESG
+        professional driven by a strong commitment to climate action, responsible business, and climate-related
+        human mobility.
+      </p>
+      <p class="lead">
+        With a Ph.D. focused on climate change and human mobility, I bring a cross-sector background spanning
+        academia, NGOs, and global companies including Shell and Google. I currently work as a Sustainability
+        Specialist at DSV, where I support ESG data management, reporting processes, performance improvement, and
+        alignment with sustainability goals.
+      </p>
+      <p class="lead">
+        Alongside my corporate sustainability work, I teach and publish on sustainability, human rights,
+        globalization, international relations, and the political and economic impacts of climate change.
+      </p>
+      <p class="lead">
+        What motivates me most is connecting research with action. I enjoy translating complex sustainability and
+        ESG topics into practical, meaningful steps that teams can understand, implement, and improve over time —
+        whether through ESG training, reporting improvements, stakeholder collaboration, or mentoring students.
+      </p>
+      <p class="lead">
+        Having worked with international teams and across different cultural contexts, I strongly believe that
+        cross-cultural collaboration is essential to building more sustainable and inclusive solutions.
+      </p>
+      <p class="lead">
+        If you are working on sustainability, ESG, climate policy, international collaboration, or climate
+        change-related human mobility, I'd be happy to connect.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="block" id="experience">
+  <div class="wrap grid2">
+    <div class="col-label reveal"><span class="num">02</span><span class="lbl">Experience</span><div class="rule"></div></div>
+    <div class="col-body">
+
+      <div class="entry reveal">
+        <div class="yr">Jun 2023 — Present</div>
+        <div>
+          <h3>Sustainability &amp; ESG Controlling Specialist</h3>
+          <div class="org">DSV — Global Transport and Logistics<span class="sep">·</span>Warsaw, Poland</div>
+          <ul>
+            <li>Collect, validate, and report ESG data across global operations.</li>
+            <li>Implement and enhance ESG data control processes to improve accuracy and consistency, particularly in the Scope 1 and Scope 2 areas.</li>
+            <li>Calculate key ESG KPIs in collaboration with subject-matter experts, including Injury Frequency Rate (IFR), Absence Rate, Ill Health Rate, and Lost Workdays Rate.</li>
+          </ul>
+          <details class="more">
+            <summary>More <svg class="chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <ul>
+              <li>Reconcile ESG data across multiple systems to ensure accurate and auditable reporting.</li>
+              <li>Develop ESG reports communicating key insights to internal and external stakeholders.</li>
+              <li>Partner with internal teams to improve global ESG data quality.</li>
+              <li>Design and deliver ESG training for colleagues, with a focus on Scope 1 and Scope 2 consumption.</li>
+              <li>Collaborate with Power BI developers to strengthen data controls and reporting transparency.</li>
+              <li>Support the external audit process with data delivery and explanation.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+      <div class="entry reveal">
+        <div class="yr">Apr 2022 — Oct 2022</div>
+        <div>
+          <h3>Corporate Political Engagement Analyst</h3>
+          <div class="org">Shell plc<span class="sep">·</span>Kraków, Poland</div>
+          <ul>
+            <li>Supported internal governance processes and controls aligned with Shell's transparency priorities and corporate values.</li>
+            <li>Provided high-quality data on Shell's Industry Association relationships for internal assurance, management oversight, and external disclosures.</li>
+            <li>Supported rollout of the Industry Associations Governance &amp; Control Framework across countries; used SAP GUI and Excel daily.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry reveal">
+        <div class="yr">Oct 2021 — Nov 2024</div>
+        <div>
+          <h3>Non-Permanent Faculty Member</h3>
+          <div class="org">University of Silesia in Katowice<span class="sep">·</span>Katowice, Poland</div>
+          <ul>
+            <li>Designed and delivered university courses on Climate Change, International Relations of the Middle East, and Globalisation &amp; Global Issues — 75 teaching hours total.</li>
+            <li>Wrote and managed scientific projects including project &amp; budget management; active in international scientific initiatives.</li>
+            <li>Published peer-reviewed research on sustainability, human rights, globalisation, and the impacts of climate change.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="entry reveal">
+        <div class="yr">Apr 2021 — Mar 2022</div>
+        <div>
+          <h3>Quality Assurance Specialist for Google</h3>
+          <div class="org">Cognizant Technology Solutions<span class="sep">·</span>Kraków, Poland</div>
+          <ul>
+            <li>Led a team of 3; conducted daily quality reviews ensuring compliance with Google Ads policies, maintaining 98%+ quality scores across all products.</li>
+            <li>Analyzed quality errors, identified root causes, and implemented corrective actions; monitored SLA performance and reported KPIs.</li>
+          </ul>
+          <details class="more">
+            <summary>Earlier Google roles at Cognizant <svg class="chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+            <ul>
+              <li><b>Senior Operations Specialist</b> (Apr 2020 – Apr 2021) — interpreted data and reported to management; maintained databases and identified trends in complex data sets.</li>
+              <li><b>Senior Process Executive</b> (Apr 2019 – Apr 2020) — created and managed text ads and campaign extensions on Google AdWords per best practices and policy.</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section class="block" id="education">
+  <div class="wrap grid2">
+    <div class="col-label reveal"><span class="num">03</span><span class="lbl">Education</span><div class="rule"></div></div>
+    <div class="col-body reveal">
+      <div class="ed-row">
+        <div><div class="ed-deg">Doctor of Philosophy — Political Science and Public Administration</div><div class="ed-school">University of Silesia in Katowice, Poland · Grade 4.99 / 5.00</div><div class="ed-focus">Focus: Climate Change and Human Migration</div></div>
+        <div class="ed-meta">Oct 2019 – Jun 2023</div>
+      </div>
+      <div class="ed-row">
+        <div><div class="ed-deg">Postgraduate Degree — Business Management</div><div class="ed-school">Wyższa Szkoła Kształcenia Zawodowego, Poland · Grade 5.00 / 5.00</div></div>
+        <div class="ed-meta">Oct 2024 – Jul 2025</div>
+      </div>
+      <div class="ed-row">
+        <div><div class="ed-deg">Master's Degree — Political Science</div><div class="ed-school">University of Warsaw, Poland · Grade 3.82 / 5.00</div></div>
+        <div class="ed-meta">Oct 2015 – Oct 2018</div>
+      </div>
+      <div class="ed-row">
+        <div><div class="ed-deg">Bachelor's Degree — Political Science and Public Administration</div><div class="ed-school">Çankırı Karatekin University, Türkiye · Honor Student · Grade 3.29 / 4.00</div></div>
+        <div class="ed-meta">Sep 2011 – May 2015</div>
+      </div>
+
+      <div class="sub-head">Licenses &amp; Certifications</div>
+      <div class="cert-grid">
+        <div class="cert"><span class="yr">’26</span><div><b>Financial Management</b><span>Duke University (Coursera) · 7-course specialization · Jun 2026</span></div></div>
+        <div class="cert"><span class="yr">’25</span><div><b>CSRD Fundamentals</b><span>Sustainability Reporting Institute (formerly CSRD Institute) · Apr 2025</span></div></div>
+        <div class="cert"><span class="yr">’25</span><div><b>Six Sigma Yellow Belt Training</b><span>DSV ISSC · May 2025</span></div></div>
+        <div class="cert"><span class="yr">’24</span><div><b>Climate Change: From Learning to Action</b><span>UN CC:Learn · Nov 2024</span></div></div>
+        <div class="cert"><span class="yr">’23</span><div><b>Personal Data Protection Training (GDPR)</b><span>AURACO sp. z o.o. · Dec 2023</span></div></div>
+        <div class="cert"><span class="yr">’23</span><div><b>15 Days of Power BI — Complete Microsoft Power BI Bootcamp</b><span>Udemy · Jun 2023</span></div></div>
+      </div>
+      <details class="more" style="margin-top:1.2rem;">
+        <summary>More certifications <svg class="chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></summary>
+        <div class="cert-grid" style="margin-top:.6rem;">
+          <div class="cert"><span class="yr">’22</span><div><b>Business English: Easy English for Meetings</b><span>Udemy · Jan 2022</span></div></div>
+          <div class="cert"><span class="yr">’21</span><div><b>Business Communication Skills: Business Writing &amp; Grammar</b><span>Udemy · Nov 2021</span></div></div>
+          <div class="cert"><span class="yr">’21</span><div><b>Master Google Sheets</b><span>Udemy · Nov 2021</span></div></div>
+          <div class="cert"><span class="yr">’21</span><div><b>Business Presentation Skills — Excellence Made Easy</b><span>Udemy · Nov 2021</span></div></div>
+          <div class="cert"><span class="yr">’21</span><div><b>Better Virtual Meetings: How to Lead Effective Meetings</b><span>Udemy · Nov 2021</span></div></div>
+          <div class="cert"><span class="yr">’21</span><div><b>Google Ads Search Certification</b><span>Google · Jan 2021</span></div></div>
+          <div class="cert"><span class="yr">’21</span><div><b>Google Ads — Measurement Certification</b><span>Google · Jun 2021</span></div></div>
+          <div class="cert"><span class="yr">’20</span><div><b>Microsoft Excel — Data Analysis with Pivot Tables</b><span>Udemy · Jan 2020</span></div></div>
+          <div class="cert"><span class="yr">’20</span><div><b>The Complete Google Sheets Course: Beginner to Advanced</b><span>Udemy · Mar 2020</span></div></div>
+          <div class="cert"><span class="yr">’20</span><div><b>Beginning Project Management: Level One</b><span>Udemy · Feb 2020</span></div></div>
+          <div class="cert"><span class="yr">’20</span><div><b>Interview Training for Hiring Managers and Teams</b><span>Udemy · Jan 2020</span></div></div>
+          <div class="cert"><span class="yr">’19</span><div><b>SQL for Data Analysis — Crash Course</b><span>Udemy · Dec 2019</span></div></div>
+          <div class="cert"><span class="yr">’19</span><div><b>Introduction to Artificial Intelligence</b><span>Cognizant · Apr 2019</span></div></div>
+          <div class="cert"><span class="yr">’19</span><div><b>German Language A2</b><span>IIENSTITU · May 2019</span></div></div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section class="block" id="research">
+  <div class="wrap grid2">
+    <div class="col-label reveal"><span class="num">04</span><span class="lbl">Research</span><div class="rule"></div></div>
+    <div class="col-body reveal">
+      <h2 class="big">Selected publications &amp; teaching.</h2>
+      <p class="lead">Peer-reviewed research and university teaching on sustainability, climate change, human rights, and globalisation.</p>
+
+      <div style="margin-top:2.2rem;">
+        <div class="pub"><span class="pn">01</span><div><div class="pub-title">Deep History of Liberalism: An Approach to Liberalism History</div><div class="pub-meta">Journal of Awareness, 3(3), 1–10 (2018) · <a href="https://doi.org/10.26809/joa.2018342288" target="_blank" rel="noopener">doi.org/10.26809/joa.2018342288 ↗</a></div></div></div>
+        <div class="pub"><span class="pn">02</span><div><div class="pub-title">An Evaluation on the Inadequacy of the United Nations to Protect Human Rights</div><div class="pub-meta">Gaziantep University Journal of Social Sciences, 18(2), 855–862 (2019) · <a href="https://doi.org/10.21547/jss.431138" target="_blank" rel="noopener">doi.org/10.21547/jss.431138 ↗</a></div></div></div>
+        <div class="pub"><span class="pn">03</span><div><div class="pub-title">Sustainabilitism: An Approach to Sustainability</div><div class="pub-meta">Studia Politicae Universitatis Silesiensis, 29, 9–23 (2020) · <a href="https://doi.org/10.31261/spus.9571" target="_blank" rel="noopener">doi.org/10.31261/spus.9571 ↗</a></div></div></div>
+        <div class="pub"><span class="pn">04</span><div><div class="pub-title"><a href="https://www.kitapyurdu.com/kitap/eksik-bir-seyler-var/658157.html" target="_blank" rel="noopener" style="color:inherit;border-bottom:1px solid var(--line-2);">Eksik Bir Şeyler Var</a></div><div class="pub-meta">Kitap Yurdu Doğrudan Yayıncılık (2023) · ISBN 9789754496321 · <a href="https://www.kitapyurdu.com/kitap/eksik-bir-seyler-var/658157.html" target="_blank" rel="noopener">View on Kitap Yurdu ↗</a></div></div></div>
+      </div>
+
+      <div class="sub-head">Teaching at a Higher Education Institution</div>
+      <div class="ed-row"><div><div class="ed-deg" style="font-size:1.05rem">Globalization and Global Issues in Today's World</div><div class="ed-school">University of Silesia in Katowice</div></div><div class="ed-meta">15 hrs · 2020/2021</div></div>
+      <div class="ed-row"><div><div class="ed-deg" style="font-size:1.05rem">International Relations of the Middle East</div><div class="ed-school">University of Silesia in Katowice</div></div><div class="ed-meta">30 hrs · 2021/2022</div></div>
+      <div class="ed-row"><div><div class="ed-deg" style="font-size:1.05rem">Climate Change: Social, Political &amp; Economic Implications</div><div class="ed-school">University of Silesia in Katowice</div></div><div class="ed-meta">30 hrs · 2022/2023</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERTISE ============ -->
+<section class="block" id="expertise">
+  <div class="wrap grid2">
+    <div class="col-label reveal"><span class="num">05</span><span class="lbl">Expertise</span><div class="rule"></div></div>
+    <div class="col-body reveal">
+      <div class="exp-cols">
+        <div>
+          <h3>ESG &amp; Sustainability</h3>
+          <ul>
+            <li>ESG controlling &amp; non-financial reporting</li>
+            <li>CSRD / ESRS / NFRD regulatory frameworks</li>
+            <li>GHG Protocol — Scope 1, 2, 3</li>
+            <li>Emission factors: DEFRA, AIB, residual mix, supplier-specific</li>
+            <li>ESG ratings data: EcoVadis, CDP, SBTi</li>
+            <li>Internal controls, data governance &amp; audit readiness</li>
+            <li>ESG KPI design &amp; Board / management reporting</li>
+            <li>Data validation, reconciliation &amp; quality management</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Data &amp; Technical</h3>
+          <ul>
+            <li>Excel (advanced)</li>
+            <li>Enablon · SAP Analytics Cloud · SAP GUI</li>
+            <li>Power BI · SharePoint · MS Project · Salesforce</li>
+            <li>Six Sigma · process improvement</li>
+            <li>Business Intelligence &amp; data analysis</li>
+            <li>CRM &amp; ERP systems · Adobe Analytics · G Suite</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="block" id="skills">
+  <div class="wrap grid2">
+    <div class="col-label reveal"><span class="num">06</span><span class="lbl">Toolkit</span><div class="rule"></div></div>
+    <div class="col-body reveal">
+      <div class="skills-grid">
+        <div class="skill-col">
+          <h3>TECHNICAL</h3>
+          <div class="tags">
+            <span class="tag">Excel (advanced)</span><span class="tag">Power BI</span><span class="tag">Business Intelligence</span>
+            <span class="tag">Data analysis</span><span class="tag">Enablon</span><span class="tag">SAP Analytics Cloud</span>
+            <span class="tag">SAP GUI</span><span class="tag">SharePoint</span><span class="tag">MS Project</span>
+            <span class="tag">Salesforce</span><span class="tag">G Suite</span><span class="tag">CRM &amp; ERP</span>
+            <span class="tag">Adobe Analytics</span><span class="tag">Windows · macOS · Linux</span>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3>SOFT SKILLS</h3>
+          <div class="tags">
+            <span class="tag">Leadership &amp; team management</span><span class="tag">Stakeholder engagement</span>
+            <span class="tag">Cross-functional collaboration</span><span class="tag">Cross-cultural communication</span>
+            <span class="tag">Analytical thinking</span><span class="tag">Structured problem-solving</span>
+            <span class="tag">Process ownership</span><span class="tag">Coaching &amp; mentoring</span>
+          </div>
+        </div>
+        <div class="skill-col">
+          <h3>LANGUAGES</h3>
+          <div class="lang"><b>English</b><small>Full professional</small></div>
+          <div class="lang"><b>Zazaki</b><small>Native / Bilingual</small></div>
+          <div class="lang"><b>Turkish</b><small>Native / Bilingual</small></div>
+          <div class="lang"><b>Polish</b><small>Communicative</small></div>
+          <div class="lang"><b>German</b><small>Elementary</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="f-head">
+      <div>
+        <span class="kicker">Get in touch</span>
+        <h2>Let's talk ESG, climate, or data.</h2>
+      </div>
+      <p class="f-lead">Open to collaboration across corporate sustainability, academic research, and reporting &amp; data initiatives.</p>
+    </div>
+
+    <div class="contact-wrap">
+      <form class="cform" id="cform" novalidate>
+        <div class="row">
+          <div><label for="cf-name">Name/Organization</label><input id="cf-name" type="text" autocomplete="name" required></div>
+          <div><label for="cf-email">Email</label><input id="cf-email" type="email" autocomplete="email" required></div>
+        </div>
+        <div><label for="cf-message">Message</label><textarea id="cf-message" required></textarea></div>
+        <!-- honeypot: invisible to people, bots tend to fill it -->
+        <input class="hp" type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="human">
+          <label for="cf-human">Quick check — <span id="cq"></span></label>
+          <input id="cf-human" type="text" inputmode="numeric" autocomplete="off" required>
+        </div>
+        <button type="submit">Send message</button>
+        <p class="note" id="cmsg">Protected by a simple human check &amp; spam trap. Nothing is sent until you submit.</p>
+      </form>
+
+      <div class="f-side">
+        <p class="f-side-lead">Prefer email or LinkedIn? Reach me directly:</p>
+        <div class="f-contact">
+          <a href="mailto:firatbarca@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>firatbarca[at]gmail.com</a>
+          <a href="https://www.linkedin.com/in/firatbarca" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14ZM8.34 18.34v-7.2H6.06v7.2h2.28ZM7.2 10.1a1.32 1.32 0 1 0 0-2.64 1.32 1.32 0 0 0 0 2.64Zm11.14 8.24v-4.13c0-2.2-1.18-3.23-2.75-3.23a2.37 2.37 0 0 0-2.15 1.18v-1.02h-2.28v7.2h2.28v-3.98c0-1.05.2-2.07 1.5-2.07s1.32 1.2 1.32 2.14v3.91h2.28Z"/></svg>linkedin.com/in/firatbarca</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="f-bottom">
+      <span>© <span id="year"></span> Firat Barca</span>
+      <span>Sustainability &amp; ESG · Ph.D. Political Science</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const topnav = document.getElementById('topnav');
+  const onScroll = () => topnav.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navlinks = document.getElementById('navlinks');
+  menuBtn.addEventListener('click', () => {
+    const open = navlinks.classList.toggle('open');
+    menuBtn.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  navlinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navlinks.classList.remove('open'); menuBtn.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false);
+  }));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.1, rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.reveal').forEach((el,i) => { el.style.transitionDelay = (Math.min(i,5)*40)+'ms'; io.observe(el); });
+
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting){
+        document.querySelectorAll('.sidenav a, nav.links a').forEach(a => a.classList.remove('active'));
+        document.querySelectorAll('.sidenav a[href="#'+e.target.id+'"], nav.links a[href="#'+e.target.id+'"]').forEach(a => a.classList.add('active'));
+      }
+    });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('section[id], footer[id]').forEach(s => spy.observe(s));
+
+  // Contact form — spam trap (honeypot) + math human-check + email validation.
+  // Delivery via Web3Forms: set W3F_KEY to your free access key from https://web3forms.com
+  // (sign up with firatbarca@gmail.com so messages land in that inbox).
+  // Until a real key is set, it safely falls back to opening the visitor's mail app.
+  (function(){
+    const form = document.getElementById('cform'); if(!form) return;
+    const q = document.getElementById('cq'), msg = document.getElementById('cmsg');
+    const W3F_KEY = '7fa191dd-d034-4320-a8bc-12d103fc6db1';
+    const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    let a = 0, b = 0;
+    const newQ = () => { a = 2 + Math.floor(Math.random()*7); b = 1 + Math.floor(Math.random()*8); q.textContent = 'what is ' + a + ' + ' + b + '?'; };
+    newQ();
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      if (document.getElementById('cf-company').value) return; // honeypot tripped → ignore bot
+      const name = document.getElementById('cf-name').value.trim();
+      const email = document.getElementById('cf-email').value.trim();
+      const message = document.getElementById('cf-message').value.trim();
+      const human = parseInt(document.getElementById('cf-human').value, 10);
+      if (!name || !email || !message){ msg.className='note err'; msg.textContent='Please complete Name/Organization, Email, and Message.'; return; }
+      if (!emailOk(email)){ msg.className='note err'; msg.textContent='Please enter a valid email, e.g. name@mail.com'; return; }
+      if (human !== a + b){ msg.className='note err'; msg.textContent='Human check failed — please try the sum again.'; newQ(); document.getElementById('cf-human').value=''; return; }
+
+      // Fallback when no key is configured yet → opens the visitor's email app
+      if (!W3F_KEY || W3F_KEY.indexOf('YOUR_') === 0){
+        const subject = encodeURIComponent('Website contact — ' + name);
+        const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+        window.location.href = 'mailto:firatbarca@gmail.com?subject=' + subject + '&body=' + body;
+        msg.className='note ok'; msg.textContent='Opening your email app to send — thank you, ' + name + '!';
+        return;
+      }
+
+      // Real delivery → arrives directly in your inbox
+      msg.className='note'; msg.textContent='Sending…';
+      try{
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body: JSON.stringify({ access_key:W3F_KEY, subject:'Website contact — '+name, from_name:name, name:name, email:email, message:message })
+        });
+        const data = await res.json();
+        if (data.success){ msg.className='note ok'; msg.textContent='Thank you, '+name+' — your message has been sent.'; form.reset(); newQ(); }
+        else { msg.className='note err'; msg.textContent='Sorry, something went wrong. Please email me directly.'; }
+      }catch(err){ msg.className='note err'; msg.textContent='Network error. Please email me directly.'; }
+    });
+  })();
+</script>
+</body>
+</html>
