@@ -24,7 +24,7 @@ Calculating a Scope 1 or Scope 2 emissions figure from utility and fuel data is,
 
 ## Controls are what turn data into disclosure
 
-Across a reporting cycle spanning so many locations, no single person can eyeball the data. What scales instead is a system of **controls**: automated validation checks that flag outliers, reconciliation routines that compare period over period, and clear ownership so that every data point has a name attached to it.
+Across a reporting cycle spanning so many locations, no single person can eyeball the data. What scales instead is a system of **controls**: automated validation checks that flag outliers, reconciliation routines that compare period-over-period, and clear ownership so that every data point has a name attached to it.
 
 This is where automation earns its keep. Building validation and reconciliation logic — even in something as accessible as Excel with Power Query — converts hours of manual checking into seconds, and more importantly, makes the checks *repeatable and consistent*. In my own work, this kind of automation improved reporting efficiency by over 40% while strengthening data quality at the same time.
 
