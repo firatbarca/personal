@@ -4,17 +4,34 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Solutions — Firat Barca</title>
-<meta name="description" content="Short solution notes from Firat Barca's draft projects across ESG data, reporting automation, and sustainability — reach out to discuss." />
+<meta name="description" content="Private, local-first desktop tools Firat Barca has built across ESG, productivity, and AI — most run entirely on your own machine, no cloud." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../blog/style.css" />
 <style>
-  .listing{max-width:1000px;margin:0 auto;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,5vw,2rem) 5rem;}
+  .listing{max-width:1100px;margin:0 auto;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,5vw,2rem) 5rem;}
   .listing .head{margin-bottom:1rem;}
   .listing .kicker{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
   .listing h1{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:600;margin:.8rem 0 .6rem;color:var(--ink);}
-  .listing .sub{color:var(--soft);font-size:1.05rem;max-width:60ch;}
+  .listing .sub{color:var(--soft);font-size:1.05rem;max-width:64ch;}
+
+  .sol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:1.5rem;margin-top:2.4rem;}
+  .sol-card{background:var(--card);border:1px solid var(--line);padding:1.9rem;display:flex;flex-direction:column;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;}
+  .sol-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(27,25,22,.10);}
+  .sol-emoji{font-size:2rem;line-height:1;}
+  .sol-card h2{font-size:1.4rem;color:var(--ink);margin:.75rem 0 .35rem;}
+  .sol-tagline{font-family:'Fraunces',serif;font-style:italic;color:var(--accent);font-size:1.02rem;margin:0 0 .85rem;}
+  .sol-desc{color:var(--soft);font-size:.95rem;margin:0 0 1.1rem;}
+  .sol-card h3{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin:.2rem 0 .6rem;}
+  .sol-card ul{list-style:none;margin:0 0 1.1rem;padding:0;}
+  .sol-card li{position:relative;padding-left:1.4rem;color:var(--soft);font-size:.92rem;margin:.42rem 0;}
+  .sol-card li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700;}
+  .sol-best{color:var(--muted);font-size:.9rem;margin:0 0 1.3rem;}
+  .sol-best strong{color:var(--ink);}
+  .sol-foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:1.3rem;align-items:center;border-top:1px solid var(--line);}
+  .sol-foot a{font-weight:600;font-size:.9rem;color:var(--accent);display:inline-flex;align-items:center;gap:.35rem;padding-top:1rem;}
+  @media (max-width:480px){.sol-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -31,47 +48,111 @@
 
 <main class="listing">
   <div class="head">
-    <span class="kicker">Draft Projects</span>
+    <span class="kicker">Tools &amp; Projects</span>
     <h1>Solutions</h1>
-    <p class="sub">Short notes on practical solutions emerging from my draft projects across ESG data, reporting automation, and sustainability. If any of these could help your team, let's talk.</p>
+    <p class="sub">A growing set of private, local-first desktop tools I've built across ESG, productivity, and AI — most run entirely on your own machine, with no cloud and no data leaving your desk. Interested in any of them, or have a problem to solve? Let's talk.</p>
   </div>
 
-  <div class="note-grid">
-    <a class="note-card" href="../index.html#contact">
-      <div class="note-cover" style="background-image:url('../assets/solutions/esg-validation.jpg'),linear-gradient(135deg,#b56a43,#7c3f24)"><span class="ctag">ESG Data</span></div>
-      <div class="note-body">
-        <h2>Automated ESG validation &amp; reconciliation</h2>
-        <p>A lightweight set of validation checks and cross-system reconciliations that flag outliers and inconsistencies before reporting — cutting manual review time substantially.</p>
-        <div class="note-meta"><span class="note-date">Draft</span><span class="note-cta">Discuss this →</span></div>
-      </div>
-    </a>
+  <div class="sol-grid">
 
-    <a class="note-card" href="../index.html#contact">
-      <div class="note-cover" style="background-image:url('../assets/solutions/scope12.jpg'),linear-gradient(135deg,#7d7a52,#4f4a33)"><span class="ctag">GHG</span></div>
-      <div class="note-body">
-        <h2>Scope 1 &amp; 2 KPI calculation toolkit</h2>
-        <p>A structured approach to turning utility &amp; fuel consumption into auditable Scope 1 and 2 figures using the right emission factors (DEFRA, AIB, residual mix).</p>
-        <div class="note-meta"><span class="note-date">Draft</span><span class="note-cta">Discuss this →</span></div>
-      </div>
-    </a>
+    <div class="sol-card">
+      <div class="sol-emoji">🦄</div>
+      <h2>Unicorn Writing Assistant</h2>
+      <p class="sol-tagline">Your private, no-cloud writing partner that never makes things up.</p>
+      <p class="sol-desc">A production-ready AI writing assistant that runs entirely on your own machine — no API key, no subscription, no data leaving your desk. It reads your documents (PDF, TXT, MD), retrieves the exact passages relevant to what you're writing, and grounds every claim in your own sources.</p>
+      <h3>What it does for you day to day</h3>
+      <ul>
+        <li>Draft reports, briefs, and emails that stay factually anchored to your documents</li>
+        <li>Catches "style drift" so your writing stays consistently on-brand</li>
+        <li>Refuses to hallucinate — if it can't find a source, it tells you instead of inventing one</li>
+        <li>Works offline with local models</li>
+      </ul>
+      <p class="sol-best"><strong>Best for:</strong> professionals who handle sensitive material and want AI help without sending anything to the cloud.</p>
+      <div class="sol-foot"><a href="../index.html#contact">Get in touch →</a></div>
+    </div>
 
-    <a class="note-card" href="../index.html#contact">
-      <div class="note-cover" style="background-image:url('../assets/solutions/reporting-dashboard.jpg'),linear-gradient(135deg,#9a6a55,#5e3b2c)"><span class="ctag">Reporting</span></div>
-      <div class="note-body">
-        <h2>ESG reporting dashboards &amp; controls</h2>
-        <p>Patterns for clear management/Board dashboards with built-in data controls and trend analysis — so issues surface early and disclosures stay defensible.</p>
-        <div class="note-meta"><span class="note-date">Draft</span><span class="note-cta">Discuss this →</span></div>
-      </div>
-    </a>
+    <div class="sol-card">
+      <div class="sol-emoji">👽</div>
+      <h2>Fiba Unfiltered</h2>
+      <p class="sol-tagline">A sleek, private desktop AI chat — powered entirely by local models.</p>
+      <p class="sol-desc">A native macOS chat client with a sci-fi, alien-themed interface that talks to your local models. Streaming replies, persistent history, file attachments, and a fully configurable system prompt — all running on your own hardware.</p>
+      <h3>What it does for you day to day</h3>
+      <ul>
+        <li>A fast, beautiful chat experience with no cloud and no censorship of your own data</li>
+        <li>Attach files and chat about them locally</li>
+        <li>Keep a searchable history of every conversation</li>
+        <li>Tune the assistant's personality with a custom system prompt</li>
+      </ul>
+      <p class="sol-best"><strong>Best for:</strong> anyone who wants a polished AI chat app that's 100% private and runs offline.</p>
+      <div class="sol-foot"><a href="../index.html#contact">Get in touch →</a></div>
+    </div>
 
-    <div class="note-card soon">
-      <div class="note-cover" style="background-image:linear-gradient(135deg,#5e564c,#2f2a24)"><span class="ctag">More</span></div>
-      <div class="note-body">
-        <h3>More solution notes coming</h3>
-        <p>Additional notes from ongoing draft projects will appear here. Have a specific challenge in mind? Reach out and let's explore it.</p>
-        <div class="note-meta"><span class="note-date">In progress</span></div>
+    <div class="sol-card">
+      <div class="sol-emoji">🟢</div>
+      <h2>Green Certificate Manager</h2>
+      <p class="sol-tagline">Stop losing track of your certificates and their paperwork.</p>
+      <p class="sol-desc">A no-setup desktop app for managing certificates and their supporting documents. Store certificate records, attach the relevant PDFs, validate your entries, and export everything to CSV or Excel in a couple of clicks. Just run it — no installation ceremony.</p>
+      <h3>What it does for you day to day</h3>
+      <ul>
+        <li>Keep every certificate and its PDF in one organized place</li>
+        <li>Built-in validation so records stay clean and consistent</li>
+        <li>Archive deleted items instead of losing them</li>
+        <li>One-click export to Excel/CSV for reporting and audits</li>
+      </ul>
+      <p class="sol-best"><strong>Best for:</strong> anyone juggling compliance docs, green/ESG certificates, or any paperwork that needs to be tracked, attached, and exported.</p>
+      <div class="sol-foot"><a href="../index.html#contact">Get in touch →</a></div>
+    </div>
+
+    <div class="sol-card">
+      <div class="sol-emoji">📔</div>
+      <h2>Daily Diary</h2>
+      <p class="sol-tagline">A dead-simple desktop diary for your daily notes.</p>
+      <p class="sol-desc">A clean, distraction-free diary that stores one note per day in a local file. Jump to today, browse past entries, and write — that's it. No accounts, no cloud, no clutter.</p>
+      <h3>What it does for you day to day</h3>
+      <ul>
+        <li>Capture a quick daily log or journal entry in seconds</li>
+        <li>Navigate by date or pick from your list of entries</li>
+        <li>Everything stays local and private in one simple file</li>
+      </ul>
+      <p class="sol-best"><strong>Best for:</strong> people who want a frictionless journaling habit without a heavyweight app.</p>
+      <div class="sol-foot"><a href="../index.html#contact">Get in touch →</a></div>
+    </div>
+
+    <div class="sol-card">
+      <div class="sol-emoji">🎭</div>
+      <h2>Pantomime Intelligence</h2>
+      <p class="sol-tagline">Your private content studio.</p>
+      <p class="sol-desc">A drafting studio that generates business, strategy, and leadership posts grounded in your material — keywords, PDFs, academic papers, and live news. Instead of generic AI posts, you get content built on credible, current sources.</p>
+      <h3>What it does for you day to day</h3>
+      <ul>
+        <li>Spin up thoughtful LinkedIn posts that sound informed, not templated</li>
+        <li>Ground drafts in real research (Semantic Scholar) and live news</li>
+        <li>Pull from your own PDFs and keywords for relevance</li>
+        <li>Keep your professional voice consistent</li>
+      </ul>
+      <p class="sol-best"><strong>Best for:</strong> founders, executives, and thought-leaders who want to post consistently without starting from a blank page.</p>
+      <div class="sol-foot">
+        <a href="https://pantomimeintelligence.com" target="_blank" rel="noopener">Visit pantomimeintelligence.com ↗</a>
+        <a href="../index.html#contact">Get in touch →</a>
       </div>
     </div>
+
+    <div class="sol-card">
+      <div class="sol-emoji">🌍</div>
+      <h2>ESG Terra</h2>
+      <p class="sol-tagline">Forecast the KPIs that matter — injury rates, absenteeism, incidents, FTE.</p>
+      <p class="sol-desc">A production-ready desktop app that forecasts key performance indicators using Meta's Prophet time-series model behind a clean, modern UI. Drop in a CSV or Excel file, and get forward-looking projections across entities, divisions, countries, and regions.</p>
+      <h3>What it does for you day to day</h3>
+      <ul>
+        <li>Turn historical KPI data into reliable forecasts in minutes</li>
+        <li>Drill down by entity, division, country, or region</li>
+        <li>Built for H&amp;S, HR, and ESG metrics (injury rate, absenteeism, incidents, headcount)</li>
+        <li>No data-science setup — load a file, get a forecast</li>
+      </ul>
+      <p class="sol-best"><strong>Best for:</strong> ESG, HR, and operations teams who need credible forward projections without a data-science team.</p>
+      <div class="sol-foot"><a href="../index.html#contact">Get in touch →</a></div>
+    </div>
+
   </div>
 
   <div class="list-cta">
