@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>{{TITLE}} — Firat Barca</title>
-<meta name="description" content="{{DESCRIPTION}}" />
+<title>{{ title }} — Firat Barca</title>
+<meta name="description" content="{{ summary }}" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="/blog/style.css" />
 </head>
 <body>
 
 <div class="bar">
   <div class="in">
-    <a class="brand" href="../index.html">Firat Barca<span>.</span></a>
-    <a class="back" href="index.html">
+    <a class="brand" href="/index.html">Firat Barca<span>.</span></a>
+    <a class="back" href="/blog/">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
       All posts
     </a>
@@ -23,19 +23,19 @@
 </div>
 
 <article>
-  <span class="post-tag">{{TAG}}</span>
-  <h1>{{TITLE}}</h1>
-  <div class="post-meta">By Firat Barca · {{DATE}} · {{READ}} min read</div>
+  <span class="post-tag">{{ tag }}</span>
+  <h1>{{ title }}</h1>
+  <div class="post-meta">By Firat Barca · {{ date | postDate }} · {{ content | readingTime }} min read</div>
 
-  <img src="{{SLUG}}.jpg" alt="{{TITLE}}" style="width:100%;border:1px solid var(--line);margin:0 0 2rem;" onerror="this.style.display='none'" />
+  {% if cover %}<img src="{{ cover }}" alt="{{ title }}" style="width:100%;border:1px solid var(--line);margin:0 0 2rem;" onerror="this.style.display='none'" />{% endif %}
 
-  {{BODY}}
+  {{ content | safe }}
 
   <hr />
-  <p><em>Working on something in this space? I'd be glad to compare notes — <a href="../index.html#contact">get in touch</a>.</em></p>
+  <p><em>Working on something in this space? I'd be glad to compare notes — <a href="/index.html#contact">get in touch</a>.</em></p>
 
   <div class="post-foot">
-    <a class="home" href="../index.html">
+    <a class="home" href="/index.html">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
       Back to firatbarca
     </a>

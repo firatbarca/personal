@@ -1,0 +1,45 @@
+# Pages CMS configuration (https://pagescms.org)
+# Defines the friendly admin editor for blog posts. Edit posts at app.pagescms.org
+# after installing the Pages CMS GitHub App on this repo.
+
+media:
+  input: src/assets/blog
+  output: /assets/blog
+
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: src/posts
+    filename: "{primary}.md"
+    view:
+      fields: [title, date, draft]
+      primary: title
+      sort: [date, title]
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Publish date & time
+        type: date
+        options:
+          format: "yyyy-MM-dd'T'HH:mm"
+          time: true
+      - name: tag
+        label: Tag / category
+        type: string
+      - name: summary
+        label: Summary (shown on the blog card)
+        type: text
+      - name: cover
+        label: Cover image
+        type: image
+      - name: draft
+        label: Draft (hide from the site until ready)
+        type: boolean
+        default: false
+      - name: body
+        label: Body
+        type: rich-text
