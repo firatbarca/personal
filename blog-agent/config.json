@@ -1,0 +1,26 @@
+{
+  "_comment": "Settings for the weekly blog-writing agent. Edit `mode` to switch behaviour.",
+  "mode": "review",
+  "_mode_options": {
+    "review": "Agent opens a Pull Request with the new post for you to read & merge (nothing goes live until you approve).",
+    "auto": "Agent commits the new post straight to main, so it publishes to firatbarca.com automatically."
+  },
+  "cadence": "weekly",
+  "destination_repo": "firatbarca/personal",
+  "posts_dir": "blog",
+  "listing_file": "blog/index.html",
+  "image_script": "scripts/fetch_image.sh",
+  "author": "Firat Barca",
+  "voice": "First person, professional yet warm. Expert in ESG, sustainability, non-financial reporting, and political science (climate change & human mobility). Practical and credible, no hype or buzzword padding. European/British spelling. ~700-950 words.",
+  "word_count_min": 700,
+  "word_count_max": 950,
+  "topics": [
+    "ESG",
+    "Sustainability",
+    "Sustainability & AI",
+    "ESG & AI",
+    "ESG reporting",
+    "Climate change",
+    "Climate change & human mobility"
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "_comment": "Agent's memory of what it has already published, so it varies topics and avoids repeats.",
+  "published": []
+}
