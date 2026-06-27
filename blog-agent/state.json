@@ -1,4 +1,11 @@
 {
   "_comment": "Agent's memory of what it has already published, so it varies topics and avoids repeats.",
-  "published": []
+  "published": [
+    {
+      "slug": "ai-in-esg-reporting-assistant-not-author",
+      "title": "AI in ESG reporting: assistant, not author",
+      "topic": "ESG & AI",
+      "date": "2026-06-27"
+    }
+  ]
 }
