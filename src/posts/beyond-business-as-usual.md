@@ -6,7 +6,7 @@ summary: "Business as Usual assumes tomorrow will look like yesterday. On
   climate, that quiet assumption has become the riskiest position a company can
   hold — here's why incremental change no longer clears the bar."
 cover: /assets/blog/climate-migration.jpg
-draft: false
+draft: true
 ---
 For decades, **Business as Usual (BAU)** has been the default way to run an organisation. It rests on a quiet assumption: that today's business models, operations, supply chains, and investment decisions can carry on with only incremental improvement — that tomorrow will look more or less like yesterday. In much of the corporate world, BAU simply means keeping things running the way they have always run, without rethinking how value is created or how environmental impact is managed.
 
