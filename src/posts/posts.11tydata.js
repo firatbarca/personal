@@ -11,6 +11,11 @@ function todayInTZ() {
   return new Intl.DateTimeFormat("en-CA", { timeZone: AUTHOR_TZ }).format(new Date());
 }
 function postDay(date) {
+  // YAML turns date-only values (e.g. "2026-07-05", as Pages CMS writes them) into
+  // Date objects, while datetimes without seconds stay strings. Handle both.
+  if (date instanceof Date) {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: AUTHOR_TZ }).format(date);
+  }
   return String(date).slice(0, 10); // calendar-day portion of the front-matter date
 }
 function isHidden(data) {
