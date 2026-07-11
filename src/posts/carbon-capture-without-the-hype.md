@@ -28,11 +28,11 @@ The gap between the "U" and the "S" matters far more than the tidy acronym sugge
 
 CCUS reduces emissions in the obvious way: CO₂ that would have gone up a chimney goes underground instead. But its real value is narrower than that sentence implies.
 
-For most of the economy — electricity, cars, buildings — we already have cheaper, cleaner answers: renewables, electrification, efficiency. Spending scarce capital to capture emissions from a coal plant that could be replaced by wind and solar is, in most cases, the wrong trade.
+For much of the economy — electricity, cars, buildings — we already have cleaner and increasingly cost-competitive answers: renewables, electrification, efficiency. Spending scarce capital to capture emissions from a coal plant that could instead be replaced by wind and solar is, in most cases, the wrong trade.
 
 Where CCUS becomes genuinely important is the set of **hard-to-abate** sectors — the ones with no easy electric substitute:
 
-- **Cement**, where roughly half the CO₂ comes from the chemistry of making clinker, not from burning fuel.
+- **Cement**, where much of the CO₂ comes from the chemistry of making clinker — calcination releases CO₂ inherently — not only from burning fuel.
 - **Steel**, **chemicals**, and **fertilisers**, where intense heat and process reactions are difficult to electrify.
 - Some **waste-to-energy** and heavy industrial-heat applications.
 
@@ -46,8 +46,8 @@ The benefits are real: a route to cut emissions from industries that underpin mo
 
 The challenges are just as real, and worth naming plainly:
 
-- **Cost and the energy penalty.** Capturing CO₂ takes energy, which raises the cost of whatever you're making. Without a carbon price or subsidy, it rarely pays for itself.
-- **Utilisation isn't always removal.** Many "uses" — synthetic fuels, carbonated drinks, enhanced oil recovery — simply release the CO₂ again later. Only durable storage, or genuinely permanent products, deliver a lasting climate benefit. A lot of "carbon utilisation" marketing quietly skips past this.
+- **Cost and the energy penalty.** Capturing CO₂ takes energy, which raises the cost of whatever you're making. Without a carbon price or subsidy, it often does not pay for itself.
+- **Utilisation isn't always removal.** Several common uses — synthetic fuels and carbonated drinks among them — release the CO₂ again when the product is burned or consumed. Only durable storage, or genuinely permanent products, delivers a lasting climate benefit. A lot of "carbon utilisation" marketing quietly skips past this.
 - **Infrastructure.** Pipelines and storage sites don't exist at scale in most regions, and building them is slow and capital-heavy.
 - **Verification and trust.** You have to prove the CO₂ stays where you put it — robust measurement, reporting, and verification — and win public confidence about storage beneath communities' feet.
 - **Moral hazard.** The biggest risk isn't technical. It's that the promise of future capture becomes a reason to delay cuts that are cheaper and available today.
