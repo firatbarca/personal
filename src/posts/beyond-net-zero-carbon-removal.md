@@ -213,7 +213,7 @@ The balance this piece describes is easier to feel when you can move the pieces 
   </div>
   <div class="stats-row">
     <div class="stat-box">
-      <div class="stat-val" id="ppmVal" style="color:var(--brand-accent)">427.0</div>
+      <div class="stat-val" id="ppmVal" style="color:var(--brand-accent)">432.0</div>
       <div class="stat-label">CO₂ (ppm)</div>
     </div>
     <div class="stat-box">
@@ -247,7 +247,7 @@ The balance this piece describes is easier to feel when you can move the pieces 
         <text x="540" y="275" font-size="10" font-weight="800" text-anchor="middle" fill="#555">NATURAL</text>
         <circle cx="310" cy="155" r="84" fill="transparent" stroke="var(--brand-dark)" stroke-width="2.5"/>
         <rect id="co2Fill" x="228" y="155" width="164" height="164" fill="var(--brand-accent)" opacity="0.75" clip-path="url(#atmClip2)"/>
-        <text id="ppmCenter" x="310" y="138" fill="var(--brand-dark)" font-size="19" font-weight="800" text-anchor="middle">427.0 ppm</text>
+        <text id="ppmCenter" x="310" y="138" fill="var(--brand-dark)" font-size="19" font-weight="800" text-anchor="middle">432.0 ppm</text>
         <text id="netCenter" x="310" y="172" fill="var(--brand-dark)" font-size="15" font-weight="700" text-anchor="middle">+20 Gt/yr</text>
       </svg>
     </div>
@@ -300,7 +300,7 @@ const PARIS_1_5_PPM = 430;  // ~1.5°C warming at equilibrium (SSP1-1.9 peak)
 const PARIS_2_0_PPM = 480;  // ~2.0°C warming at equilibrium
 
 // State
-let curPPM = 427.0;
+let curPPM = 432.0;
 let netGt  = 0;
 
 // Helpers
@@ -484,7 +484,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   document.getElementById('slEmissions').value  = 40;
   document.getElementById('slNatural').value    = 20;
   document.getElementById('slEngineered').value = 0;
-  curPPM = 427.0;
+  curPPM = 432.0;
   update();
 });
 
