@@ -5,7 +5,7 @@ tag: ESG & Climate
 summary: "Net zero has been the corporate climate gold standard — but it may be
   a milestone, not the finish line. A look at carbon removal, the technologies
   behind it, and how businesses are starting to build it into strategy."
-cover: /assets/blog/automating-esg.jpg
+cover: /assets/blog/climate-migration.jpg
 draft: true
 ---
 For years, **net zero** has been the gold standard for corporate climate pledges. But as the science sharpens, the next phase of climate action is coming into focus: cutting emissions rapidly *and* developing ways to remove the carbon dioxide already in the atmosphere.
@@ -48,7 +48,7 @@ Mangroves are especially effective, storing carbon not only in their vegetation 
 
 To complement nature, engineers are building systems to pull CO₂ straight from the air or from industrial processes. The most prominent is **Direct Air Capture (DAC)**.
 
-DAC facilities work a little like industrial trees: large fans draw ambient air through chemical filters that selectively grab CO₂, which is then separated from the filter and either stored underground or used in products. Because atmospheric CO₂ sits at only around **420 parts per million** — roughly 0.04% of the air — DAC systems have to move enormous volumes of air to capture a meaningful amount.
+DAC facilities work a little like industrial trees: large fans draw ambient air through chemical filters that selectively grab CO₂, which is then separated from the filter and either stored underground or used in products. Because atmospheric CO₂ sits at only around **432 parts per million** — roughly 0.04% of the air, per [NASA's latest measurement](https://science.nasa.gov/earth/explore/earth-indicators/carbon-dioxide/) — DAC systems have to move enormous volumes of air to capture a meaningful amount.
 
 **Geological storage.** Captured CO₂ can be injected deep underground into suitable formations such as **saline aquifers** or depleted oil and gas reservoirs. In some places with reactive basalt rock — as in projects developed by **Carbfix** in Iceland — dissolved CO₂ reacts with minerals and becomes permanently locked as solid carbonate rock. Not all storage works through rapid mineralisation, though; many projects rely on geological trapping designed to keep CO₂ isolated for thousands of years.
 
