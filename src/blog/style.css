@@ -59,3 +59,10 @@ a.note-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shad
 .note-card.soon{opacity:.65;}
 .list-cta{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);}
 .list-cta a{font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:.4rem;}
+
+/* share row on posts */
+.share{margin-top:2.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;}
+.share .lbl{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
+.share a,.share button{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--line);background:transparent;color:var(--ink);font:inherit;font-size:.85rem;font-weight:600;padding:.5rem .9rem;cursor:pointer;transition:border-color .2s ease,color .2s ease;}
+.share a:hover,.share button:hover{border-color:var(--accent);color:var(--accent);text-decoration:none;}
+.share svg{width:15px;height:15px;}
