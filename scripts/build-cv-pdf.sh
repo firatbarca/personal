@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
-# Generate the downloadable CV (_site/cv-firat-barca.pdf) from the built homepage.
-# The @media print stylesheet in src/index.html renders the page as a compact CV.
-# Headless Chrome's --print-to-pdf never fires the beforeprint event, so the
-# experience "More" sections are opened here the same way the in-page handler
-# does for visitors who print in a browser.
+# Generate the downloadable CV (_site/cv-firat-barca.pdf) from the dedicated
+# CV document built by Eleventy from src/cv.njk (a professional A4 resume
+# layout, deliberately separate from the website design).
 set -euo pipefail
 
 SITE_DIR="${1:-_site}"
@@ -23,21 +21,10 @@ if [ -z "$CHROME" ]; then
   exit 1
 fi
 
-python3 - "$SITE_DIR" <<'PY'
-import sys
-site = sys.argv[1]
-html = open(f"{site}/index.html", encoding="utf-8").read()
-start = html.index('id="experience"')
-end = html.index('id="education"')
-seg = html[start:end].replace('<details class="more"', '<details class="more" open')
-open(f"{site}/cv-print-tmp.html", "w", encoding="utf-8").write(html[:start] + seg + html[end:])
-PY
-
 "$CHROME" --headless --disable-gpu --no-pdf-header-footer --virtual-time-budget=10000 \
-  --print-to-pdf="$SITE_DIR/$OUT" "file://$(cd "$SITE_DIR" && pwd)/cv-print-tmp.html"
-rm -f "$SITE_DIR/cv-print-tmp.html"
+  --print-to-pdf="$SITE_DIR/$OUT" "file://$(cd "$SITE_DIR" && pwd)/cv/index.html"
 
-# Sanity check: a broken render (missing fonts/styles) comes out much smaller.
+# Sanity check: a broken render (missing fonts/photo) comes out much smaller.
 SIZE=$(wc -c < "$SITE_DIR/$OUT")
 if [ "$SIZE" -lt 100000 ]; then
   echo "build-cv-pdf: $OUT is suspiciously small ($SIZE bytes); failing" >&2
