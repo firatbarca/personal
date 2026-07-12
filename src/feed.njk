@@ -1,0 +1,25 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Firat Barca · Blog</title>
+  <subtitle>Writing on ESG &amp; sustainability reporting, climate policy and human migration, and data &amp; reporting practice.</subtitle>
+  <link href="{{ site.url }}/feed.xml" rel="self" />
+  <link href="{{ site.url }}/blog/" />
+  <id>{{ site.url }}/blog/</id>
+  <author><name>{{ site.author }}</name></author>
+  {%- set newest = collections.posts | reverse | first %}
+  <updated>{{ newest.date | rfc3339 }}</updated>
+  {%- for post in collections.posts | reverse %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ site.url }}{{ post.url }}" />
+    <id>{{ site.url }}{{ post.url }}</id>
+    <updated>{{ post.date | rfc3339 }}</updated>
+    <summary>{{ post.data.summary }}</summary>
+    <category term="{{ post.data.tag }}" />
+  </entry>
+  {%- endfor %}
+</feed>

@@ -25,6 +25,12 @@ module.exports = function (eleventyConfig) {
     if (isNaN(dt)) return "";
     return new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/Warsaw" }).format(dt);
   });
+  // Full RFC 3339 timestamp, required by Atom <updated> elements in feed.njk.
+  eleventyConfig.addFilter("rfc3339", (d) => {
+    const dt = new Date(d);
+    if (isNaN(dt)) return "";
+    return dt.toISOString();
+  });
 
   return {
     dir: { input: "src", output: "_site", includes: "_includes" },
