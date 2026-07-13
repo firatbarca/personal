@@ -1,0 +1,242 @@
+---
+permalink: /cv/index.html
+eleventyExcludeFromCollections: true
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CV · Firat Barca</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#1a1917;
+    --body:#33312d;
+    --soft:#6b675f;
+    --line:#d9d5cc;
+    --accent:#9a4724;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{font-family:'Inter',system-ui,sans-serif;font-size:9.75pt;line-height:1.5;color:var(--body);background:#fff;}
+  .page{max-width:19.2cm;margin:0 auto;padding:1.1cm 0 1.4cm;}
+  @media screen{body{background:#eee;} .page{background:#fff;margin:2rem auto;padding:1.6cm 1.8cm;box-shadow:0 10px 40px rgba(0,0,0,.15);}}
+  @page{size:A4;margin:1.35cm 1.55cm;}
+
+  a{color:inherit;text-decoration:none;}
+
+  /* ---- header ---- */
+  header{display:grid;grid-template-columns:1fr auto;gap:1cm;align-items:center;padding-bottom:.55cm;border-bottom:2px solid var(--ink);}
+  h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:24pt;letter-spacing:-.02em;color:var(--ink);line-height:1.05;}
+  h1 .dot{color:var(--accent);}
+  .headline{margin-top:.18cm;font-size:10.5pt;font-weight:500;color:var(--ink);}
+  .contact{margin-top:.3cm;font-size:8.75pt;color:var(--soft);display:flex;flex-wrap:wrap;gap:.15cm .55cm;}
+  .contact .sep{color:var(--line);}
+  .photo{width:2.9cm;height:3.5cm;object-fit:cover;object-position:50% 12%;border:1px solid var(--line);filter:grayscale(12%) contrast(1.02);}
+
+  /* ---- sections ---- */
+  section{margin-top:.62cm;}
+  h2{font-family:'Inter',sans-serif;font-size:8.5pt;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:.14cm;border-bottom:1px solid var(--line);margin-bottom:.34cm;break-after:avoid;}
+  h2 .n{color:var(--accent);margin-right:.2cm;}
+
+  .summary{font-size:10pt;line-height:1.55;max-width:17.5cm;}
+
+  /* experience */
+  .role{display:grid;grid-template-columns:3.4cm 1fr;gap:.65cm;padding:.3cm 0;break-inside:avoid;}
+  .role + .role{border-top:1px solid var(--line);}
+  .when{font-size:8.5pt;font-weight:500;color:var(--soft);padding-top:.08cm;}
+  .when .now{display:inline-block;margin-top:.12cm;color:var(--accent);font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--accent);padding:.02cm .14cm;}
+  h3{font-size:11pt;font-weight:600;color:var(--ink);break-after:avoid;}
+  .org{font-size:9pt;color:var(--soft);margin:.06cm 0 .2cm;}
+  ul{list-style:none;}
+  li{position:relative;padding-left:.45cm;margin:.11cm 0;}
+  li::before{content:"";position:absolute;left:.05cm;top:.48em;width:.11cm;height:.11cm;background:var(--accent);}
+  li b{color:var(--ink);font-weight:600;}
+
+  /* education */
+  .edu{display:grid;grid-template-columns:1fr auto;gap:.6cm;align-items:baseline;padding:.22cm 0;break-inside:avoid;}
+  .edu + .edu{border-top:1px solid var(--line);}
+  .deg{font-size:10.25pt;font-weight:600;color:var(--ink);}
+  .school{font-size:9pt;color:var(--soft);margin-top:.04cm;}
+  .edu .when{white-space:nowrap;text-align:right;}
+
+  /* certifications: two columns */
+  .certs{display:grid;grid-template-columns:1fr 1fr;gap:.14cm .9cm;}
+  .cert{break-inside:avoid;padding:.1cm 0;}
+  .cert b{display:block;font-size:9pt;font-weight:600;color:var(--ink);}
+  .cert span{font-size:8.25pt;color:var(--soft);}
+
+  /* publications */
+  .pub{display:grid;grid-template-columns:.75cm 1fr;gap:.3cm;padding:.14cm 0;break-inside:avoid;}
+  .pub .pn{font-size:9pt;font-weight:600;color:var(--accent);}
+  .pub b{font-size:9.5pt;font-weight:600;color:var(--ink);}
+  .pub span{display:block;font-size:8.5pt;color:var(--soft);margin-top:.04cm;}
+
+  /* teaching */
+  .teach{display:grid;grid-template-columns:1fr auto;gap:.6cm;align-items:baseline;padding:.14cm 0;break-inside:avoid;}
+  .teach b{font-size:9.5pt;font-weight:600;color:var(--ink);}
+  .teach span{font-size:8.5pt;color:var(--soft);white-space:nowrap;}
+
+  /* skills */
+  .skills{display:grid;gap:.18cm;}
+  .skill-row{display:grid;grid-template-columns:3.4cm 1fr;gap:.65cm;break-inside:avoid;}
+  .skill-row .k{font-size:8.5pt;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);padding-top:.04cm;}
+  .skill-row .v{font-size:9.25pt;}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div>
+      <h1>Firat Barca<span class="dot">.</span></h1>
+      <div class="headline">Sustainability &amp; ESG Professional · Ph.D. Political Science</div>
+      <div class="contact">
+        <a href="mailto:firatbarca@gmail.com">firatbarca@gmail.com</a><span class="sep">|</span>
+        <a href="https://www.linkedin.com/in/firatbarca">linkedin.com/in/firatbarca</a><span class="sep">|</span>
+        <a href="https://firatbarca.com">firatbarca.com</a><span class="sep">|</span>
+        <span>Poland</span>
+      </div>
+    </div>
+    <img class="photo" src="../assets/firat-barca.jpg" alt="Firat Barca" />
+  </header>
+
+  <section>
+    <h2><span class="n">01</span>Profile</h2>
+    <p class="summary">
+      Sustainability and ESG professional with over six years of experience in corporate ESG controlling,
+      governance, and non-financial reporting, currently supporting ESG data governance and control frameworks
+      across global operations. Ph.D. in Political Science focused on climate change and human mobility, with a
+      cross-sector background spanning academia, NGOs, and global companies including Shell and Google.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="n">02</span>Professional Experience</h2>
+
+    <div class="role">
+      <div class="when">Jun 2023 – Present<br /><span class="now">Current</span></div>
+      <div>
+        <h3>Sustainability &amp; ESG Controlling Specialist</h3>
+        <div class="org">DSV · Global Transport and Logistics · Warsaw, Poland</div>
+        <ul>
+          <li>Collect, validate, and report ESG data across global operations.</li>
+          <li>Implement and enhance ESG data control processes to improve accuracy and consistency, particularly in the Scope 1 and Scope 2 areas.</li>
+          <li>Calculate key ESG KPIs in collaboration with subject-matter experts, including Injury Frequency Rate (IFR), Absence Rate, Ill Health Rate, and Lost Workdays Rate.</li>
+          <li>Reconcile ESG data across multiple systems to ensure accurate and auditable reporting.</li>
+          <li>Develop ESG reports communicating key insights to internal and external stakeholders.</li>
+          <li>Design and deliver ESG training for colleagues, with a focus on Scope 1 and Scope 2 consumption.</li>
+          <li>Support the external audit process with data delivery and explanation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="when">Apr 2022 – Oct 2022</div>
+      <div>
+        <h3>Corporate Political Engagement Analyst</h3>
+        <div class="org">Shell plc · Kraków, Poland</div>
+        <ul>
+          <li>Supported internal governance processes and controls aligned with Shell's transparency priorities and corporate values.</li>
+          <li>Provided high-quality data on Shell's Industry Association relationships for internal assurance, management oversight, and external disclosures.</li>
+          <li>Supported rollout of the Industry Associations Governance &amp; Control Framework across countries; used SAP GUI and Excel daily.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="when">Oct 2021 – Nov 2024</div>
+      <div>
+        <h3>Non-Permanent Faculty Member</h3>
+        <div class="org">University of Silesia in Katowice · Katowice, Poland</div>
+        <ul>
+          <li>Designed and delivered university courses on Climate Change, International Relations of the Middle East, and Globalisation &amp; Global Issues; 75 teaching hours total.</li>
+          <li>Wrote and managed scientific projects including project and budget management; active in international scientific initiatives.</li>
+          <li>Published peer-reviewed research on sustainability, human rights, globalisation, and the impacts of climate change.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="role">
+      <div class="when">Apr 2019 – Mar 2022</div>
+      <div>
+        <h3>Quality Assurance Specialist for Google</h3>
+        <div class="org">Cognizant Technology Solutions · Kraków, Poland</div>
+        <ul>
+          <li>Led a team of 3; conducted daily quality reviews ensuring compliance with Google Ads policies, maintaining 98%+ quality scores across all products.</li>
+          <li>Analyzed quality errors, identified root causes, and implemented corrective actions; monitored SLA performance and reported KPIs.</li>
+          <li><b>Senior Operations Specialist</b> (Apr 2020 – Apr 2021): interpreted data and reported to management; maintained databases and identified trends in complex data sets.</li>
+          <li><b>Senior Process Executive</b> (Apr 2019 – Apr 2020): created and managed text ads and campaign extensions on Google AdWords per best practices and policy.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">03</span>Education</h2>
+    <div class="edu">
+      <div><div class="deg">Doctor of Philosophy in Political Science and Public Administration</div>
+      <div class="school">University of Silesia in Katowice, Poland · Grade 4.99 / 5.00 · Focus: Climate Change and Human Migration</div></div>
+      <div class="when">Oct 2019 – Jun 2023</div>
+    </div>
+    <div class="edu">
+      <div><div class="deg">Postgraduate Degree in Business Management</div>
+      <div class="school">Wyższa Szkoła Kształcenia Zawodowego, Poland · Grade 5.00 / 5.00</div></div>
+      <div class="when">Oct 2024 – Jul 2025</div>
+    </div>
+    <div class="edu">
+      <div><div class="deg">Master's Degree in Political Science</div>
+      <div class="school">University of Warsaw, Poland · Grade 3.82 / 5.00</div></div>
+      <div class="when">Oct 2015 – Oct 2018</div>
+    </div>
+    <div class="edu">
+      <div><div class="deg">Bachelor's Degree in Political Science and Public Administration</div>
+      <div class="school">Çankırı Karatekin University, Türkiye · Honor Student · Grade 3.29 / 4.00</div></div>
+      <div class="when">Sep 2011 – May 2015</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">04</span>Selected Certifications</h2>
+    <div class="certs">
+      <div class="cert"><b>Financial Management</b><span>Duke University (Coursera) · 7-course specialization · Jun 2026</span></div>
+      <div class="cert"><b>CSRD Fundamentals</b><span>Sustainability Reporting Institute · Apr 2025</span></div>
+      <div class="cert"><b>Six Sigma Yellow Belt Training</b><span>DSV ISSC · May 2025</span></div>
+      <div class="cert"><b>Climate Change: From Learning to Action</b><span>UN CC:Learn · Nov 2024</span></div>
+      <div class="cert"><b>Personal Data Protection Training (GDPR)</b><span>AURACO sp. z o.o. · Dec 2023</span></div>
+      <div class="cert"><b>15 Days of Power BI: Complete Microsoft Power BI Bootcamp</b><span>Udemy · Jun 2023</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="n">05</span>Selected Publications</h2>
+    <div class="pub"><span class="pn">01</span><div><b>Deep History of Liberalism: An Approach to Liberalism History</b><span>Journal of Awareness, 3(3), 1–10 (2018) · doi.org/10.26809/joa.2018342288</span></div></div>
+    <div class="pub"><span class="pn">02</span><div><b>An Evaluation on the Inadequacy of the United Nations to Protect Human Rights</b><span>Gaziantep University Journal of Social Sciences, 18(2), 855–862 (2019) · doi.org/10.21547/jss.431138</span></div></div>
+    <div class="pub"><span class="pn">03</span><div><b>Sustainabilitism: An Approach to Sustainability</b><span>Studia Politicae Universitatis Silesiensis, 29, 9–23 (2020) · doi.org/10.31261/spus.9571</span></div></div>
+    <div class="pub"><span class="pn">04</span><div><b>Eksik Bir Şeyler Var</b><span>Kitap Yurdu Doğrudan Yayıncılık (2023) · ISBN 9789754496321</span></div></div>
+  </section>
+
+  <section>
+    <h2><span class="n">06</span>University Teaching</h2>
+    <div class="teach"><b>Globalization and Global Issues in Today's World</b><span>University of Silesia · 15 hrs · 2020/2021</span></div>
+    <div class="teach"><b>International Relations of the Middle East</b><span>University of Silesia · 30 hrs · 2021/2022</span></div>
+    <div class="teach"><b>Climate Change: Social, Political &amp; Economic Implications</b><span>University of Silesia · 30 hrs · 2022/2023</span></div>
+  </section>
+
+  <section>
+    <h2><span class="n">07</span>Skills &amp; Languages</h2>
+    <div class="skills">
+      <div class="skill-row"><span class="k">ESG &amp; Reporting</span><span class="v">ESG controlling &amp; non-financial reporting · CSRD / ESRS / NFRD · GHG Protocol (Scope 1, 2, 3) · emission factors (DEFRA, AIB, residual mix, supplier-specific) · EcoVadis, CDP, SBTi · internal controls, data governance &amp; audit readiness · KPI design &amp; Board reporting</span></div>
+      <div class="skill-row"><span class="k">Tools &amp; Data</span><span class="v">Excel (advanced) · Power BI · Enablon · SAP Analytics Cloud · SAP GUI · SharePoint · MS Project · Salesforce · Business Intelligence &amp; data analysis · Six Sigma · CRM &amp; ERP · G Suite</span></div>
+      <div class="skill-row"><span class="k">Languages</span><span class="v">English (full professional) · Zazaki (native) · Turkish (native) · Polish (communicative) · German (elementary)</span></div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
