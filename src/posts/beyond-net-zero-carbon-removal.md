@@ -1,12 +1,12 @@
 ---
 title: "The carbon clean-up: why reaching 'zero' may not be enough"
-date: 2026-07-13
+date: 2026-07-13T11:00:00+02:00
 tag: ESG & Climate
 summary: Net zero has been the corporate climate gold standard, but it may be a
   milestone, not the finish line. A look at carbon removal, the technologies
   behind it, and how businesses are starting to build it into strategy.
 cover: /assets/blog/carbon-clean-up.jpg
-draft: true
+draft: false
 ---
 For years, **net zero** has been the gold standard for corporate climate pledges. But as the science sharpens, the next phase of climate action is coming into focus: cutting emissions rapidly *and* developing ways to remove the carbon dioxide already in the atmosphere.
 
