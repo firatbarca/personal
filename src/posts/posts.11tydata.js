@@ -11,14 +11,12 @@ function todayInTZ() {
   return new Intl.DateTimeFormat("en-CA", { timeZone: AUTHOR_TZ }).format(new Date());
 }
 function postDay(date) {
-  // YAML turns date-only values (e.g. "2026-07-05", as Pages CMS writes them) into
-  // Date objects, while datetimes without seconds stay strings. Handle both.
-  if (date instanceof Date) {
-    return new Intl.DateTimeFormat("en-CA", { timeZone: AUTHOR_TZ }).format(date);
-  }
-
   if (!date) {
     return todayInTZ();
+  }
+
+  if (date instanceof Date || typeof date.getTime === "function") {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: AUTHOR_TZ }).format(date);
   }
 
   const asString = String(date);
