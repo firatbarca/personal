@@ -16,7 +16,22 @@ function postDay(date) {
   if (date instanceof Date) {
     return new Intl.DateTimeFormat("en-CA", { timeZone: AUTHOR_TZ }).format(date);
   }
-  return String(date).slice(0, 10); // calendar-day portion of the front-matter date
+
+  if (!date) {
+    return todayInTZ();
+  }
+
+  const asString = String(date);
+  if (/^\d{4}-\d{2}-\d{2}/.test(asString)) {
+    return asString.slice(0, 10);
+  }
+
+  const parsed = new Date(asString);
+  if (!Number.isNaN(parsed.getTime())) {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: AUTHOR_TZ }).format(parsed);
+  }
+
+  return todayInTZ();
 }
 function isHidden(data) {
   return data.draft === true || postDay(data.date) > todayInTZ();
