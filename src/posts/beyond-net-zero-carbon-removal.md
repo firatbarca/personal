@@ -112,16 +112,11 @@ Net zero remains a critical milestone. But for the world to eventually bring atm
 
 The balance this piece describes is easier to feel when you can move the pieces yourself. In the model below, adjust emissions, natural uptake, and engineered removal, then watch atmospheric CO₂ and the global temperature respond, along with where that leaves the Paris targets. The figures are illustrative: an educational model, not a projection.
 
-{% raw %}
-
-
-
-### Carbon Flow Simulator
-
-How emissions and carbon removal affect atmospheric CO₂ and global temperature.
-
-Educational model only. Uses IPCC best-estimate climate sensitivity (ECS 3°C per CO₂ doubling). Pre-industrial baseline: 280 ppm / +0°C. Real sinks currently absorb ~50% of emissions. Sources: NOAA, IPCC AR6, Global Carbon Project.
-
+<div class="simulator-block">
+  <h3>Carbon Flow Simulator</h3>
+  <p>How emissions and carbon removal affect atmospheric CO₂ and global temperature.</p>
+  <p>Educational model only. Uses IPCC best-estimate climate sensitivity (ECS 3°C per CO₂ doubling). Pre-industrial baseline: 280 ppm / +0°C. Real sinks currently absorb ~50% of emissions. Sources: NOAA, IPCC AR6, Global Carbon Project.</p>
+  <pre>
 432.0
 
 CO₂ (ppm)
@@ -156,8 +151,6 @@ Global Temperature Anomaly
 
 above pre-industrial (1850)
 
-Created by [Firat Barca](https://www.firatbarca.com)
-
-
-
-{% endraw %}
+Created by <a href="https://www.firatbarca.com">Firat Barca</a>
+  </pre>
+</div>
