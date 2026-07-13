@@ -112,45 +112,652 @@ Net zero remains a critical milestone. But for the world to eventually bring atm
 
 The balance this piece describes is easier to feel when you can move the pieces yourself. In the model below, adjust emissions, natural uptake, and engineered removal, then watch atmospheric CO₂ and the global temperature respond, along with where that leaves the Paris targets. The figures are illustrative: an educational model, not a projection.
 
-<div class="simulator-block">
-  <h3>Carbon Flow Simulator</h3>
-  <p>How emissions and carbon removal affect atmospheric CO₂ and global temperature.</p>
-  <p>Educational model only. Uses IPCC best-estimate climate sensitivity (ECS 3°C per CO₂ doubling). Pre-industrial baseline: 280 ppm / +0°C. Real sinks currently absorb ~50% of emissions. Sources: NOAA, IPCC AR6, Global Carbon Project.</p>
-  <pre>
-432.0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carbon Flow Simulator</title>
+<style>
+:root {
+  --brand-dark: #1a1a1a;
+  --brand-accent: #c2593e;
+  --green: #5e8b61;
+  --blue: #5c7c92;
+  --warn-yellow: #e8a020;
+  --danger-red: #c2593e;
+  --safe-green: #5e8b61;
+}
 
-CO₂ (ppm)
+* { box-sizing: border-box; }
 
-+20
+.carbon-simulator-pro {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 22px 26px;
+  background: #fff;
+  color: var(--brand-dark);
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+}
 
-Net Gt/yr
+.carbon-header h3 {
+  margin: 0;
+  font-size: 1.9em;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+}
 
-+1.55°C
+.carbon-header p { color: #555; margin-top: 6px; font-size: 0.95em; }
+.disclaimer { font-style: italic; opacity: 0.75; margin-bottom: 16px; font-size: 0.8em; }
 
-vs Pre-Industrial
+/* Layout */
+.simulator-stack { display: flex; flex-direction: column; gap: 12px; }
+.bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 640px) { .bottom-row { grid-template-columns: 1fr; } }
 
-Carbon Flow
+/* Panels */
+.panel {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  padding: 14px 16px;
+}
 
-40 Gt IN 20 Gt OUT 0 Gt OUT 🏭 EMISSIONS ⚙️ ENGINEERED 🌲 NATURAL 432.0 ppm +20 Gt/yr
+.panel-title {
+  font-size: 0.68em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0 0 10px 0;
+  color: #888;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
 
-Adjust Parameters
+/* Sliders */
+.slider-group { margin-bottom: 12px; }
+.slider-group:last-child { margin-bottom: 0; }
 
-Emissions 40 Gt/yr
+.slider-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 700;
+  font-size: 0.78em;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 7px;
+}
 
-Natural Uptake 20 Gt/yr
+.slider-label span { font-size: 1.05em; }
 
-Engineered Removal 0 Gt/yr
+input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+  height: 2px;
+  background: #ddd;
+  -webkit-appearance: none;
+  border-radius: 1px;
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px; width: 16px;
+  background: var(--brand-dark);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1.5px var(--brand-dark);
+  cursor: pointer;
+}
 
-↺ Reset to Current (2026)
+.reset-btn {
+  width: 100%;
+  padding: 9px;
+  background: var(--brand-dark);
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 0.75em;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+.reset-btn:hover { background: #333; }
 
-Global Temperature Anomaly
+/* Flow diagram */
+.visual-panel {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  padding: 10px 14px;
+  width: 100%;
+}
 
-+0°C+1°C+2°C+3°C+4°C
+.flow-line { fill: none; stroke-linecap: square; stroke-dasharray: 8, 8; }
+.flow-label { font-weight: 800; font-size: 13px; paint-order: stroke; stroke: #fff; stroke-width: 4px; }
+@keyframes flow { from { stroke-dashoffset: 16; } to { stroke-dashoffset: 0; } }
 
-+1.55°C
+/* Temperature gauge */
+.temp-gauge-wrap { position: relative; }
 
-above pre-industrial (1850)
+.temp-track {
+  width: 100%;
+  height: 28px;
+  border-radius: 4px;
+  position: relative;
+  overflow: visible;
+  margin: 8px 0 4px 0;
+  background: linear-gradient(to right,
+    #4a9b5e 0%,
+    #8bc34a 25%,
+    #ffd54f 45%,
+    #ff8f00 65%,
+    #e53935 100%
+  );
+  border: 1px solid #ccc;
+}
 
-Created by <a href="https://www.firatbarca.com">Firat Barca</a>
+.temp-needle {
+  position: absolute;
+  top: -6px;
+  width: 3px;
+  height: 40px;
+  background: var(--brand-dark);
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: left 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.temp-needle::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px; height: 10px;
+  background: var(--brand-dark);
+  border-radius: 50%;
+}
+
+.paris-marker {
+  position: absolute;
+  top: -24px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.paris-marker-line {
+  width: 2px;
+  height: 60px;
+  margin-top: 4px;
+  border-left: 2px dashed rgba(0,0,0,0.35);
+}
+
+.paris-marker-label {
+  font-size: 0.62em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: #555;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.temp-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65em;
+  color: #777;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.temp-big {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.temp-number {
+  font-size: 2.4em;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  line-height: 1;
+  transition: color 0.4s;
+}
+
+.temp-unit { font-size: 1.1em; font-weight: 400; color: #888; }
+.temp-sublabel { font-size: 0.7em; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+.paris-status {
+  margin-top: 8px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-size: 0.73em;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+/* Stats row */
+.stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border: 1px solid #e0e0e0;
+  background: #fafafa;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stat-box {
+  padding: 10px 14px;
+  border-right: 1px solid #eee;
+  text-align: center;
+}
+.stat-box:last-child { border-right: none; }
+
+.stat-val {
+  font-size: 1.5em;
+  font-weight: 800;
+  font-family: "Playfair Display", Georgia, serif;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.stat-label {
+  font-size: 0.62em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #888;
+  font-weight: 700;
+  margin-top: 3px;
+}
+</style>
+</head>
+<body>
+
+<div class="carbon-simulator-pro">
+  <div class="carbon-header" style="margin-bottom:14px;">
+    <h3>Carbon Flow Simulator</h3>
+    <p>Explore how emissions and carbon removal affect atmospheric CO₂ and global temperature.</p>
+    <p class="disclaimer">Educational model only — uses IPCC best-estimate climate sensitivity (ECS 3°C per CO₂ doubling). Pre-industrial baseline: 280 ppm / +0°C. Real sinks currently absorb ~50% of emissions. Sources: NOAA, IPCC AR6, Global Carbon Project.</p>
+  </div>
+
+  <!-- Stats row -->
+  <div class="stats-row" style="margin-bottom:12px;">
+    <div class="stat-box">
+      <div class="stat-val" id="ppmVal" style="color:var(--brand-accent)">432.0</div>
+      <div class="stat-label">CO₂ (ppm)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val" id="netVal">+20</div>
+      <div class="stat-label">Net Gt/yr</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val" id="tempVal" style="color:var(--warn-yellow)">+1.55°C</div>
+      <div class="stat-label">vs Pre-Industrial</div>
+    </div>
+  </div>
+
+  <div class="simulator-stack">
+
+    <!-- Flow diagram -->
+    <div class="visual-panel">
+      <div class="panel-title">Carbon Flow</div>
+      <svg width="100%" viewBox="0 0 620 270" style="display:block;">
+        <defs>
+          <clipPath id="atmClip2"><circle cx="310" cy="155" r="82"/></clipPath>
+          <marker id="arrow2" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">
+            <path d="M0 2 L6 5 L0 8 z" fill="#1a1a1a"/>
+          </marker>
+        </defs>
+
+        <!-- Paths -->
+        <path id="pathEmissions" d="M130 155 L215 155" class="flow-line" stroke="var(--brand-accent)" stroke-width="3" marker-end="url(#arrow2)"/>
+        <path id="pathNatural"   d="M405 200 C440 240 470 250 500 250" class="flow-line" stroke="var(--green)" stroke-width="3" marker-end="url(#arrow2)"/>
+        <path id="pathEngineered" d="M405 110 C440 75 470 65 500 65" class="flow-line"  stroke="var(--blue)"  stroke-width="3" marker-end="url(#arrow2)"/>
+
+        <!-- Flow labels -->
+        <text id="lblEmissions"  x="172" y="142" class="flow-label" fill="var(--brand-accent)" text-anchor="middle">40 Gt IN</text>
+        <text id="lblNatural"    x="455" y="268" class="flow-label" fill="var(--green)"         text-anchor="middle">20 Gt OUT</text>
+        <text id="lblEngineered" x="455" y="52"  class="flow-label" fill="var(--blue)"          text-anchor="middle">0 Gt OUT</text>
+
+        <!-- Source icons -->
+        <text x="72" y="142" font-size="36" text-anchor="middle">🏭</text>
+        <text x="72" y="175" font-size="10" font-weight="800" text-anchor="middle" fill="#555">EMISSIONS</text>
+
+        <text x="540" y="56"  font-size="36" text-anchor="middle">⚙️</text>
+        <text x="540" y="89"  font-size="10" font-weight="800" text-anchor="middle" fill="#555">ENGINEERED</text>
+
+        <text x="540" y="242" font-size="36" text-anchor="middle">🌲</text>
+        <text x="540" y="275" font-size="10" font-weight="800" text-anchor="middle" fill="#555">NATURAL</text>
+
+        <!-- Atmosphere circle -->
+        <circle cx="310" cy="155" r="84" fill="transparent" stroke="var(--brand-dark)" stroke-width="2.5"/>
+        <!-- CO2 fill level -->
+        <rect id="co2Fill" x="228" y="155" width="164" height="164" fill="var(--brand-accent)" opacity="0.75" clip-path="url(#atmClip2)"/>
+
+        <!-- Center text -->
+        <text id="ppmCenter"   x="310" y="138" fill="var(--brand-dark)" font-size="19" font-weight="800" text-anchor="middle">432.0 ppm</text>
+        <text id="netCenter"   x="310" y="172" fill="var(--brand-dark)" font-size="15" font-weight="700" text-anchor="middle">+20 Gt/yr</text>
+      </svg>
+    </div>
+
+    <!-- Bottom two panels -->
+    <div class="bottom-row">
+
+      <!-- Controls -->
+      <div class="panel">
+        <p class="panel-title">Adjust Parameters</p>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            Emissions <span id="emissionsDisplay" style="color:var(--brand-accent)">40 Gt/yr</span>
+          </div>
+          <input id="slEmissions" type="range" min="0" max="60" value="40">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            Natural Uptake <span id="naturalDisplay" style="color:var(--green)">20 Gt/yr</span>
+          </div>
+          <input id="slNatural" type="range" min="0" max="30" value="20">
+        </div>
+
+        <div class="slider-group">
+          <div class="slider-label">
+            Engineered Removal <span id="engineeredDisplay" style="color:var(--blue)">0 Gt/yr</span>
+          </div>
+          <input id="slEngineered" type="range" min="0" max="20" value="0">
+        </div>
+
+        <button class="reset-btn" id="resetBtn">↺ Reset to Current (2026)</button>
+      </div>
+
+      <!-- Temperature gauge -->
+      <div class="panel">
+        <p class="panel-title">Global Temperature Anomaly</p>
+
+        <div class="temp-gauge-wrap" style="margin-top: 28px;">
+          <div class="temp-track" id="tempTrack">
+            <!-- Paris markers injected by JS -->
+            <div class="temp-needle" id="tempNeedle"></div>
+          </div>
+          <div class="temp-labels">
+            <span>+0°C</span>
+            <span>+1°C</span>
+            <span>+2°C</span>
+            <span>+3°C</span>
+            <span>+4°C</span>
+          </div>
+        </div>
+
+        <div class="temp-big">
+          <div>
+            <span class="temp-number" id="tempDisplay">+1.55</span>
+            <span class="temp-unit">°C</span>
+          </div>
+          <div class="temp-sublabel">above pre-industrial (1850)</div>
+        </div>
+
+        <div class="paris-status" id="parisStatus"></div>
+        <div class="paris-status" id="balanceStatus" style="margin-top: 8px;"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="margin-top: 28px; padding-top: 16px; border-top: 1px solid #eee; 
+       display: flex; justify-content: flex-end; align-items: center; gap: 8px;">
+    <span style="font-size: 0.75em; color: #aaa; text-transform: uppercase; 
+          letter-spacing: 1px;">Created by</span>
+    <a href="https://www.firatbarca.com" target="_blank"
+       style="font-size: 0.85em; font-weight: 800; color: #1a1a1a; 
+              text-decoration: none; font-family: 'Playfair Display', Georgia, serif;">
+      Firat Barca
+    </a>
+  </div>
+</div>
+
+<script>
+// ── Science constants ──────────────────────────────────────────────────────────
+const PRE_INDUSTRIAL_PPM = 280;   // ~1750–1850 baseline
+const ECS = 3.0;                  // IPCC AR6 best-estimate (°C per CO₂ doubling)
+const GT_PER_PPM = 7.77;          // GtCO₂ ≈ 1 ppm change
+
+// Paris Agreement CO₂ thresholds (approximate equilibrium, per IPCC AR6)
+const PARIS_1_5_PPM = 430;  // ~1.5°C warming at equilibrium (SSP1-1.9 peak)
+const PARIS_2_0_PPM = 480;  // ~2.0°C warming at equilibrium
+
+// ── State ─────────────────────────────────────────────────────────────────────
+let curPPM = 432.0;
+let netGt  = 0;
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function ppmToTemp(ppm) {
+  // Logarithmic CO₂–temperature relationship: ΔT = ECS × log2(ppm / 280)
+  return ECS * Math.log2(ppm / PRE_INDUSTRIAL_PPM);
+}
+
+function ppmToFillFraction(ppm) {
+  // Fill the circle: empty at 280ppm, full at 600ppm (visual range)
+  return Math.max(0.04, Math.min(0.96, (ppm - 280) / 320));
+}
+
+function tempToGaugePercent(temp) {
+  // Gauge spans 0°C → 4°C
+  return Math.max(0, Math.min(100, (temp / 4) * 100));
+}
+
+function tempToColor(temp) {
+  if (temp <= 1.5) return '#5e8b61';
+  if (temp <= 2.0) return '#e8a020';
+  return '#c2593e';
+}
+
+// ── Build Paris markers ────────────────────────────────────────────────────────
+function buildParisMarkers() {
+  const track = document.getElementById('tempTrack');
+  const markers = [
+    { ppm: PARIS_1_5_PPM, label: '1.5°C Paris target', temp: ppmToTemp(PARIS_1_5_PPM) },
+    { ppm: PARIS_2_0_PPM, label: '2.0°C Paris limit',  temp: ppmToTemp(PARIS_2_0_PPM) }
+  ];
+  markers.forEach(m => {
+    const pct = tempToGaugePercent(m.temp);
+    const el = document.createElement('div');
+    el.className = 'paris-marker';
+    el.style.left = pct + '%';
+    el.innerHTML = `
+      <div class="paris-marker-label">${m.label}</div>
+      <div class="paris-marker-line"></div>
+    `;
+    track.appendChild(el);
+  });
+}
+
+// ── Update UI ─────────────────────────────────────────────────────────────────
+function update() {
+  const e  = Number(document.getElementById('slEmissions').value);
+  const n  = Number(document.getElementById('slNatural').value);
+  const en = Number(document.getElementById('slEngineered').value);
+  netGt = e - (n + en);
+
+  // Labels
+  document.getElementById('emissionsDisplay').textContent  = e  + ' Gt/yr';
+  document.getElementById('naturalDisplay').textContent    = n  + ' Gt/yr';
+  document.getElementById('engineeredDisplay').textContent = en + ' Gt/yr';
+
+  // Flow diagram labels
+  document.getElementById('lblEmissions').textContent  = e  ? e  + ' Gt IN'  : '';
+  document.getElementById('lblNatural').textContent    = n  ? n  + ' Gt OUT' : '';
+  document.getElementById('lblEngineered').textContent = en ? en + ' Gt OUT' : '';
+
+  // Net label & stat
+  const netStr = (netGt >= 0 ? '+' : '') + netGt + ' Gt/yr';
+  document.getElementById('netCenter').textContent = netStr;
+  document.getElementById('netVal').textContent    = netStr;
+  document.getElementById('netVal').style.color   = netGt > 0 ? 'var(--brand-accent)' : netGt < 0 ? 'var(--green)' : '#1a1a1a';
+
+  // Flow line widths & animations
+  const paths  = ['pathEmissions', 'pathNatural', 'pathEngineered'];
+  const vals   = [e, n, en];
+  const colors = ['var(--brand-accent)', 'var(--green)', 'var(--blue)'];
+  paths.forEach((id, i) => {
+    const p = document.getElementById(id);
+    p.style.display     = vals[i] ? 'block' : 'none';
+    p.style.strokeWidth = Math.max(1.5, vals[i] / 8);
+    p.style.stroke      = colors[i];
+    p.style.animation   = vals[i] ? `flow ${Math.max(0.3, 2.5 - (vals[i]/60)*2)}s linear infinite` : 'none';
+  });
+}
+
+// ── Tick: advance ppm & refresh visuals ───────────────────────────────────────
+function tick() {
+  // 1 ppm ≈ 7.77 GtCO₂; sim runs at 10× speed so changes are perceptible
+  curPPM += (netGt * 0.1) / GT_PER_PPM;
+  curPPM = Math.max(200, Math.min(800, curPPM));
+
+  const temp = ppmToTemp(curPPM);
+  const fillPct = ppmToFillFraction(curPPM);
+  const fillY   = 237 - fillPct * 164; // clip rect top (circle bottom ~237, top ~73)
+
+  // PPM display
+  document.getElementById('ppmCenter').textContent = curPPM.toFixed(1) + ' ppm';
+  document.getElementById('ppmVal').textContent    = curPPM.toFixed(1);
+  document.getElementById('ppmVal').style.color    = tempToColor(temp);
+
+  // CO₂ fill in atmosphere circle
+  const fill = document.getElementById('co2Fill');
+  fill.setAttribute('y', fillY.toFixed(1));
+  fill.setAttribute('fill', tempToColor(temp));
+
+  // Temperature
+  const tempStr = (temp >= 0 ? '+' : '') + temp.toFixed(2) + '°C';
+  document.getElementById('tempDisplay').textContent = (temp >= 0 ? '+' : '') + temp.toFixed(2);
+  document.getElementById('tempVal').textContent     = (temp >= 0 ? '+' : '') + temp.toFixed(2) + '°C';
+  document.getElementById('tempVal').style.color     = tempToColor(temp);
+  document.getElementById('tempDisplay').parentElement.style.color = tempToColor(temp);
+
+  // Needle
+  const pct = tempToGaugePercent(temp);
+  document.getElementById('tempNeedle').style.left = pct + '%';
+
+  // Paris status badge
+  const status = document.getElementById('parisStatus');
+  if (temp <= 1.5) {
+    status.textContent = '✓ Within 1.5°C Paris target';
+    status.style.background = '#e8f5e9';
+    status.style.color = '#2e7d32';
+  } else if (temp <= 2.0) {
+    status.textContent = '⚠ Between 1.5°C and 2.0°C — Paris danger zone';
+    status.style.background = '#fff8e1';
+    status.style.color = '#e65100';
+  } else {
+    status.textContent = '✕ Exceeds 2.0°C Paris Agreement upper limit';
+    status.style.background = '#ffebee';
+    status.style.color = '#b71c1c';
+  }
+
+  // Balance status badge
+  const bal = document.getElementById('balanceStatus');
+  const BALANCED = Math.abs(netGt) <= 1; // ±1 Gt tolerance
+
+  // ── Years-to-target calculator ──────────────────────────────────────────────
+  // How many years at the current net rate to reach a target ppm?
+  // ppmChange/yr = netGt / GT_PER_PPM
+  function yearsTo(targetPPM) {
+    if (Math.abs(netGt) <= 1) return null;              // balanced — never arrives
+    const ppmPerYear = netGt / GT_PER_PPM;
+    const delta = targetPPM - curPPM;
+    if (Math.sign(delta) !== Math.sign(ppmPerYear)) return null; // moving away
+    const yrs = Math.round(delta / ppmPerYear);
+    return yrs > 0 ? yrs : null;
+  }
+
+  function yrsLabel(yrs) {
+    if (yrs === null) return '';
+    if (yrs < 2)   return 'less than 2 years';
+    if (yrs > 500) return 'over 500 years';
+    return yrs + ' years';
+  }
+
+  if (netGt < -1) {
+    // Drawing down — show years to reach 1.5°C safe zone (430 ppm)
+    const yrs = yearsTo(PARIS_1_5_PPM);
+    const eta  = yrs ? ' · ~' + yrsLabel(yrs) + ' to reach the 1.5°C safe zone' : '';
+    bal.textContent = '↓ Drawing down — CO₂ falling toward safer levels' + eta;
+    bal.style.background = '#e3f2fd';
+    bal.style.color = '#0d47a1';
+    bal.style.display = 'block';
+  } else if (BALANCED && curPPM <= PARIS_1_5_PPM) {
+    bal.textContent = '⬤ Balanced within the 1.5°C Paris target — this is the goal';
+    bal.style.background = '#e8f5e9';
+    bal.style.color = '#1b5e20';
+    bal.style.display = 'block';
+  } else if (BALANCED && curPPM <= PARIS_2_0_PPM) {
+    bal.textContent = '⬤ CO₂ stabilised — permanently locked at +' + temp.toFixed(2) + '°C. Need drawdown to reach safety.';
+    bal.style.background = '#fff8e1';
+    bal.style.color = '#e65100';
+    bal.style.display = 'block';
+  } else if (BALANCED) {
+    bal.textContent = '⬤ CO₂ stabilised above 2°C — permanent danger. Drawdown essential.';
+    bal.style.background = '#ffebee';
+    bal.style.color = '#b71c1c';
+    bal.style.display = 'block';
+  } else if (netGt > 1) {
+    // Still rising — show years until we breach each Paris threshold
+    const yrs15 = yearsTo(PARIS_1_5_PPM);
+    const yrs20 = yearsTo(PARIS_2_0_PPM);
+    let msg = '';
+    if (yrs15 !== null && curPPM < PARIS_1_5_PPM) {
+      msg = '↑ Rising — 1.5°C threshold breached in ~' + yrsLabel(yrs15);
+      if (yrs20 !== null) msg += ', 2.0°C in ~' + yrsLabel(yrs20);
+    } else if (yrs20 !== null && curPPM < PARIS_2_0_PPM) {
+      msg = '↑ Rising — already past 1.5°C. 2.0°C breached in ~' + yrsLabel(yrs20);
+    } else {
+      msg = '↑ Rising — both Paris thresholds already exceeded';
+    }
+    bal.textContent = msg;
+    bal.style.background = '#fff3e0';
+    bal.style.color = '#bf360c';
+    bal.style.display = 'block';
+  } else {
+    bal.style.display = 'none';
+  }
+}
+
+// ── Reset ─────────────────────────────────────────────────────────────────────
+document.getElementById('resetBtn').addEventListener('click', () => {
+  document.getElementById('slEmissions').value  = 40;
+  document.getElementById('slNatural').value    = 20;
+  document.getElementById('slEngineered').value = 0;
+  curPPM = 432.0;
+  update();
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+['slEmissions','slNatural','slEngineered'].forEach(id => {
+  document.getElementById(id).addEventListener('input', update);
+});
+
+buildParisMarkers();
+update();
+setInterval(tick, 100);
+tick();
+</script>
+</body>
+</html>
+
   </pre>
 </div>
