@@ -60,6 +60,22 @@ a.note-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shad
 .list-cta{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);}
 .list-cta a{font-weight:600;color:var(--accent);display:inline-flex;align-items:center;gap:.4rem;}
 
+/* ---- newsletter capture (blog listing + end of every post) ---- */
+.newsletter{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:1.6rem 1.7rem 1.7rem;margin:2rem 0;}
+.newsletter .lbl{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 .5rem;}
+.newsletter h2,.newsletter h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--ink);margin:0 0 .4rem;}
+.newsletter p{color:var(--soft);font-size:.94rem;margin:0 0 1.1rem;}
+.newsletter form{display:flex;gap:.6rem;flex-wrap:wrap;}
+.newsletter .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+.newsletter input[type=email]{flex:1 1 220px;font:inherit;font-size:.96rem;color:var(--ink);background:#fffdf9;border:1px solid var(--line-2);border-radius:4px;padding:.72rem .85rem;transition:border-color .18s,box-shadow .18s;}
+.newsletter input[type=email]::placeholder{color:var(--muted);}
+.newsletter input[type=email]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);}
+.newsletter button{font:inherit;font-weight:700;font-size:.94rem;color:#fff;background:var(--accent);border:none;border-radius:4px;padding:.72rem 1.2rem;cursor:pointer;white-space:nowrap;transition:filter .18s,transform .12s;}
+.newsletter button:hover{filter:brightness(1.08);}
+.newsletter button:active{transform:translateY(1px);}
+.newsletter button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+.newsletter .fine{font-size:.72rem;color:var(--muted);margin:.55rem 0 0;}
+
 /* share row on posts */
 .share{margin-top:2.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;}
 .share .lbl{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
