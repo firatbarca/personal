@@ -2,6 +2,7 @@ module.exports = function (eleventyConfig) {
   // ---- Passthrough: static files copied byte-for-byte (design unchanged) ----
   eleventyConfig.addPassthroughCopy({ "src/index.html": "index.html" });
   eleventyConfig.addPassthroughCopy({ "src/solutions": "solutions" });
+  eleventyConfig.addPassthroughCopy({ "src/mrfiba": "mrfiba" });
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/blog/style.css": "blog/style.css" });
   eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
