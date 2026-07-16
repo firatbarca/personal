@@ -35,7 +35,7 @@
 
   /* cards */
   .sol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-top:2.4rem;}
-  .sol-card{display:flex;flex-direction:column;overflow:hidden;background:var(--card);border:1px solid var(--line);color:inherit;text-align:left;font:inherit;padding:0;cursor:pointer;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;}
+  .sol-card{display:flex;flex-direction:column;overflow:hidden;background:var(--card);border:1px solid var(--line);color:inherit;text-decoration:none;text-align:left;font:inherit;padding:0;cursor:pointer;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;}
   .sol-card:hover,.sol-card:focus-visible{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 16px 40px rgba(27,25,22,.13);outline:none;}
   .sol-cover{aspect-ratio:16/10;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-start;padding:.85rem;}
   .sol-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,25,22,.04),rgba(27,25,22,.34));}
@@ -91,6 +91,15 @@
   </div>
 
   <div class="sol-grid">
+
+    <a class="sol-card" href="/mrfiba/" target="_blank" rel="noopener">
+      <span class="sol-cover" style="background-image:url('../assets/solutions/mrfiba.png'),linear-gradient(135deg,#1e2d38,#10161B)"><img class="emoji icon-img" src="../assets/solutions/icon-mrfiba.png" alt="" /></span>
+      <span class="sol-cbody">
+        <span class="t">Mr.Fiba</span>
+        <span class="d">My short-form brand on AI side income — real tools, real numbers, no hype.</span>
+        <span class="more">Open the hub ↗</span>
+      </span>
+    </a>
 
     <button class="sol-card" type="button" data-cover="../assets/solutions/pantomime-intelligence.jpg">
       <span class="sol-cover" style="background-image:url('../assets/solutions/pantomime-intelligence.jpg'),linear-gradient(135deg,#b56a43,#7c3f24)"><img class="emoji icon-img" src="../assets/solutions/icon-pantomime-intelligence.png" alt="" /></span>
@@ -301,6 +310,7 @@
       if(lastFocus)lastFocus.focus();
     }
     document.querySelectorAll('.sol-card').forEach(function(c){
+      if(!c.querySelector('.sol-full')) return; // link cards (e.g. Mr.Fiba) open their href in a new tab
       c.addEventListener('click',function(){open(c);});
     });
     closeBtn.addEventListener('click',close);
