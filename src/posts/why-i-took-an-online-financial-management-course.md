@@ -1,6 +1,6 @@
 ---
 title: "Why an ESG and sustainability professional took an online financial management course"
-date: 2026-06-29T09:30
+date: 2026-07-21T09:30
 tag: ESG
 summary: "I didn't train as a financier — my degree was in political science. But
   the deeper I went into sustainability, the more I needed the language of the
