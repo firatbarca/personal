@@ -5,7 +5,7 @@ tag: ESG
 summary: "I didn't train as a financier — my degree was in political science. But
   the deeper I went into sustainability, the more I needed the language of the
   balance sheet. So I took an online course to brush up on it."
-cover: /assets/blog/esg-data-quality.jpg
+cover: /assets/blog/alphatradezone.jpg
 draft: false
 ---
 My undergraduate degree was in **Political Science and Public Administration**, not finance. But because the programme sat within a faculty of economics and administrative sciences, I had to take finance, accounting, and economics along the way. To my own surprise, I enjoyed them — and did well enough to come away with top marks in all three. At the time I filed it under "interesting, but not my path," and moved on.
