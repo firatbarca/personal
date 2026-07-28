@@ -8,7 +8,7 @@ summary: "ESG reporting struggled for years, not because the numbers were
 cover: /assets/blog/Audit_ESG1.jpg
 draft: false
 ---
-In [a recent post on the EU AI Act and ESG](/blog/eu-ai-act-esg-sustainability/), I wrote one sentence that deserves a post of its own: ESG reporting struggled for years, not because the numbers were impossible to calculate, but because organizations relied too heavily on **guesswork** and lacked the **audit trails** to trace the data back to its source. Anyone who worked through the early reporting cycles knows exactly what that sentence describes. This is what it looked like from the inside — and why the era it describes is ending.
+In [a recent post on the EU AI Act and ESG](/blog/eu-ai-act-esg-sustainability/), I wrote one sentence that deserves a post of its own: ESG reporting struggled for years, not because the numbers were impossible to calculate, but because organizations relied too heavily on **guesswork** and lacked the **audit trails** to trace the data back to its source. Anyone who worked through the early reporting cycles knows exactly what that sentence describes. This is what it looked like from the inside, and why the era it describes is ending.
 
 ## The era of the educated guess
 
@@ -27,9 +27,9 @@ Each shortcut was defensible on its own. Stacked together, cycle after cycle, th
 
 The deeper problem was not the estimating itself. Estimation is a legitimate tool; even financial accounting depends on it. The problem was that nobody could **show their work**.
 
-A number would arrive in the group template from a country office. Where did it come from? A spreadsheet. Where did the spreadsheet get it? An email. Who sent the email? Someone who left in March. The chain of custody — source document, transformation, assumption, final figure — existed only as institutional memory, and institutional memory resigns, retires, and forgets.
+A number would arrive in the group template from a country office. Where did it come from? A spreadsheet. Where did the spreadsheet get it? An email. Who sent the email? Someone who left in March. The chain of custody, source document, transformation, assumption, final figure,  existed only as institutional memory, and institutional memory resigns, retires, and forgets.
 
-> A guess with a documented trail can be improved. A precise number with no trail can only be believed — or not.
+> A guess with a documented trail can be improved. A precise number with no trail can only be believed, or not.
 
 That is the real distinction, and it is why "guesswork" and "no audit trail" are two halves of one failure. Without a trail, you cannot even tell which numbers *are* guesses. Everything looks equally solid on the page, which means everything is equally fragile underneath it.
 
