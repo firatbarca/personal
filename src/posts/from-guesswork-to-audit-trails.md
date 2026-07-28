@@ -1,6 +1,6 @@
 ---
 title: "From Guesswork To Audit Trails: Why ESG Reporting Struggled For So Long"
-date: 2026-07-05T23:55
+date: 2026-07-28T12:33
 tag: ESG
 summary: "ESG reporting struggled for years, not because the numbers were
   impossible to calculate, but because organizations relied too heavily on
