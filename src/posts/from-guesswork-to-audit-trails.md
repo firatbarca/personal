@@ -5,7 +5,7 @@ tag: ESG
 summary: "ESG reporting struggled for years, not because the numbers were
   impossible to calculate, but because organizations relied too heavily on
   guesswork and lacked the audit trails to trace the data back to its source."
-cover: /assets/blog/Audit_ESG1.png
+cover: /assets/blog/Audit_ESG1.jpg
 draft: false
 ---
 In [a recent post on the EU AI Act and ESG](/blog/eu-ai-act-esg-sustainability/), I wrote one sentence that deserves a post of its own: ESG reporting struggled for years, not because the numbers were impossible to calculate, but because organizations relied too heavily on **guesswork** and lacked the **audit trails** to trace the data back to its source. Anyone who worked through the early reporting cycles knows exactly what that sentence describes. This is what it looked like from the inside, and why the era it describes is ending.
