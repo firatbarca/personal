@@ -3,3 +3,8 @@ node_modules/
 _site/
 .playwright-mcp/
 .claude/worktrees/
+
+# Local secrets: API keys for image fetching etc. Never commit.
+keys.env
+*.env
+.env
