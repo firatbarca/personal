@@ -5,7 +5,7 @@ tag: ESG
 summary: "From 2 July 2026, ESG rating providers operating in the EU need
   authorisation from ESMA. The scores that have moved capital for years are
   finally being asked the question they asked everyone else."
-cover: /assets/blog/who-audits-the-esg-raters.jpg
+cover: assets/blog/who-audits-the-esg-raters.png
 draft: false
 ---
 For years, ESG ratings sat outside the governance conversation they helped create. A score could influence a bond price, a procurement shortlist, or an index inclusion, and almost nobody asked what stood behind the number. That changed on 2 July 2026.
