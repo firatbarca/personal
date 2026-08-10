@@ -1,51 +1,143 @@
 ---
 title: "What a Political Scientist Sees in a Carbon Accounting Standard"
-date: 2026-09-08T09:00
+date: 2026-11-08T09:00
 tag: ESG
 summary: "I trained to read treaties and institutions, not emission factors. That
   background turns out to be unexpectedly useful for understanding why reporting
   standards look the way they do."
 cover: /assets/blog/political-scientist-reads-a-standard.jpg
-draft: true
+draft: False
 ---
-My doctorate is in political science, on climate change and human migration. Nothing in that training prepared me to calculate a Scope 2 figure. It prepared me for something else that has turned out to be more useful than I expected: reading a standard as a negotiated document rather than a technical one.
+My doctorate is in political science, focused on climate change and migration. It did not teach me how to calculate a Scope 2 emissions figure.
 
-Because that is what standards are. Someone drafted them, various parties objected, positions were traded, and the text that survived carries the marks of that process. Once you start reading for those marks, a lot of otherwise puzzling design choices become legible.
+But it did teach me something that has turned out to be very useful in sustainability reporting: how to read rules and standards as products of negotiation, institutions and competing interests.
 
-## Ambiguity is usually deliberate
+That matters because standards are not written in a vacuum. People draft them, stakeholders disagree, compromises are made, and the final wording reflects those choices.
 
-In a technical document, vagueness looks like a drafting failure. In a negotiated one, it is often the only reason agreement was possible.
+Once you start reading standards that way, some of their strange or vague wording starts to make more sense.
 
-When a standard says a company should use "the best available data" without defining it, that is rarely an oversight. It is more likely the point at which parties who disagreed about how much primary data to require found language they could both accept. The ambiguity is load-bearing. It is holding the agreement together.
+## Ambiguity can be deliberate
 
-This matters practically, because it tells you where to expect future tightening. The vague clauses are where the argument was, which means they are where the argument will resume once the standard is revised.
+When a technical document is vague, it is easy to assume the writing is simply poor.
 
-You can see this in the GHG Protocol's Scope 3 revision. The Phase 1 Progress Update published in March 2026 is consulting on separating reported emissions into tiers by data type and on a coverage floor with justified exclusions. Those are both proposals to make specific what the 2011 standard left open. Fifteen years on, the unresolved question is being reopened, which is exactly what you would predict from reading where the original text went soft.
+But in a negotiated standard, vague wording can sometimes be intentional.
 
-> Standards do not fail at the places they are precise. They get revised at the places they had to stay vague.
+Different groups may disagree about how strict a requirement should be. Instead of choosing one side, the standard may use flexible language that everyone can live with.
 
-## Compliance is a bargain, not an instruction
+That does not mean every vague sentence is the result of a political compromise. But it does mean ambiguity is not always a mistake.
 
-The second thing political science training gives you is a realistic view of how rules actually work on the ground.
+It can also tell you something about where a standard might change in the future.
 
-A regulation does not produce compliance by existing. It produces compliance when enough actors calculate that complying costs less than not complying, and that calculation depends on enforcement capacity, reputational exposure, and what everyone else is doing.
+If companies interpret a flexible rule in very different ways, regulators or standard setters may eventually decide that clearer requirements are needed.
 
-This explains a pattern that otherwise looks like cynicism. Sustainability reporting improved sharply once the numbers started being used in financing and procurement decisions, not when the first disclosure requirements appeared. The rule created the obligation. Consequences created the compliance. Those are different mechanisms and they arrived years apart.
+You can see this in the current revision of the GHG Protocol Scope 3 Standard.
 
-It also explains why the Omnibus simplification is a more interesting event than the headline suggests. Raising the CSRD thresholds to more than 1,000 employees and more than 450 million euro turnover does not just reduce burden. It changes who is inside the bargain and who is outside it, which reshapes the incentives of everyone in a value chain that crosses that line.
+The March 2026 Phase 1 Progress Update describes proposals that are still being developed. It is not yet the formal public consultation draft.
 
-## Institutions outlive their reasons
+Among the ideas being considered are clearer requirements for showing what type of data companies use and a more specific rule on how much of their Scope 3 emissions they need to include.
 
-The third habit is looking for what a rule was originally for, which is often not what it currently does.
+The existing 2011 standard already has rules about data quality, data sources, and exclusions. So these ideas are not starting from nothing.
 
-Emission factors are a small example I have written about [elsewhere](/blog/emission-factor-nobody-owns/). A factor gets chosen for a defensible reason, the reason is forgotten, and the factor persists as infrastructure. That is institutional drift at the scale of a spreadsheet cell, and it works the same way it does at the scale of an international organisation.
+What the proposed changes would do is make some parts of the existing system much more specific and easier to compare between companies.
 
-The remedy is the same at both scales too. Write down why the decision was made, by whom, and when it should be looked at again. Institutions that record their own reasoning can be reformed deliberately. Institutions that do not get reformed by crisis, or not at all.
+That is an important distinction.
 
-## Why I think the crossover matters
+> The lesson is not that old standards had no rules. It is those areas that, once allowed, more judgment can later become more prescriptive.
 
-There is a persistent assumption that sustainability reporting is a technical discipline that happens to be governed by rules. I have come to think it is closer to the reverse: a governance discipline that happens to involve arithmetic.
+## Compliance is about incentives too
 
-The arithmetic is genuinely the easy part. Multiply consumption by a factor. The hard parts are all institutional. Who owns this number. What happens when two parties disagree. How do you make a commitment credible to someone with no reason to trust you. Why does this rule say what it says, and what will happen to it next.
+Political science also teaches you that writing a rule does not automatically change behaviour.
 
-Those are political science questions. I did not expect to be using that training in a reporting function, and I would not have predicted the fit. But standards are political documents, organisations are political systems, and a discipline built for reading both turns out to travel further into this work than my younger self would have guessed.
+Companies respond to rules, but they also respond to enforcement, reputation, customers, investors, lenders, and commercial pressure.
+
+A reporting requirement may create the obligation to disclose information.
+
+But that information often becomes much more important when someone actually uses it to make a decision.
+
+For example, if emissions data starts affecting financing, procurement, or customer relationships, companies have a stronger practical reason to make sure the data is credible.
+
+That is why I think the recent changes to the EU's Corporate Sustainability Reporting Directive are interesting.
+
+The revised rules significantly narrow the number of companies that fall directly within the main reporting requirements.
+
+That is usually described as a reduction in reporting burden.
+
+And it is.
+
+But it also changes which companies are directly inside the regulatory system and which companies are outside it.
+
+That can affect the pressure that moves through supply chains, because large companies often ask suppliers for information even when those suppliers are not directly covered by the law.
+
+So changing the scope of a regulation can change more than the number of companies that have to file a report.
+
+It can change the incentives around the whole system.
+
+## Organisations forget why they do things
+
+Another useful political-science habit is asking why a rule or practice exists in the first place.
+
+Organisations often keep doing something long after the original reason has been forgotten.
+
+Emission factors are a simple example.
+
+Someone may choose a particular factor for a perfectly reasonable reason.
+
+Years later, the number is still sitting in the spreadsheet, but nobody remembers who chose it or why.
+
+Eventually, it stops being a decision and becomes part of the infrastructure.
+
+The same thing happens with much bigger institutions.
+
+A policy or process may continue because it is already there, not because anyone has recently checked whether it still makes sense.
+
+The solution is simple in principle: record the reasoning.
+
+Write down why a decision was made, who made it, what evidence was used, and when the decision should be reviewed.
+
+That makes it much easier to change things deliberately later.
+
+## Why this matters for sustainability reporting
+
+Sustainability reporting is often treated as a technical discipline.
+
+And of course, there is technical work involved.
+
+But I have come to think that many of the hardest problems are really governance problems.
+
+The calculation itself may be simple.
+
+Use an activity figure. Apply an emission factor. Get a result.
+
+The difficult questions usually come before and after that calculation.
+
+Who owns the data?
+
+Which source should we trust?
+
+What happens when two departments disagree?
+
+How good does the data need to be?
+
+Who is responsible for checking it?
+
+Why does the standard require this particular thing?
+
+How much judgement are we allowed to use?
+
+And how might the rule change in the future?
+
+Those are not mainly mathematical questions.
+
+They are questions about institutions, incentives, responsibility and trust.
+
+In other words, they are political-science questions.
+
+I did not expect my academic background to be so useful in sustainability reporting.
+
+But it makes more sense to me now.
+
+Standards are created through governance processes. Organisations contain different interests and incentives. Reporting depends on people agreeing about rules, evidence and responsibility.
+
+So sustainability reporting is not just about calculating emissions.
+
+A large part of the job is understanding the system around the calculation.
