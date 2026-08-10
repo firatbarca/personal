@@ -1,10 +1,10 @@
 ---
-title: "What a Political Scientist Sees in a Carbon Accounting Standard"
-date: 2026-11-08T09:00
+title: What a Political Scientist Sees in a Carbon Accounting Standard
+date: 2026-08-09
 tag: ESG
-summary: "I trained to read treaties and institutions, not emission factors. That
+summary: I trained to read treaties and institutions, not emission factors. That
   background turns out to be unexpectedly useful for understanding why reporting
-  standards look the way they do."
+  standards look the way they do.
 cover: /assets/blog/political-scientist-reads-a-standard.jpg
 draft: false
 ---
