@@ -92,4 +92,6 @@ Those are not mainly mathematical questions. There are questions about instituti
 
 I did not expect my academic background to be so useful in sustainability reporting. But it makes more sense to me now.
 
-Standards are created through governance processes. Organisations contain different interests and incentives. Reporting depends on people agreeing about rules, evidence, and responsibility. So, sustainability reporting is not just about calculating emissions. A large part of the job is understanding the system around the calculation.
+Standards are created through governance processes. Organisations contain different interests and incentives. Reporting depends on people agreeing about rules, evidence, and responsibility. 
+
+So, sustainability reporting is not just about calculating emissions. A large part of the job is understanding the system around the calculation.
