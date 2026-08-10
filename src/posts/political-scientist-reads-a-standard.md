@@ -6,7 +6,7 @@ summary: "I trained to read treaties and institutions, not emission factors. Tha
   background turns out to be unexpectedly useful for understanding why reporting
   standards look the way they do."
 cover: /assets/blog/political-scientist-reads-a-standard.jpg
-draft: true
+draft: false
 ---
 My doctorate is in political science, focused on climate change and migration. It did not teach me how to calculate a Scope 2 emissions figure.
 
