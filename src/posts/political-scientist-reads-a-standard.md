@@ -58,25 +58,13 @@ It can change the incentives around the whole system.
 
 Another useful political-science habit is asking why a rule or practice exists in the first place.
 
-Organisations often keep doing something long after the original reason has been forgotten.
+Organisations often keep doing something long after the original reason has been forgotten. Emission factors are a simple example. Someone may choose a particular factor for a perfectly reasonable reason.
 
-Emission factors are a simple example.
+Years later, the number is still sitting in the spreadsheet, but nobody remembers who chose it or why. Eventually, it stops being a decision and becomes part of the infrastructure.
 
-Someone may choose a particular factor for a perfectly reasonable reason.
+The same thing happens with much bigger institutions. A policy or process may continue because it is already there, not because anyone has recently checked whether it still makes sense.
 
-Years later, the number is still sitting in the spreadsheet, but nobody remembers who chose it or why.
-
-Eventually, it stops being a decision and becomes part of the infrastructure.
-
-The same thing happens with much bigger institutions.
-
-A policy or process may continue because it is already there, not because anyone has recently checked whether it still makes sense.
-
-The solution is simple in principle: record the reasoning.
-
-Write down why a decision was made, who made it, what evidence was used, and when the decision should be reviewed.
-
-That makes it much easier to change things deliberately later.
+The solution is simple in principle: record the reasoning. Write down why a decision was made, who made it, what evidence was used, and when the decision should be reviewed. That makes it much easier to change things deliberately later.
 
 ## Why this matters for sustainability reporting
 
