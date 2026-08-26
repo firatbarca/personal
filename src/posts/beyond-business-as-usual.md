@@ -1,5 +1,5 @@
 ---
-title: "Business as Usual: why yesterday's business model can't solve tomorrow's climate challenge"
+title: "Why Business as Usual Is Becoming a Business Risk"
 date: 2026-08-25T09:00
 tag: ESG & Climate
 summary: "Business as Usual assumes tomorrow will look like yesterday. On
