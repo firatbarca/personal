@@ -1,12 +1,12 @@
 ---
 title: "Business as Usual: why yesterday's business model can't solve tomorrow's climate challenge"
-date: 2026-07-01T09:00
+date: 2026-08-25T09:00
 tag: ESG & Climate
 summary: "Business as Usual assumes tomorrow will look like yesterday. On
   climate, that quiet assumption has become the riskiest position a company can
   hold — here's why incremental change no longer clears the bar."
 cover: /assets/blog/climate-migration.jpg
-draft: true
+draft: false
 ---
 For decades, **Business as Usual, or BAU**, has described the normal way an organisation operates. It usually means continuing established business models, processes, investment patterns, and ways of working without making fundamental changes.
 
@@ -14,11 +14,11 @@ That approach can feel safe because it is familiar. Existing systems are underst
 
 The problem is that the conditions around business are changing.
 
-Climate change is no longer only an environmental issue. It increasingly affects regulation, finance, insurance, supply chains, operations, investment decisions, and long-term competitiveness.
+Fortunately, anthropogenic climate change is no longer treated only as an environmental issue. It has increasingly become a regulatory, financial, and business issue, affecting insurance, supply chains, operations, investment decisions, and long-term competitiveness.
 
 As a result, continuing with established practices can create risks of its own. What looks like the safest option today may leave an organisation less prepared for the conditions it will face tomorrow.
 
-## Understanding Business as Usual
+## Understanding Business as Usual (BAU)
 
 In climate analysis, Business as Usual has often been used to describe a **baseline or reference scenario**.
 
@@ -30,13 +30,15 @@ The term Business as Usual is now used less often in climate science because it 
 
 Inside an organisation, however, the idea remains useful.
 
-Business as Usual can describe a company continuing with established operations, investment practices, technologies, and business models without making major changes in response to climate risk or the transition to a lower carbon economy.
+Business as Usual can describe a company continuing with established operations, investment practices, technologies, and business models without making major changes in response to climate risk or the transition to a lower-carbon economy.
 
 The difficulty is that many existing systems were developed at a time when greenhouse gas emissions, resource use, and climate risk were rarely central to business decisions.
 
 Those systems can continue to shape decisions today.
 
-## Why Business as Usual matters for climate change
+## Why Business as Usual matters for anthropogenic climate change
+
+Anthropogenic climate change refers to the significant alterations in Earth's climate resulting from human activities, particularly since the Industrial Revolution. 
 
 Anthropogenic climate change is driven mainly by greenhouse gases building up in the atmosphere.
 
@@ -70,7 +72,7 @@ Carbon lock-in happens when existing infrastructure, technology, investment choi
 
 > A decision that looks convenient today can therefore limit future choices.
 
-Business as Usual is, at its core, a belief that established ways of operating will remain suitable for the future. Climate change makes that assumption increasingly difficult to rely on.
+Business as Usual is, at its core, a belief that established ways of operating will remain suitable for the future. Anthropogenic climate change makes that assumption increasingly difficult to rely on.
 
 Delay can also create financial and operational costs.
 
@@ -78,7 +80,7 @@ As governments change climate policy, markets develop, customer expectations shi
 
 That can make the process more disruptive and potentially more expensive.
 
-At the same time, organisations face growing exposure to the physical effects of climate change.
+At the same time, organisations face growing exposure to the physical effects of anthropogenic climate change.
 
 Extreme heat can affect workers, buildings, equipment, and energy systems.
 
@@ -102,7 +104,7 @@ This can include questions such as:
 
 - What are our greenhouse gas emissions?
 - Where are our most important climate risks?
-- How could climate change affect our operations and finances?
+- How could anthropogenic climate change affect our operations and finances?
 - How resilient is our supply chain?
 - Can we use energy and other resources more efficiently?
 - How could new regulations affect our business?
@@ -159,13 +161,11 @@ Moving beyond Business as Usual does not mean replacing everything at once.
 
 It means examining existing assumptions before repeating them.
 
-Before replacing a major asset, an organisation can ask whether a lower emission alternative now makes more sense.
-
 Before approving an investment, it can consider climate risk alongside traditional financial measures.
 
 Before choosing a supplier, it can consider resilience and environmental performance as well as cost and quality.
 
-Before developing a long term strategy, it can consider how climate change, regulation, technology, and market expectations could affect the business.
+Before developing a long term strategy, it can consider how anthropogenic climate change, regulation, technology, and market expectations could affect the business.
 
 This approach can lead to different decisions without requiring change for the sake of change.
 
@@ -179,7 +179,7 @@ Many of today's business models, infrastructure systems, and investment practice
 
 The conditions around them are now changing.
 
-Climate change is affecting physical risk.
+Anthropogenic climate change is affecting physical risk.
 
 Governments are developing new policies.
 
@@ -187,7 +187,7 @@ Technology is changing quickly.
 
 Energy systems are evolving.
 
-Investors, customers, employees, and regulators are asking different questions about how organisations create long term value.
+Investors, customers, employees, and regulators are asking different questions about how organisations create long-term value.
 
 Companies that continue relying only on established operating models risk becoming less prepared for these changes.
 
