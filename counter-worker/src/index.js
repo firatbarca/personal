@@ -73,6 +73,36 @@ function responseHeaders(origin, env, cacheControl = "no-store") {
   return headers;
 }
 
+function configuredStartTotal(env) {
+  const value = Number.parseInt(String(env.COUNTER_START_TOTAL || "0"), 10);
+  return Number.isSafeInteger(value) && value >= 0 ? value : 0;
+}
+
+async function baselineViews(env) {
+  const existing = await env.COUNTER_DB.prepare(
+    "SELECT value FROM counter_settings WHERE key = 'baseline_offset'"
+  ).first();
+
+  if (existing?.value != null) return Number(existing.value || 0);
+
+  const raw = await env.COUNTER_DB.prepare(
+    "SELECT COALESCE(SUM(views), 0) AS total FROM page_views"
+  ).first();
+  const offset = Math.max(0, configuredStartTotal(env) - Number(raw?.total || 0));
+
+  await env.COUNTER_DB.prepare(
+    `INSERT INTO counter_settings (key, value, updated_at)
+     VALUES ('baseline_offset', ?, CURRENT_TIMESTAMP)
+     ON CONFLICT(key) DO NOTHING`
+  ).bind(offset).run();
+
+  const stored = await env.COUNTER_DB.prepare(
+    "SELECT value FROM counter_settings WHERE key = 'baseline_offset'"
+  ).first();
+
+  return Number(stored?.value ?? offset);
+}
+
 function json(data, status, origin, env, cacheControl) {
   return new Response(JSON.stringify(data), {
     status,
@@ -81,14 +111,16 @@ function json(data, status, origin, env, cacheControl) {
 }
 
 async function readTotal(env) {
+  const baseline = await baselineViews(env);
   const row = await env.COUNTER_DB.prepare(
     "SELECT COALESCE(SUM(views), 0) AS total FROM page_views"
   ).first();
 
-  return Number(row?.total || 0);
+  return Number(row?.total || 0) + baseline;
 }
 
 async function recordView(path, env) {
+  const baseline = await baselineViews(env);
   const results = await env.COUNTER_DB.batch([
     env.COUNTER_DB.prepare(
       `INSERT INTO page_views (path, views, updated_at)
@@ -105,7 +137,7 @@ async function recordView(path, env) {
 
   return {
     pathViews: Number(results[0]?.results?.[0]?.views || 0),
-    total: Number(results[1]?.results?.[0]?.total || 0),
+    total: Number(results[1]?.results?.[0]?.total || 0) + baseline,
   };
 }
 

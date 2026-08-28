@@ -15,14 +15,30 @@ class Statement {
   }
 
   async first() {
+    if (this.sql.includes("counter_settings")) {
+      const value = this.database.settings.get("baseline_offset");
+      return value == null ? null : { value };
+    }
     if (!this.sql.includes("SUM(views)")) return null;
     return { total: this.database.total() };
+  }
+
+  async run() {
+    if (this.sql.includes("INSERT INTO counter_settings")) {
+      if (!this.database.settings.has("baseline_offset")) {
+        this.database.settings.set("baseline_offset", this.values[0]);
+      }
+      return { success: true };
+    }
+
+    return { success: true };
   }
 }
 
 class MockD1 {
   constructor() {
     this.rows = new Map();
+    this.settings = new Map();
   }
 
   prepare(sql) {
@@ -151,4 +167,16 @@ test("returns the public aggregate", async () => {
 
   assert.equal(response.status, 200);
   assert.deepEqual(await response.json(), { total: 1 });
+});
+
+test("adds a configured baseline without altering stored page views", async () => {
+  const env = environment();
+  env.COUNTER_START_TOTAL = "30913";
+
+  const recorded = await worker.fetch(pageViewRequest(), env);
+  const body = await recorded.json();
+
+  assert.equal(body.total, 30914);
+  assert.equal(env.COUNTER_DB.total(), 1);
+  assert.equal(env.COUNTER_DB.settings.get("baseline_offset"), 30913);
 });

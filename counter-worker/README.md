@@ -8,6 +8,11 @@ The request IP is hashed with the current UTC date and used only as a rotating
 rate-limit key. The raw address and the hash are not written to D1 or application
 logs.
 
+`COUNTER_START_TOTAL` supplies a presentation-only starting total. On its first
+request after activation, the Worker saves a one-time baseline offset in D1 so the
+public display starts at 30,915. New page views then increment normally. Existing
+page-view rows are never rewritten or deleted.
+
 ## Provision and deploy
 
 1. Install the Worker dependency:

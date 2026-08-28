@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS counter_settings (
+  key TEXT PRIMARY KEY,
+  value INTEGER NOT NULL CHECK (value >= 0),
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
