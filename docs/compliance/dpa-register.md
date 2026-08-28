@@ -8,8 +8,8 @@ privately; do not commit account contracts containing personal information.
 
 | Provider | Public document | Current assessment | Action |
 | --- | --- | --- | --- |
-| Cloudflare | [Customer DPA](https://www.cloudflare.com/cloudflare-customer-dpa/) | Public DPA located; covers Cloudflare services subject to its scope | Verify the account terms incorporate the current DPA and retain the acceptance/version date |
-| Kit | [Kit DPA](https://kit.com/dpa) | Public DPA located | Confirm it applies to the account and retain acceptance/version evidence |
+| Cloudflare | [Customer DPA](https://www.cloudflare.com/cloudflare-customer-dpa/) | Version 6.4, effective 3 April 2026, located; it states that it forms part of the applicable main agreement | Retain private evidence identifying the account agreement and applicable DPA version |
+| Kit | [Kit DPA](https://kit.com/dpa) | Public DPA located; current public subprocessor list reviewed 28 August 2026 and states it was updated 26 May 2026 | Confirm the DPA is incorporated into the account terms and retain private evidence |
 | hCaptcha | [DPA linked from the current terms](https://newassets.hcaptcha.com/dpa/IMI_DPA_4.21.2023.pdf) | Current terms incorporate a DPA and describe hCaptcha as processor/service provider | Retain the applicable terms and DPA version used indirectly through Web3Forms |
 | GitHub | [GitHub DPA](https://github.com/customer-terms/github-data-protection-agreement) | Standard DPA located; applicability can depend on account/contract type | Confirm whether the Pages account/service relationship is covered; document the answer |
 | Google Workspace | [Cloud Data Processing Addendum](https://cloud.google.com/terms/data-processing-addendum) | DPA exists for contracted Google Workspace/Cloud customers | If enquiries use Workspace, retain contract evidence; if they use free personal Gmail, document that the Workspace DPA is not applicable and reassess mailbox choice |

@@ -1,8 +1,7 @@
 (function () {
   "use strict";
 
-  var endpoint =
-    "https://firatbarca-page-counter.firatbarca-page-counter.workers.dev";
+  var endpoint = "https://counter.firatbarca.com";
   var output = document.getElementById("site-pageviews");
   var hasRun = false;
 

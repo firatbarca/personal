@@ -11,9 +11,13 @@ Last reviewed: 28 August 2026
 - [x] Add explicit newsletter consent wording and double-opt-in expectations to both Kit forms.
 - [x] Add Cloudflare Web Analytics to `/mrfiba/`.
 - [x] Connect the public page-view display to the Cloudflare Worker/D1 counter.
+- [x] Attach the counter to the first-party `counter.firatbarca.com` custom domain
+  and verify its D1 binding, origin policy and cookie-free response headers.
 - [x] Keep the tested Supabase implementation as an unconnected fallback.
 - [x] Inventory current external scripts and data processors.
 - [x] Create image-provenance and claim-review records.
+- [x] Resolve and record five exact legacy Pexels image sources without replacing
+  any published image; retain unresolved rows as explicit publication risks.
 - [x] Qualify absolute privacy, accuracy, readiness and forecasting claims on the Solutions page.
 - [x] Add a general information notice to every blog article.
 
@@ -32,8 +36,9 @@ contracts or screenshots containing personal data.
 - [ ] Kit form `9692717`: verify incentive/double opt-in is enabled; test the
   confirmation, consent record and unsubscribe flow.
 - [ ] Kit form `9692610`: perform the same verification for the Mr.Fiba list.
-- [ ] Cloudflare Web Analytics: after deployment, verify that `/mrfiba/` reports
-  page views and that aggregate site counts are increasing.
+- [ ] Cloudflare Web Analytics: after site deployment, verify that `/mrfiba/`
+  reports page views. The site registration and matching beacon token have been
+  verified through the API; the current token does not expose RUM count datasets.
 - [ ] Browser privacy test: in a clean production session, confirm the analytics
   beacon and Worker counter create no cookies and write no local/session storage.
 - [ ] Complete all DPA decisions marked `Action required` in `dpa-register.md`.

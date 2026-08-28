@@ -12,7 +12,7 @@ exist. Store recovery codes offline and never commit them.
 | Web3Forms | [ ] | [ ] | Rotate or replace the form access key if abuse is detected; it is necessarily public in a static form |
 | Kit | [ ] | [ ] | Review administrators, integrations and API keys |
 | Cloudflare | [ ] | [ ] | Keep API tokens scoped to required account/resources; rotate exposed tokens |
-| GitHub | [ ] | [ ] | Review deploy keys, OAuth apps, fine-grained tokens and branch protection |
+| GitHub | [ ] | [ ] | CLI authentication for `firatbarca` was verified 28 August 2026, but the API did not disclose MFA status; verify MFA interactively and review deploy keys, OAuth apps, tokens and branch protection |
 | Google/Gmail | [ ] | [ ] | Review forwarding rules, app passwords, recovery email and active sessions |
 | Supabase | [ ] | [ ] | Service is dormant; review tokens and decide whether continued deployment is justified |
 

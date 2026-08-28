@@ -32,13 +32,13 @@ logs.
    npm run deploy
    ```
 
-5. The website currently uses the deployed `workers.dev` endpoint. A custom
-   domain can be attached later without changing the database or stored counts.
+5. Attach the first-party custom domain `counter.firatbarca.com`. The repository's
+   deployed configuration already declares this domain and the website client uses it.
 
 6. Verify:
 
    ```sh
-   curl https://firatbarca-page-counter.firatbarca-page-counter.workers.dev/count
+   curl https://counter.firatbarca.com/count
    ```
 
 The write endpoint accepts only browser requests whose `Origin` is
