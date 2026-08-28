@@ -8,10 +8,10 @@ The request IP is hashed with the current UTC date and used only as a rotating
 rate-limit key. The raw address and the hash are not written to D1 or application
 logs.
 
-`BASELINE_VIEWS` supplies a presentation-only starting total. The current value is
-30,913, which combines with the two D1 views recorded before activation to start
-the public display at 30,915. New page views continue to increment normally, and
-the underlying D1 records are not rewritten or deleted.
+`BASELINE_VIEWS` supplies a presentation-only starting total. Its deployed value
+was calibrated against the existing aggregate D1 count at activation so the
+public display started at 30,915. New page views continue to increment normally,
+and the underlying D1 records are not rewritten or deleted.
 
 ## Provision and deploy
 
