@@ -51,6 +51,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/blog/style.css" />
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c83b0428a8146f18271b4e51332f02a"}'></script><!-- End Cloudflare Web Analytics -->
+<script defer src="/assets/page-counter.js"></script>
 </head>
 <body>
 
@@ -73,6 +74,8 @@
 
   {{ content | safe }}
 
+  <p class="article-notice"><strong>Information notice:</strong> This article is general commentary, not legal, financial, assurance, or investment advice. Regulations and standards change; verify current requirements with the relevant primary source and a qualified adviser.</p>
+
   <div class="newsletter" aria-labelledby="nl-h-post">
     <p class="lbl">Occasional dispatches</p>
     <h3 id="nl-h-post">New posts, straight to your inbox</h3>
@@ -80,10 +83,10 @@
     <!-- Kit form (id 9692717, uid 48a6952f49) — plain POST, public id only, no API key. -->
     <form action="https://app.kit.com/forms/9692717/subscriptions" method="post" data-sv-form="9692717" data-uid="48a6952f49">
       <label class="vh" for="nl-email-post">Your email address</label>
-      <input id="nl-email-post" name="email_address" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+      <input id="nl-email-post" name="email_address" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder="you@email.com" required>
       <button type="submit">Subscribe</button>
+      <p class="privacy-note">By subscribing, you consent to receive occasional emails from Firat Barca. Confirm the subscription by email, unsubscribe at any time, and see the <a href="/privacy/">privacy notice</a>.</p>
     </form>
-    <p class="fine">No spam · unsubscribe anytime.</p>
   </div>
 
   <hr />
@@ -106,7 +109,7 @@
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
       Back to firatbarca
     </a>
-    <span class="who">Firat Barca · Sustainability &amp; ESG · Ph.D.</span>
+    <span class="who">Firat Barca · <a href="/privacy/">Privacy</a></span>
   </div>
 </article>
 

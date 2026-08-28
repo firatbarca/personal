@@ -19,6 +19,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/blog/style.css">
+<!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"5c83b0428a8146f18271b4e51332f02a"}'></script><!-- End Cloudflare Web Analytics -->
+<script defer src="/assets/page-counter.js"></script>
 <style>
   /* Mr.Fiba link hub — native firatbarca.com editorial theme (tokens from /blog/style.css) */
   .hub{max-width:480px;margin:0 auto;padding:clamp(2rem,6vw,3.4rem) clamp(1.25rem,5vw,1.5rem) 4rem;
@@ -53,6 +55,7 @@
   button[type=submit]:active{transform:translateY(1px);}
   button[type=submit]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
   .fine{font-size:.72rem;color:var(--muted);margin:.1rem 0 0;letter-spacing:.02em;}
+  .privacy-note{font-size:.72rem;color:var(--muted);margin:.1rem 0 0;line-height:1.5;}
 
   .links{display:flex;flex-direction:column;}
   .links .lbl{font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
@@ -104,10 +107,10 @@
     <!-- Kit form "Weekly Ledger" (id 9692610, uid ab77de6999) — plain POST, public id only, no API key. -->
     <form action="https://app.kit.com/forms/9692610/subscriptions" method="post" data-sv-form="9692610" data-uid="ab77de6999">
       <label class="vh" for="email">Your email address</label>
-      <input id="email" name="email_address" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+      <input id="email" name="email_address" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder="you@email.com" required>
       <button type="submit">Send me this week&rsquo;s &rarr;</button>
     </form>
-    <p class="fine">No spam · no hype · unsubscribe anytime.</p>
+    <p class="privacy-note">By subscribing, you consent to receive the Weekly Ledger by email. Confirm by email, unsubscribe at any time, and see the <a href="/privacy/">privacy notice</a>.</p>
   </section>
 
   <nav class="links" aria-label="Follow Mr.Fiba">
@@ -116,8 +119,8 @@
       <span class="body"><span class="p">TikTok</span><span class="h">@mr.fiba</span></span>
       <span class="meta">Primary</span><span class="chev" aria-hidden="true">›</span>
     </a>
-    <a class="row" href="https://www.instagram.com/mr.fiba/" target="_blank" rel="noopener">
-      <span class="body"><span class="p">Instagram</span><span class="h">@mr.fiba</span></span>
+    <a class="row" href="https://www.instagram.com/mr_fiba/" target="_blank" rel="noopener">
+      <span class="body"><span class="p">Instagram</span><span class="h">@mr_fiba</span></span>
       <span class="chev" aria-hidden="true">›</span>
     </a>
     <a class="row" href="https://www.facebook.com/profile.php?id=61591730558778" target="_blank" rel="noopener">
@@ -128,8 +131,8 @@
 
   <footer class="tail">
     <p>Mr.Fiba is Firat Barca — real methods, real numbers.</p>
-    <p>Some links are affiliate links (#affiliate). They never change what gets recommended.</p>
-    <p>© 2026 · <a href="/">firatbarca.com</a></p>
+    <p>Future affiliate links will be marked #affiliate near the link. If you use one, I may earn a commission at no added cost to you. Earnings examples are educational and do not guarantee results.</p>
+    <p>© 2026 · <a href="/">firatbarca.com</a> · <a href="/privacy/">Privacy</a></p>
   </footer>
 </main>
 
