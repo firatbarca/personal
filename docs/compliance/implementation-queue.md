@@ -2,7 +2,7 @@
 
 Last reviewed: 28 August 2026
 
-## Implemented in this branch
+## Implemented and deployed
 
 - [x] Add hCaptcha markup and provider-side token submission to the Web3Forms contact form.
 - [x] Add contact field-length limits, request timeout, rate-limit messaging, safe response parsing and clearer errors.
@@ -13,6 +13,9 @@ Last reviewed: 28 August 2026
 - [x] Connect the public page-view display to the Cloudflare Worker/D1 counter.
 - [x] Attach the counter to the first-party `counter.firatbarca.com` custom domain
   and verify its D1 binding, origin policy and cookie-free response headers.
+- [x] Verify the deployed homepage, privacy page, Mr.Fiba page and counter client
+  return HTTP 200 without `Set-Cookie`; verify one production counter write from
+  an allowed origin and rejection of a foreign origin.
 - [x] Keep the tested Supabase implementation as an unconnected fallback.
 - [x] Inventory current external scripts and data processors.
 - [x] Create image-provenance and claim-review records.
