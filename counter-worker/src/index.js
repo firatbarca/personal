@@ -73,6 +73,11 @@ function responseHeaders(origin, env, cacheControl = "no-store") {
   return headers;
 }
 
+function baselineViews(env) {
+  const value = Number.parseInt(String(env.BASELINE_VIEWS || "0"), 10);
+  return Number.isSafeInteger(value) && value >= 0 ? value : 0;
+}
+
 function json(data, status, origin, env, cacheControl) {
   return new Response(JSON.stringify(data), {
     status,
@@ -85,7 +90,7 @@ async function readTotal(env) {
     "SELECT COALESCE(SUM(views), 0) AS total FROM page_views"
   ).first();
 
-  return Number(row?.total || 0);
+  return Number(row?.total || 0) + baselineViews(env);
 }
 
 async function recordView(path, env) {
@@ -105,7 +110,7 @@ async function recordView(path, env) {
 
   return {
     pathViews: Number(results[0]?.results?.[0]?.views || 0),
-    total: Number(results[1]?.results?.[0]?.total || 0),
+    total: Number(results[1]?.results?.[0]?.total || 0) + baselineViews(env),
   };
 }
 

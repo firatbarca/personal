@@ -11,7 +11,8 @@
     }
   ],
   "vars": {
-    "ALLOWED_ORIGINS": "https://firatbarca.com,https://www.firatbarca.com"
+    "ALLOWED_ORIGINS": "https://firatbarca.com,https://www.firatbarca.com",
+    "BASELINE_VIEWS": "30913"
   },
   "d1_databases": [
     {

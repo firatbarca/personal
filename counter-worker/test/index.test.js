@@ -152,3 +152,14 @@ test("returns the public aggregate", async () => {
   assert.equal(response.status, 200);
   assert.deepEqual(await response.json(), { total: 1 });
 });
+
+test("adds a configured baseline without altering stored page views", async () => {
+  const env = environment();
+  env.BASELINE_VIEWS = "30913";
+
+  const recorded = await worker.fetch(pageViewRequest(), env);
+  const body = await recorded.json();
+
+  assert.equal(body.total, 30914);
+  assert.equal(env.COUNTER_DB.total(), 1);
+});
