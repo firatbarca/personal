@@ -1,0 +1,5 @@
+project_id = "rsbtdsqkxyyqvgrrmtrb"
+
+[functions.page-counter]
+verify_jwt = false
+entrypoint = "./functions/page-counter/index.js"

@@ -1,5 +1,12 @@
 .DS_Store
 node_modules/
+node_modules
 _site/
 .playwright-mcp/
 .claude/worktrees/
+supabase/.temp/
+
+# Local secrets: API keys for image fetching etc. Never commit.
+keys.env
+*.env
+.env

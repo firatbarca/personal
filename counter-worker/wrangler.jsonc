@@ -1,0 +1,34 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "firatbarca-page-counter",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-27",
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "counter.firatbarca.com",
+      "custom_domain": true
+    }
+  ],
+  "vars": {
+    "ALLOWED_ORIGINS": "https://firatbarca.com,https://www.firatbarca.com"
+  },
+  "d1_databases": [
+    {
+      "binding": "COUNTER_DB",
+      "database_name": "firatbarca-page-counter",
+      "database_id": "a08f1529-e5b5-4bb0-83c1-238a4f5a2fb4",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "ratelimits": [
+    {
+      "name": "PAGE_VIEW_LIMITER",
+      "namespace_id": "73921001",
+      "simple": {
+        "limit": 10,
+        "period": 60
+      }
+    }
+  ]
+}

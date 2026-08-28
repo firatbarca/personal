@@ -34,6 +34,7 @@ permalink: /blog/index.html
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/blog/style.css" />
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c83b0428a8146f18271b4e51332f02a"}'></script><!-- End Cloudflare Web Analytics -->
+<script defer src="/assets/page-counter.js"></script>
 <style>
   .listing{max-width:1000px;margin:0 auto;padding:clamp(2.5rem,6vw,4.5rem) clamp(1.25rem,5vw,2rem) 5rem;}
   .listing .head{margin-bottom:1rem;}
@@ -68,10 +69,10 @@ permalink: /blog/index.html
     <!-- Kit form (id 9692717, uid 48a6952f49) — plain POST, public id only, no API key. -->
     <form action="https://app.kit.com/forms/9692717/subscriptions" method="post" data-sv-form="9692717" data-uid="48a6952f49">
       <label class="vh" for="nl-email-blog">Your email address</label>
-      <input id="nl-email-blog" name="email_address" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+      <input id="nl-email-blog" name="email_address" type="email" inputmode="email" autocomplete="email" maxlength="254" placeholder="you@email.com" required>
       <button type="submit">Subscribe</button>
+      <p class="privacy-note">By subscribing, you consent to receive occasional emails from Firat Barca. Confirm the subscription by email, unsubscribe at any time, and see the <a href="/privacy/">privacy notice</a>.</p>
     </form>
-    <p class="fine">No spam · unsubscribe anytime.</p>
   </div>
 
   <div class="note-grid">
@@ -91,6 +92,11 @@ permalink: /blog/index.html
     <a href="/index.html#contact">Have a topic you'd like me to cover? Get in touch →</a>
   </div>
 </main>
+
+<footer class="legal-foot">
+  <p>© 2026 Firat Barca</p>
+  <nav aria-label="Legal"><a href="/">Home</a><a href="/privacy/">Privacy</a></nav>
+</footer>
 
 </body>
 </html>

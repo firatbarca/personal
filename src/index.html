@@ -35,6 +35,7 @@
 </script>
 
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5c83b0428a8146f18271b4e51332f02a"}'></script><!-- End Cloudflare Web Analytics -->
+<script defer src="/assets/page-counter.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -232,6 +233,9 @@
   .cform .note{font-size:.8rem;color:rgba(239,235,227,.5);margin:0;}
   .cform .note.ok{color:#9fd3b0;}
   .cform .note.err{color:#f0a982;}
+  .cform .privacy-note{font-size:.76rem;color:rgba(239,235,227,.62);margin:0;line-height:1.55;max-width:68ch;}
+  .cform .privacy-note a{color:var(--paper);text-decoration:underline;text-underline-offset:2px;}
+  .cform .h-captcha{min-height:78px;}
   .f-side-lead{color:rgba(239,235,227,.7);font-size:.95rem;margin:0 0 1rem;}
   .f-build{margin:1.8rem 0 0;padding-top:1.4rem;border-top:1px solid rgba(239,235,227,.14);color:rgba(239,235,227,.62);font-size:.9rem;line-height:1.6;}
   .f-build a{color:var(--accent);font-weight:600;}
@@ -714,18 +718,20 @@
       <div class="cform-col">
       <form class="cform" id="cform" novalidate>
         <div class="row">
-          <div><label for="cf-name">Name/Organization <span class="req">*</span></label><input id="cf-name" type="text" autocomplete="name" required></div>
-          <div><label for="cf-email">Email <span class="req">*</span></label><input id="cf-email" type="email" autocomplete="email" required></div>
+          <div><label for="cf-name">Name/Organization <span class="req">*</span></label><input id="cf-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="100" required></div>
+          <div><label for="cf-email">Email <span class="req">*</span></label><input id="cf-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
         </div>
-        <div><label for="cf-message">Message <span class="req">*</span></label><textarea id="cf-message" required></textarea></div>
+        <div><label for="cf-message">Message <span class="req">*</span></label><textarea id="cf-message" name="message" minlength="10" maxlength="5000" required></textarea></div>
         <!-- honeypot: invisible to people, bots tend to fill it -->
         <input class="hp" type="text" id="cf-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="human">
           <label for="cf-human">Quick check: <span id="cq"></span></label>
-          <input id="cf-human" type="text" inputmode="numeric" autocomplete="off" required>
+          <input id="cf-human" type="text" inputmode="numeric" autocomplete="off" maxlength="2" required>
         </div>
+        <div class="h-captcha" data-captcha="true" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2" data-theme="dark"></div>
         <button type="submit">Send message</button>
-        <p class="note" id="cmsg">Protected by a simple human check &amp; spam trap. Nothing is sent until you submit.</p>
+        <p class="note" id="cmsg" role="status" aria-live="polite">Protected by hCaptcha, a simple human check, and a spam trap. Nothing is sent until you submit.</p>
+        <p class="privacy-note">I use your details only to respond to this enquiry. Submitting does not create a consultant-client relationship. Do not include sensitive or confidential information. See the <a href="/privacy/">privacy notice</a>.</p>
       </form>
       <div class="cform-done" id="cform-done" hidden>
         <div class="cform-done-icon">✓</div>
@@ -747,11 +753,13 @@
 
     <div class="f-bottom">
       <span>© <span id="year"></span> Firat Barca</span>
-      <span>Sustainability &amp; ESG · Ph.D. Political Science</span>
+      <span id="site-pageviews" hidden aria-live="polite"></span>
+      <span>Sustainability &amp; ESG · <a href="/privacy/" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Privacy</a></span>
     </div>
   </div>
 </footer>
 
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
   const topnav = document.getElementById('topnav');
@@ -797,10 +805,9 @@
   }, {rootMargin:'-45% 0px -50% 0px'});
   document.querySelectorAll('section[id], footer[id]').forEach(s => spy.observe(s));
 
-  // Contact form — spam trap (honeypot) + math human-check + email validation.
-  // Delivery via Web3Forms: set W3F_KEY to your free access key from https://web3forms.com
-  // (sign up with firatbarca@gmail.com so messages land in that inbox).
-  // Until a real key is set, it safely falls back to opening the visitor's mail app.
+  // Contact form — hCaptcha + spam trap + math human-check + bounded fields.
+  // The Web3Forms access key is a public form identifier in this static page;
+  // hCaptcha activation and allowed-domain restriction are provider controls.
   (function(){
     const form = document.getElementById('cform'); if(!form) return;
     const q = document.getElementById('cq'), msg = document.getElementById('cmsg');
@@ -808,6 +815,7 @@
     const btn = form.querySelector('button[type="submit"]');
     const W3F_KEY = '7fa191dd-d034-4320-a8bc-12d103fc6db1';
     const emailOk = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    const resetCaptcha = () => { if (window.hcaptcha && typeof window.hcaptcha.reset === 'function') window.hcaptcha.reset(); };
     let a = 0, b = 0;
     const newQ = () => { a = 2 + Math.floor(Math.random()*7); b = 1 + Math.floor(Math.random()*8); q.textContent = 'what is ' + a + ' + ' + b + '?'; };
     newQ();
@@ -818,8 +826,8 @@
     }
     const again = document.getElementById('cform-again');
     if (again) again.addEventListener('click', () => {
-      done.hidden = true; form.style.display = ''; form.reset(); newQ();
-      msg.className='note'; msg.textContent='Protected by a simple human check & spam trap. Nothing is sent until you submit.';
+      done.hidden = true; form.style.display = ''; form.reset(); resetCaptcha(); newQ();
+      msg.className='note'; msg.textContent='Protected by hCaptcha, a simple human check, and a spam trap. Nothing is sent until you submit.';
     });
     form.addEventListener('submit', async function(e){
       e.preventDefault();
@@ -828,11 +836,17 @@
       const email = document.getElementById('cf-email').value.trim();
       const message = document.getElementById('cf-message').value.trim();
       const human = parseInt(document.getElementById('cf-human').value, 10);
+      const captchaField = form.querySelector('textarea[name="h-captcha-response"]');
+      const captchaToken = captchaField ? captchaField.value.trim() : '';
       if (!name || !email || !message){ msg.className='note err'; msg.textContent='Please complete Name/Organization, Email, and Message.'; return; }
+      if (name.length < 2 || name.length > 100){ msg.className='note err'; msg.textContent='Name/Organization must be between 2 and 100 characters.'; return; }
       if (!emailOk(email)){ msg.className='note err'; msg.textContent='Please enter a valid email, e.g. name@mail.com'; return; }
+      if (email.length > 254){ msg.className='note err'; msg.textContent='Please enter an email address no longer than 254 characters.'; return; }
+      if (message.length < 10 || message.length > 5000){ msg.className='note err'; msg.textContent='Message must be between 10 and 5,000 characters.'; return; }
       if (human !== a + b){ msg.className='note err'; msg.textContent='Human check failed; please try the sum again.'; newQ(); document.getElementById('cf-human').value=''; return; }
+      if (!captchaToken){ msg.className='note err'; msg.textContent='Please complete the hCaptcha check before sending.'; return; }
 
-      // Fallback when no key is configured yet → opens the visitor's email app
+      // Development fallback when no form identifier is configured.
       if (!W3F_KEY || W3F_KEY.indexOf('YOUR_') === 0){
         const subject = encodeURIComponent('Website contact: ' + name);
         const body = encodeURIComponent(message + '\n\n' + name + ' (' + email + ')');
@@ -843,16 +857,29 @@
       // Real delivery → arrives directly in your inbox
       const old = btn.textContent; btn.disabled = true; btn.textContent = 'Sending…';
       msg.className='note'; msg.textContent='Sending your message…';
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 12000);
       try{
         const res = await fetch('https://api.web3forms.com/submit', {
-          method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-          body: JSON.stringify({ access_key:W3F_KEY, subject:'Website contact: '+name, from_name:name, name:name, email:email, message:message })
+          method:'POST',
+          headers:{'Content-Type':'application/json','Accept':'application/json'},
+          credentials:'omit',
+          signal:controller.signal,
+          body: JSON.stringify({ access_key:W3F_KEY, subject:'Website contact: '+name, from_name:name, name:name, email:email, message:message, 'h-captcha-response':captchaToken })
         });
-        const data = await res.json();
-        if (data.success){ showDone(name); }
-        else { msg.className='note err'; msg.textContent='Sorry, something went wrong; please email me directly at firatbarca[at]gmail.com.'; }
-      }catch(err){ msg.className='note err'; msg.textContent='Network error; please email me directly at firatbarca[at]gmail.com.'; }
-      finally{ btn.disabled = false; btn.textContent = old; }
+        let data = null;
+        try { data = await res.json(); } catch (parseError) { data = null; }
+        if (res.ok && data && data.success){ showDone(name); }
+        else if (res.status === 429){ msg.className='note err'; msg.textContent='Too many attempts were received. Please wait and try again later, or email me directly.'; resetCaptcha(); }
+        else { msg.className='note err'; msg.textContent='The message could not be sent. Please retry once, or email me directly at firatbarca[at]gmail.com.'; resetCaptcha(); }
+      }catch(err){
+        msg.className='note err';
+        msg.textContent = err && err.name === 'AbortError'
+          ? 'Sending took too long. Please check your connection and try once more.'
+          : 'Network error. Please retry once, or email me directly at firatbarca[at]gmail.com.';
+        resetCaptcha();
+      }
+      finally{ window.clearTimeout(timeout); btn.disabled = false; btn.textContent = old; }
     });
   })();
 </script>
