@@ -16,7 +16,7 @@ Last reviewed: 28 August 2026
 - [x] Keep the tested Supabase implementation as an unconnected fallback.
 - [x] Inventory current external scripts and data processors.
 - [x] Create image-provenance and claim-review records.
-- [x] Resolve and record five exact legacy Pexels image sources without replacing
+- [x] Resolve and record four exact legacy Pexels image sources without replacing
   any published image; retain unresolved rows as explicit publication risks.
 - [x] Qualify absolute privacy, accuracy, readiness and forecasting claims on the Solutions page.
 - [x] Add a general information notice to every blog article.

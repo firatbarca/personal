@@ -20,7 +20,6 @@ unaltered copies).
 | --- | --- | --- | --- |
 | `src/assets/solutions/daily-diary.jpg` | [1166636](https://www.pexels.com/photo/white-and-teal-notebook-1166636/) | Chimene Gaspar | Exact source verified |
 | `src/assets/solutions/green-certificate-manager.jpg` | [34293529](https://www.pexels.com/photo/colorful-office-binders-in-storage-shelf-34293529/) | Zulfugar Karimov | Exact source verified |
-| `src/assets/blog/political-scientist-reads-a-standard.jpg` | [31139000](https://www.pexels.com/photo/modern-library-archive-storage-room-with-compact-shelving-31139000/) | Eric Lozaga | Exact source verified |
 | `src/assets/blog/reading-a-sustainability-report-sceptically.jpg` | [7887850](https://www.pexels.com/photo/smartphone-displaying-a-stock-market-chart-lying-on-documents-next-to-a-laptop-on-the-desk-7887850/) | Leeloo The First | Exact source verified |
 | `src/assets/blog/the-95-percent-rule.jpg` | [12234106](https://www.pexels.com/photo/close-up-shot-of-a-person-doing-a-checklist-12234106/) | Daniel Andraski | Exact source verified |
 
@@ -58,6 +57,7 @@ missing** (the five verified blog records above are excluded):
 `how-to-restate-a-sustainability-figure.jpg`,
 `limited-assurance-ai-disclosures.jpg`, `logistics-scope-3.jpg`,
 `omnibus-raised-threshold-not-ambition.jpg`, `out-of-scope-not-out-of-question.jpg`,
+`political-scientist-reads-a-standard.jpg`,
 `reporting-boundary-acquisitions.jpg`, `spend-based-estimate-deadline.jpg`,
 `the-question-that-survives-every-framework.jpg`,
 `who-audits-the-esg-raters.jpg`, and `working-with-your-assurance-provider.jpg`.
