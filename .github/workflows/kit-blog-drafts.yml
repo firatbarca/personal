@@ -1,0 +1,32 @@
+name: Create Kit draft for new blog posts
+
+on:
+  workflow_run:
+    workflows: ["Build & deploy site"]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kit-blog-drafts
+  cancel-in-progress: false
+
+jobs:
+  create-drafts:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Create deduplicated Kit drafts
+        run: node scripts/kit-blog-drafts.mjs
+        env:
+          KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
+          KIT_FORM_ID: "9692717"
+          KIT_TAG_NAME: "Firat Barca blog subscribers"
+          KIT_NOTIFY_AFTER: "2026-08-29T00:00:00Z"
+          BLOG_FEED_URL: "https://firatbarca.com/feed.xml"
