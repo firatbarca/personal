@@ -63,7 +63,11 @@ export function markerFor(entry) {
   return `firatbarca-feed:${entry.id || entry.url}`;
 }
 
-export function broadcastPayload(entry, tagId) {
+export function scheduledSendAt(now, index, delayMinutes) {
+  return new Date(now.getTime() + (delayMinutes * 60_000) + (index * 60_000)).toISOString();
+}
+
+export function broadcastPayload(entry, tagId, sendAt) {
   const title = escapeHtml(entry.title);
   const summary = escapeHtml(entry.summary);
   const url = escapeHtml(entry.url);
@@ -75,7 +79,7 @@ export function broadcastPayload(entry, tagId) {
     content: `<p>New on Firat Barca:</p><h1><a href="${url}">${title}</a></h1><p>${summary}</p><p><a href="${url}">Read the full post →</a></p>`,
     public: false,
     published_at: entry.updated,
-    send_at: null,
+    send_at: sendAt,
     subscriber_filter: [{
       all: [{ type: "tag", ids: [tagId] }],
       any: null,
@@ -151,8 +155,12 @@ async function main() {
   const formId = Number.parseInt(process.env.KIT_FORM_ID || "9692717", 10);
   const tagName = process.env.KIT_TAG_NAME || "Firat Barca blog subscribers";
   const cutoff = process.env.KIT_NOTIFY_AFTER || "2026-08-29T00:00:00Z";
+  const delayMinutes = Number.parseInt(process.env.KIT_SEND_DELAY_MINUTES || "10", 10);
 
   if (!Number.isSafeInteger(formId) || formId <= 0) throw new Error("KIT_FORM_ID is invalid");
+  if (!Number.isSafeInteger(delayMinutes) || delayMinutes < 1 || delayMinutes > 60) {
+    throw new Error("KIT_SEND_DELAY_MINUTES must be an integer from 1 to 60");
+  }
 
   const feedResponse = await fetch(feedUrl, { headers: { Accept: "application/atom+xml, application/xml" } });
   if (!feedResponse.ok) throw new Error(`Unable to read blog feed: HTTP ${feedResponse.status}`);
@@ -163,15 +171,17 @@ async function main() {
   const existingMarkers = new Set(broadcasts.map((broadcast) => broadcast.description).filter(Boolean));
   const pending = entries.filter((entry) => !existingMarkers.has(markerFor(entry)));
 
-  for (const entry of pending) {
+  const scheduleBase = new Date();
+  for (const [index, entry] of pending.entries()) {
+    const sendAt = scheduledSendAt(scheduleBase, index, delayMinutes);
     await apiRequest("/broadcasts", {
       method: "POST",
-      body: JSON.stringify(broadcastPayload(entry, tagId)),
+      body: JSON.stringify(broadcastPayload(entry, tagId, sendAt)),
     });
-    console.log(`Created Kit draft for: ${entry.title}`);
+    console.log(`Scheduled Kit broadcast for: ${entry.title} at ${sendAt}`);
   }
 
-  if (!pending.length) console.log("No new published posts require a Kit draft.");
+  if (!pending.length) console.log("No new published posts require a Kit broadcast.");
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {

@@ -1,4 +1,4 @@
-name: Create Kit draft for new blog posts
+name: Email new blog posts through Kit
 
 on:
   workflow_run:
@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  create-drafts:
+  schedule-broadcasts:
     if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
@@ -22,11 +22,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
-      - name: Create deduplicated Kit drafts
+      - name: Schedule deduplicated Kit broadcasts
         run: node scripts/kit-blog-drafts.mjs
         env:
           KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
           KIT_FORM_ID: "9692717"
           KIT_TAG_NAME: "Firat Barca blog subscribers"
           KIT_NOTIFY_AFTER: "2026-08-29T00:00:00Z"
+          KIT_SEND_DELAY_MINUTES: "10"
           BLOG_FEED_URL: "https://firatbarca.com/feed.xml"
