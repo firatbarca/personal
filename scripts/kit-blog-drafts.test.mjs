@@ -6,6 +6,7 @@ import {
   eligibleEntries,
   markerFor,
   parseAtomEntries,
+  scheduledSendAt,
 } from "./kit-blog-drafts.mjs";
 
 const feed = `<?xml version="1.0"?>
@@ -38,12 +39,13 @@ test("selects only future firatbarca blog entries", () => {
   assert.equal(eligibleEntries(parsed, "2026-08-31T00:00:00Z").length, 0);
 });
 
-test("creates a draft targeted only to the blog tag", () => {
+test("creates a scheduled broadcast targeted only to the blog tag", () => {
   const entry = parseAtomEntries(feed)[0];
-  const payload = broadcastPayload(entry, 42);
+  const sendAt = "2026-08-30T10:10:00.000Z";
+  const payload = broadcastPayload(entry, 42, sendAt);
 
   assert.equal(payload.public, false);
-  assert.equal(payload.send_at, null);
+  assert.equal(payload.send_at, sendAt);
   assert.equal(payload.description, markerFor(entry));
   assert.deepEqual(payload.subscriber_filter, [{
     all: [{ type: "tag", ids: [42] }],
@@ -51,4 +53,10 @@ test("creates a draft targeted only to the blog tag", () => {
     none: null,
   }]);
   assert.match(payload.content, /Useful &lt;notes&gt; and &#39;context&#39;\./);
+});
+
+test("delays and staggers automatic delivery", () => {
+  const now = new Date("2026-08-30T10:00:00.000Z");
+  assert.equal(scheduledSendAt(now, 0, 10), "2026-08-30T10:10:00.000Z");
+  assert.equal(scheduledSendAt(now, 1, 10), "2026-08-30T10:11:00.000Z");
 });
