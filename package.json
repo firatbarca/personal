@@ -5,7 +5,8 @@
   "description": "Firat Barca personal website (Eleventy static build + Pages CMS)",
   "scripts": {
     "build": "eleventy",
-    "serve": "eleventy --serve"
+    "serve": "eleventy --serve",
+    "test:kit": "node --test scripts/kit-blog-drafts.test.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"

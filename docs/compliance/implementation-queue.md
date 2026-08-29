@@ -9,6 +9,8 @@ Last reviewed: 28 August 2026
 - [x] Add a complete `/privacy/` notice and include it in the sitemap.
 - [x] Link the privacy notice from every existing footer and every form.
 - [x] Add explicit newsletter consent wording and double-opt-in expectations to both Kit forms.
+- [x] Add a deduplicated GitHub workflow that creates review-only Kit drafts for
+  future blog posts and targets only subscribers from form `9692717`.
 - [x] Add Cloudflare Web Analytics to `/mrfiba/`.
 - [x] Connect the public page-view display to the Cloudflare Worker/D1 counter.
 - [x] Attach the counter to the first-party `counter.firatbarca.com` custom domain
