@@ -1,12 +1,12 @@
 ---
 title: "The Omnibus Raised the Threshold, Not the Ambition"
-date: 2026-08-14T09:00
+date: 2026-08-31T09:00
 tag: ESG
 summary: "Fewer companies now fall inside CSRD, and the reporting standards have
   been cut back substantially. Neither change alters why the data was worth
   collecting in the first place."
 cover: /assets/blog/omnibus-raised-threshold-not-ambition.jpg
-draft: true
+draft: false
 ---
 The Omnibus package is no longer a proposal to track. It is law, and the implementation clock is running.
 
