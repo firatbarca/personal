@@ -1,0 +1,36 @@
+/* Reuse each card's identity without changing the source artwork. */
+.product-page .product-identity { display: flex; align-items: center; gap: 1rem; }
+.product-page .product-identity .eyebrow { min-width: 0; }
+.product-page .identity-icon { display: grid; place-items: center; flex: 0 0 72px; width: 72px; height: 72px; border: 1px solid var(--line); border-radius: 50%; background: var(--card); }
+.product-page .identity-icon img { display: block; width: 58px; height: 58px; object-fit: contain; }
+.product-page .product-symbol { font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif; font-size: 2.2rem; line-height: 1; }
+.product-page .product-seal { position: absolute; top: 1.75rem; left: 1.75rem; z-index: 2; width: 156px; height: 156px; display: grid; place-items: center; isolation: isolate; pointer-events: none; }
+.product-page .product-seal::before { content: ''; position: absolute; inset: 10px; border-radius: 50%; background: #f8f5eff0; box-shadow: 0 12px 32px #0003; z-index: -1; }
+.product-page .product-seal img { display: block; width: 118px; height: 118px; object-fit: contain; transform: rotate(-6deg); }
+.product-page .seal-orbit { position: absolute; inset: 0; border: 1px solid #f8f5ef90; border-radius: 50%; }
+.product-page .seal-orbit::after { content: ''; position: absolute; inset: -7px; border: 1px dashed #f8f5ef60; border-radius: 50%; }
+.product-page .product-seal .product-symbol { font-size: 4.2rem; transform: rotate(-8deg); }
+.product-page.product-terra .product-seal img { transform: none; }
+.product-page.product-green .product-seal .product-symbol { text-shadow: 0 8px 14px #203b3033; }
+.product-page.product-websites .website-example-copy .product-seal { position: relative; top: auto; left: auto; width: 132px; height: 132px; margin: .5rem 0 2rem; }
+.product-page.product-websites .product-seal .product-symbol { font-size: 3.7rem; }
+@media (max-width: 1000px) {
+  .product-page .product-seal { width: 124px; height: 124px; top: 1.25rem; left: 1.25rem; }
+  .product-page .product-seal img { width: 94px; height: 94px; }
+  .product-page .product-seal .product-symbol { font-size: 3.4rem; }
+}
+@media (max-width: 750px) {
+  .product-page .product-identity { gap: .8rem; }
+  .product-page .identity-icon { flex-basis: 60px; width: 60px; height: 60px; }
+  .product-page .identity-icon img { width: 48px; height: 48px; }
+  .product-page .identity-icon .product-symbol { font-size: 1.9rem; }
+  .product-page .operations-photo, .product-page.product-pantomime .studio-photo { min-height: 370px; }
+  .product-page .register-stage { padding-top: 370px; }
+  .product-page .register-stage > .hero-photo { height: 450px; }
+  .product-page .register-stage .image-title { top: 190px; }
+  .product-page .register-stage::before { background: linear-gradient(180deg, #0c221766, #0c2217cc 370px, transparent 450px); }
+}
+@media (forced-colors: active) {
+  .product-page .identity-icon, .product-page .seal-orbit { border-color: CanvasText; }
+  .product-page .product-seal::before { background: Canvas; }
+}
