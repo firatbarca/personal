@@ -1,6 +1,6 @@
 ---
 title: "CSRD: Terminology, Scope, and Changes"
-date: 2026-09-01T09:00
+date: 2026-09-08T09:00
 tag: ESG Regulation
 summary: "A practical guide to the CSRD’s revised scope, double materiality, ESRS reporting, value-chain information and assurance."
 cover: /assets/blog/csrd-who-reports-what-changes.jpg
@@ -10,7 +10,7 @@ The Corporate Sustainability Reporting Directive, usually shortened to **CSRD**,
 
 That distinction is the easiest way to understand the system: the CSRD establishes who must report and the core legal obligations around the report; ESRS establishes the detailed information the report must contain and how that information is prepared.
 
-The rules have changed materially since the CSRD was adopted in 2022. The Omnibus I amending Directive entered into force on 18 March 2026 and narrowed the future scope. As at 1 September 2026, companies therefore need to check the amended legislation and its national transposition rather than rely on an old CSRD scope chart.
+The rules have changed materially since the CSRD was adopted in 2022. The Omnibus I amending Directive entered into force on 18 March 2026 and narrowed the future scope. Companies, therefore, need to check the amended legislation and its national transposition rather than rely on an old CSRD scope chart.
 
 
 ## The essential terminology
