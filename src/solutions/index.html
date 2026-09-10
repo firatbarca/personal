@@ -41,34 +41,13 @@
   .sol-cover{aspect-ratio:16/10;background-size:cover;background-position:center;position:relative;display:flex;align-items:flex-start;padding:.85rem;}
   .sol-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,25,22,.04),rgba(27,25,22,.34));}
   .sol-cover .emoji{position:relative;z-index:1;font-size:1.4rem;background:rgba(255,255,255,.94);width:2.5rem;height:2.5rem;border-radius:50%;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.22);}
-  .sol-cover .emoji.icon-img,.m-emoji.icon-img{object-fit:contain;}
+  .sol-cover .emoji.icon-img{object-fit:contain;}
   .sol-cover .emoji.icon-img{padding:.3rem;box-sizing:border-box;}
-  .m-emoji.icon-img{width:2.75rem;height:2.75rem;}
   .sol-cbody{display:flex;flex-direction:column;flex:1;padding:1.3rem 1.4rem 1.4rem;}
   .sol-cbody .t{font-family:'Fraunces',serif;font-weight:600;font-size:1.18rem;color:var(--ink);display:block;margin-bottom:.4rem;}
   .sol-cbody .d{color:var(--soft);font-size:.92rem;display:block;flex:1;margin-bottom:1rem;}
   .sol-cbody .more{font-size:.85rem;font-weight:600;color:var(--accent);}
 
-  /* modal */
-  .modal-overlay{position:fixed;inset:0;background:rgba(20,18,16,.55);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:1.5rem;z-index:1000;}
-  .modal-overlay.open{display:flex;}
-  .modal{background:var(--paper);max-width:640px;width:100%;max-height:88vh;overflow:auto;border:1px solid var(--line-2);box-shadow:0 30px 80px rgba(0,0,0,.45);position:relative;}
-  .m-cover{aspect-ratio:21/9;background-size:cover;background-position:center;}
-  .m-close{position:absolute;top:.7rem;right:.7rem;z-index:2;background:rgba(255,255,255,.94);border:1px solid var(--line);width:2.3rem;height:2.3rem;border-radius:50%;font-size:1rem;cursor:pointer;display:grid;place-items:center;color:var(--ink);}
-  .m-close:hover{background:#fff;border-color:var(--accent);}
-  .m-body{padding:1.7rem clamp(1.4rem,4vw,2.4rem) 2rem;}
-  .m-body .m-emoji{font-size:2rem;line-height:1;}
-  .m-body h2{font-size:1.6rem;color:var(--ink);margin:.6rem 0 .3rem;}
-  .m-body .m-tag{font-family:'Fraunces',serif;font-style:italic;color:var(--accent);font-size:1.05rem;margin:0 0 1rem;}
-  .m-body p{color:var(--soft);font-size:.97rem;}
-  .m-body h3{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin:1.4rem 0 .6rem;}
-  .m-body ul{list-style:none;margin:0 0 1rem;padding:0;}
-  .m-body li{position:relative;padding-left:1.4rem;color:var(--soft);font-size:.93rem;margin:.45rem 0;}
-  .m-body li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700;}
-  .m-best{color:var(--muted);font-size:.92rem;}
-  .m-best strong{color:var(--ink);}
-  .m-foot{margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:1.4rem;}
-  .m-foot a{font-weight:600;color:var(--accent);font-size:.92rem;}
   @media (max-width:480px){.sol-grid{grid-template-columns:1fr;}}
 </style>
 </head>
@@ -111,53 +90,23 @@
       </span>
     </a>
 
-    <button class="sol-card" type="button" data-cover="../assets/solutions/unicorn-writing-assistant.jpg">
+    <a class="sol-card" href="./unicorn-writing-assistant/">
       <span class="sol-cover" style="background-image:url('../assets/solutions/unicorn-writing-assistant.jpg'),linear-gradient(135deg,#b56a43,#7c3f24)"><img class="emoji icon-img" src="../assets/solutions/icon-unicorn-writing-assistant.png" alt="" /></span>
       <span class="sol-cbody">
         <span class="t">Unicorn Writing Assistant</span>
         <span class="d">A local-first writing partner grounded in your own source documents.</span>
         <span class="more">View details →</span>
       </span>
-      <div class="sol-full" hidden>
-        <img class="m-emoji icon-img" src="../assets/solutions/icon-unicorn-writing-assistant.png" alt="" />
-        <h2>Unicorn Writing Assistant</h2>
-        <p class="m-tag">A local-first writing partner grounded in your own source documents.</p>
-        <p>An AI writing assistant designed to run on your own machine with a compatible local model. It reads your documents (PDF, TXT, MD), retrieves passages relevant to what you're writing, and uses those passages to ground its drafts. AI output can still be incomplete or wrong and should be reviewed.</p>
-        <h3>What it does for you day to day</h3>
-        <ul>
-          <li>Draft reports, briefs, and emails that stay factually anchored to your documents</li>
-          <li>Catches "style drift" so your writing stays consistently on-brand</li>
-          <li>Designed to flag when it cannot find supporting source material</li>
-          <li>Can work offline when configured with compatible local models</li>
-        </ul>
-        <p class="m-best"><strong>Best for:</strong> professionals who want source-grounded AI assistance and can validate that their chosen local setup meets their confidentiality requirements.</p>
-        <div class="m-foot"><a href="../index.html#contact">Get in touch →</a></div>
-      </div>
-    </button>
+    </a>
 
-    <button class="sol-card" type="button" data-cover="../assets/solutions/fiba-unfiltered.jpg">
+    <a class="sol-card" href="./fiba-unfiltered/">
       <span class="sol-cover" style="background-image:url('../assets/solutions/fiba-unfiltered.jpg'),linear-gradient(135deg,#5e564c,#2f2a24)"><img class="emoji icon-img" src="../assets/solutions/icon-fiba-unfiltered.png" alt="" /></span>
       <span class="sol-cbody">
         <span class="t">Fiba Unfiltered</span>
-        <span class="d">A sleek, private desktop AI chat, powered entirely by local models.</span>
+        <span class="d">A native macOS chat workspace for your compatible local models.</span>
         <span class="more">View details →</span>
       </span>
-      <div class="sol-full" hidden>
-        <img class="m-emoji icon-img" src="../assets/solutions/icon-fiba-unfiltered.png" alt="" />
-        <h2>Fiba Unfiltered</h2>
-        <p class="m-tag">A sleek, private desktop AI chat, powered entirely by local models.</p>
-        <p>A native macOS chat client with a sci-fi, alien-themed interface that talks to your local models. Streaming replies, persistent history, file attachments, and a fully configurable system prompt, all running on your own hardware.</p>
-        <h3>What it does for you day to day</h3>
-        <ul>
-          <li>A fast, beautiful chat experience with no cloud and no censorship of your own data</li>
-          <li>Attach files and chat about them locally</li>
-          <li>Keep a searchable history of every conversation</li>
-          <li>Tune the assistant's personality with a custom system prompt</li>
-        </ul>
-        <p class="m-best"><strong>Best for:</strong> anyone who wants a polished AI chat app that can run offline with compatible local models. Privacy depends on the selected model and configuration.</p>
-        <div class="m-foot"><a href="../index.html#contact">Get in touch →</a></div>
-      </div>
-    </button>
+    </a>
 
     <a class="sol-card" href="./green-certificate-manager/">
       <span class="sol-cover" style="background-image:url('../assets/solutions/green-certificate-manager.jpg'),linear-gradient(135deg,#7d7a52,#4f4a33)"><span class="emoji">🟢</span></span>
@@ -168,28 +117,14 @@
       </span>
     </a>
 
-    <button class="sol-card" type="button" data-cover="../assets/solutions/daily-diary.jpg">
+    <a class="sol-card" href="./daily-diary/">
       <span class="sol-cover" style="background-image:url('../assets/solutions/daily-diary.jpg'),linear-gradient(135deg,#9a6a55,#5e3b2c)"><span class="emoji">📔</span></span>
       <span class="sol-cbody">
         <span class="t">Daily Diary</span>
         <span class="d">A dead-simple desktop diary for your daily notes.</span>
         <span class="more">View details →</span>
       </span>
-      <div class="sol-full" hidden>
-        <div class="m-emoji">📔</div>
-        <h2>Daily Diary</h2>
-        <p class="m-tag">A dead-simple desktop diary for your daily notes.</p>
-        <p>A clean, distraction-free diary that stores one note per day in a local file. Jump to today, browse past entries, and write; that's it. No accounts, no cloud, no clutter.</p>
-        <h3>What it does for you day to day</h3>
-        <ul>
-          <li>Capture a quick daily log or journal entry in seconds</li>
-          <li>Navigate by date or pick from your list of entries</li>
-          <li>Everything stays local and private in one simple file</li>
-        </ul>
-        <p class="m-best"><strong>Best for:</strong> people who want a frictionless journaling habit without a heavyweight app.</p>
-        <div class="m-foot"><a href="../index.html#contact">Get in touch →</a></div>
-      </div>
-    </button>
+    </a>
 
     <a class="sol-card" href="./esg-terra/">
       <span class="sol-cover" style="background-image:url('../assets/solutions/esg-terra.jpg'),linear-gradient(135deg,#2c6049,#163328)"><img class="emoji icon-img" src="../assets/solutions/icon-esg-terra.png" alt="" /></span>
@@ -220,46 +155,6 @@
   <p>Tools and descriptions are informational; availability and results depend on the use case.</p>
   <nav aria-label="Legal"><a href="/">Home</a><a href="/privacy/">Privacy</a></nav>
 </footer>
-
-<!-- pop-up -->
-<div class="modal-overlay" id="solModal" role="dialog" aria-modal="true" aria-label="Solution details">
-  <div class="modal">
-    <button class="m-close" id="solClose" type="button" aria-label="Close">✕</button>
-    <div class="m-cover" id="solCover"></div>
-    <div class="m-body" id="solBody"></div>
-  </div>
-</div>
-
-<script>
-  (function(){
-    var modal=document.getElementById('solModal'),
-        cover=document.getElementById('solCover'),
-        body=document.getElementById('solBody'),
-        closeBtn=document.getElementById('solClose'),
-        lastFocus=null;
-    function open(card){
-      lastFocus=card;
-      var img=card.getAttribute('data-cover');
-      cover.style.backgroundImage="linear-gradient(0deg,rgba(27,25,22,.15),rgba(27,25,22,.03)),url('"+img+"')";
-      body.innerHTML=card.querySelector('.sol-full').innerHTML;
-      modal.classList.add('open');
-      document.body.style.overflow='hidden';
-      closeBtn.focus();
-    }
-    function close(){
-      modal.classList.remove('open');
-      document.body.style.overflow='';
-      if(lastFocus)lastFocus.focus();
-    }
-    document.querySelectorAll('.sol-card').forEach(function(c){
-      if(!c.querySelector('.sol-full')) return; // link cards (e.g. Mr.Fiba) open their href in a new tab
-      c.addEventListener('click',function(){open(c);});
-    });
-    closeBtn.addEventListener('click',close);
-    modal.addEventListener('click',function(e){ if(e.target===modal) close(); });
-    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&modal.classList.contains('open')) close(); });
-  })();
-</script>
 
 </body>
 </html>

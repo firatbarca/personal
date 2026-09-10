@@ -26,7 +26,12 @@
   .hub{max-width:480px;margin:0 auto;padding:clamp(2rem,6vw,3.4rem) clamp(1.25rem,5vw,1.5rem) 4rem;
        display:flex;flex-direction:column;gap:2.1rem;}
   .lede{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.85rem;}
-  .lede .mark{width:88px;height:88px;border-radius:20px;box-shadow:0 12px 30px rgba(27,25,22,.20);}
+  .hub-identity{display:flex;align-items:center;justify-content:center;gap:1rem;}
+  .lede .mark{width:72px;height:72px;object-fit:contain;border-radius:16px;box-shadow:0 8px 24px rgba(27,25,22,.15);}
+  .ledger-emblem{display:flex;align-items:center;gap:1rem;width:min(100%,220px);margin:0 auto .7rem;}
+  .ledger-emblem::before,.ledger-emblem::after{content:'';flex:1;height:1px;background:var(--line);}
+  .ledger-emblem img{display:block;width:64px;height:64px;object-fit:contain;border-radius:14px;}
+  @media(max-width:420px){.hub-identity{gap:.75rem;}.lede .mark{width:56px;height:56px;}.lede .hub-identity .wordmark{font-size:2.1rem;}}
   .lede .eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);}
   .lede .wordmark{font-family:'Fraunces',serif;font-weight:600;font-size:2.5rem;line-height:1;color:var(--ink);margin:0;letter-spacing:-.02em;}
   .lede .tag{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:1.35rem;color:var(--ink);margin:0;}
@@ -93,14 +98,14 @@
 
 <main class="hub">
   <section class="lede">
-    <img class="mark" src="/assets/mrfiba-mark.png" width="88" height="88" alt="Mr.Fiba mark — a signature F with a verified check">
+    <div class="hub-identity"><img class="mark" src="/assets/solutions/icon-mrfiba.png" width="72" height="72" alt=""><h1 class="wordmark">Mr.Fiba</h1></div>
     <span class="eyebrow">Receipts — not hype</span>
-    <h1 class="wordmark">Mr.Fiba</h1>
     <p class="tag">AI side income, with receipts.</p>
     <p class="sub">Real dollar screenshots. Real tools, tested in the open. <span class="no">No $497 course.</span></p>
   </section>
 
   <section class="ledger" aria-labelledby="ledger-h">
+    <div class="ledger-emblem" aria-hidden="true"><img src="/assets/solutions/icon-mrfiba.png" alt="" width="64" height="64"></div>
     <span class="lbl"><span class="dot"></span>The weekly ledger</span>
     <h2 id="ledger-h">One method. One real number. Every Sunday.</h2>
     <p class="desc">A new way to earn with AI each week — with the receipt to prove it. Free.</p>
