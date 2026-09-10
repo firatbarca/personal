@@ -1,0 +1,8 @@
+{
+  "local_file": "src/assets/solutions/icon-personal-custom-websites.png",
+  "source": "OpenAI built-in image generation",
+  "created_on": "2026-09-10",
+  "purpose": "Original identity for the Personal & Custom Websites card and page",
+  "prompt": "Use case: logo-brand. Create one original standalone icon for Personal & Custom Websites, a bespoke website design service. Subject: an elegant architectural browser-window emblem with a folded page corner that becomes a small copper creative spark, suggesting a personal place on the web crafted with care. Restrained illustrative emblem with crisp bold silhouette and subtle dimensional detailing, companion to detailed illustrated product icons. Slate blue #385366 and deep navy #223744, warm ivory highlights and restrained copper #9a4724 accents. Centered square composition, symbol fills 85% of canvas with clean padding. Genuine transparent background with alpha, no checkerboard drawn into image. Must remain recognizable at 40px and look crafted at 120px. No text, letters, watermark, globe, generic web grid, photographic backdrop, or surrounding badge. Deliver only one icon, not a sheet of options.",
+  "verification": "Inspected artwork and confirmed RGBA transparency; used unchanged."
+}
