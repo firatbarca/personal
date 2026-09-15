@@ -35,7 +35,9 @@ The objective is not to keep the factor unchanged.
 
 It is to keep the methodology controlled, the inputs current, and the history intact.
 
+
 > A factor that nobody can defend is not a constant. It is an unexamined assumption with a decimal point.
+
 
 ## What this costs
 
