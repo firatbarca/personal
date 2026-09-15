@@ -72,17 +72,17 @@ Publication year alone is not enough. A factor published in 2026 may be based on
 For factors linked to contractual instruments, the register should also identify the relevant evidence and whether the applicable quality criteria have been considered. When a factor changes, preserve the previous version and its effective period rather than overwriting it.
 A few practical points matter disproportionately.
 
-**Register the exceptions explicitly. If a site deviates from the group methodology or default source, document why. The problem is rarely that exceptions exist. It is that, several years later, nobody can explain them.
+**Register the exceptions explicitly.** If a site deviates from the group methodology or default source, document why. The problem is rarely that exceptions exist. It is that, several years later, nobody can explain them.
 
-**Record supersessions rather than overwriting. When a factor changes, keep the previous value, source and effective period. If a methodology changes materially, record that separately from an ordinary annual change in the numerical factor. This makes later recalculation assessments and trend explanations far easier.
+**Record supersessions rather than overwriting.** When a factor changes, keep the previous value, source and effective period. If a methodology changes materially, record that separately from an ordinary annual change in the numerical factor. This makes later recalculation assessments and trend explanations far easier.
 
-**Preserve the evidence used, not only the URL. Published datasets are revised, corrected and reorganised. A live link may not reproduce the version used in the original calculation. Retain the source artefact, version or other immutable evidence where licensing and systems permit it, together with the retrieval date.
+**Preserve the evidence used, not only the URL.** Published datasets are revised, corrected and reorganised. A live link may not reproduce the version used in the original calculation. Retain the source artefact, version or other immutable evidence where licensing and systems permit it, together with the retrieval date.
 
-**Use review triggers, not just review dates. An annual review is useful, but some events should trigger review immediately: a new dataset release, a methodological revision by the publisher, a change of electricity supplier or contractual instrument, an acquisition, a reporting-boundary change, or a change in the reporting standard being applied.
+**Use review triggers, not just review dates.** An annual review is useful, but some events should trigger review immediately: a new dataset release, a methodological revision by the publisher, a change of electricity supplier or contractual instrument, an acquisition, a reporting-boundary change, or a change in the reporting standard being applied.
 
 The register does not need to be sophisticated. Its job is to stop a methodological decision from becoming an undocumented inherited assumption.
 
-Why it is worth doing now
+Why is it worth doing now
 
 Input provenance is already part of emissions reporting requirements, and it remains prominent in current standards-development work.
 Under the current ESRS, undertakings reporting GHG emissions are required to disclose the methodologies, significant assumptions and emission factors used to calculate or measure those emissions, together with the reasons why they were chosen.
