@@ -6,7 +6,7 @@ summary: "Every emissions figure rests on a factor somebody chose. In many
   organisations, nobody can say who chose it, when, or why. It is a small
   governance gap that quietly undermines everything built on top of it."
 cover: /assets/blog/emission-factor-nobody-owns.jpg
-draft: true
+draft: false
 ---
 Ask a reporting team where their electricity emission factor comes from, and you will usually get a confident answer. Ask who selected the methodology and source, which vintage of the factor was used, when that decision was made, and why it was appropriate, and the answer is often less clear.
 
