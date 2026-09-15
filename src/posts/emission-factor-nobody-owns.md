@@ -1,6 +1,6 @@
 ---
 title: "The Emission Factor Nobody Owns"
-date: 2026-08-21T09:00
+date: 2026-09-14T09:00
 tag: ESG
 summary: "Every emissions figure rests on a factor somebody chose. In many
   organisations, nobody can say who chose it, when, or why. It is a small
