@@ -98,7 +98,7 @@ That is not the point.
 
 The register is a control that makes the underlying requirement easier to satisfy. When a material number depends on a factor, you should be able to show what was used, which methodology and period it belongs to, where it came from, whether it was current and appropriate, and why the choice was defensible.
 
-That is the same underlying question I keep coming back to in almost everything I write about reporting: can you show where this came from?
+That is the same underlying question I keep coming back to in [almost everything I write about reporting](https://firatbarca.com/blog/from-guesswork-to-audit-trails/): can you show where this came from?
 An emission-factor register is a small artefact. For a modest inventory, it can often be started in an afternoon, and once it is part of the reporting process the maintenance burden is small.
 
 More importantly, it changes the nature of the conversation.
