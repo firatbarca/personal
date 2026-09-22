@@ -145,17 +145,18 @@ When reviewing an electricity emission factor, ask:
 
 Electricity consumption is usually the easy part. Understanding the emission factor is the real work.
 
-## Try the calculators
-
-For a hands-on calculation, use the [Scope 2 calculator](/calculators/scope-2/) to compare location-based and market-based results, or the [Scope 1 calculator](/calculators/scope-1/) to work through stationary combustion, refrigerant leakage and an organisation's own fleet. The tools are practical starting points; verify factors, boundaries and reporting requirements before using a result in a formal inventory.
-
 ## A note on the Scope 2 revision
 
 The 2015 Scope 2 Guidance remains the published basis for the requirements described above. GHG Protocol is revising its corporate standards, and its 2025–26 consultation included proposed changes to both the location-based and market-based methods. Those proposals are not yet final requirements.
 
 GHG Protocol published a [summary of Scope 2 consultation feedback](https://ghgprotocol.org/scope-2-public-consultation-feedback) in 2026. Anyone applying the guidance should check the latest primary material before making a reporting decision.
 
-If you want to work through the numbers with your own data, [try the Scope 2 calculator](/calculators/scope-2/). For direct emissions from fuels, refrigerants and an organisation's own fleet, use the [Scope 1 calculator](/calculators/scope-1/). Both are practical starting points, so document your factors and check the results before using them in a formal inventory.
+<div class="newsletter" aria-labelledby="scope2-calculator-title">
+  <p class="lbl">Practical tool</p>
+  <h3 id="scope2-calculator-title">Try the Scope 2 calculator</h3>
+  <p>Work through your own electricity consumption, grid factor and supplier factor to compare location-based and market-based results. It is a practical starting point, so document your factors and check the result before using it in a formal inventory.</p>
+  <p><a href="/calculators/scope-2/">Open the Scope 2 calculator →</a></p>
+</div>
 
 ## Further reading
 
