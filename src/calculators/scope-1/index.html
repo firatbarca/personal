@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Interactive Scope 1 emissions calculator for buildings, refrigerant leakage and own fleet.">
+<title>Scope 1 Calculator · Firat Barca</title>
+
+<style>
+:root{
+  --fb-bg:#f7f8f5;
+  --fb-paper:#ffffff;
+  --fb-ink:#17211d;
+  --fb-muted:#67716c;
+  --fb-line:#dfe5e1;
+  --fb-green:#1f6b4d;
+  --fb-green-2:#2d8764;
+  --fb-green-soft:#edf6f1;
+  --fb-warm:#f7f1e8;
+  --fb-purple:#6a5cb6;
+  --fb-purple-soft:#f2effd;
+  --fb-blue:#466da8;
+  --fb-blue-soft:#eef3fa;
+  --fb-danger:#a34f45;
+  --fb-radius:18px;
+  --fb-shadow:0 14px 34px rgba(23,33,29,.06);
+  --fb-max:1180px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  color:var(--fb-ink);
+  background:var(--fb-bg);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.55;
+}
+a{color:inherit}
+button,input,select{font:inherit}
+button{cursor:pointer}
+
+.fb-site-header{
+  border-bottom:1px solid var(--fb-line);
+  background:rgba(247,248,245,.94);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.fb-site-nav{
+  width:min(var(--fb-max),calc(100% - 32px));
+  min-height:66px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.fb-brand{
+  text-decoration:none;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:-.02em;
+}
+.fb-nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  font-size:14px;
+  color:#4f5d56;
+}
+.fb-nav-links a{text-decoration:none}
+.fb-nav-links a:hover{color:var(--fb-ink)}
+
+.fb-wrap{
+  width:min(var(--fb-max),calc(100% - 32px));
+  margin:auto;
+  padding:54px 0 72px;
+}
+
+.fb-breadcrumb{
+  font-size:13px;
+  color:var(--fb-muted);
+  margin-bottom:20px;
+}
+.fb-breadcrumb a{
+  color:var(--fb-green);
+  text-decoration:none;
+}
+
+.fb-hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.3fr) minmax(280px,.7fr);
+  gap:34px;
+  align-items:end;
+  padding-bottom:38px;
+  border-bottom:1px solid var(--fb-line);
+}
+.fb-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--fb-green);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.fb-eyebrow::before{
+  content:"";
+  width:24px;
+  height:2px;
+  background:var(--fb-green);
+}
+h1{
+  max-width:820px;
+  margin:13px 0 18px;
+  font-size:clamp(38px,6vw,66px);
+  line-height:1.01;
+  letter-spacing:-.045em;
+}
+.fb-lead{
+  max-width:760px;
+  margin:0;
+  color:#4e5b55;
+  font-size:18px;
+}
+.fb-hero-note{
+  border-left:3px solid var(--fb-green);
+  padding:3px 0 3px 18px;
+  color:var(--fb-muted);
+  font-size:14px;
+}
+.fb-hero-note strong{
+  display:block;
+  color:var(--fb-ink);
+  font-size:16px;
+  margin-bottom:4px;
+}
+
+.fb-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:24px;
+}
+.fb-btn{
+  border:1px solid transparent;
+  border-radius:999px;
+  padding:10px 15px;
+  font-size:13px;
+  font-weight:750;
+  transition:.16s ease;
+}
+.fb-btn:hover{transform:translateY(-1px)}
+.fb-btn-primary{
+  background:var(--fb-green);
+  color:#fff;
+}
+.fb-btn-secondary{
+  background:var(--fb-paper);
+  border-color:var(--fb-line);
+  color:var(--fb-ink);
+}
+.fb-btn-quiet{
+  background:transparent;
+  border-color:var(--fb-line);
+  color:var(--fb-muted);
+}
+
+.fb-progress{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin:28px 0 24px;
+}
+.fb-progress-item{
+  background:var(--fb-paper);
+  border:1px solid var(--fb-line);
+  border-radius:14px;
+  padding:12px 13px;
+  font-size:12px;
+  color:var(--fb-muted);
+}
+.fb-progress-item b{
+  display:block;
+  margin-bottom:2px;
+  color:var(--fb-ink);
+  font-size:13px;
+}
+
+.fb-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 320px;
+  gap:22px;
+  align-items:start;
+}
+
+.fb-main{display:grid;gap:18px}
+
+.fb-card{
+  background:var(--fb-paper);
+  border:1px solid var(--fb-line);
+  border-radius:var(--fb-radius);
+  box-shadow:var(--fb-shadow);
+  overflow:hidden;
+}
+.fb-card-head{
+  padding:21px 22px 16px;
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  align-items:flex-start;
+}
+.fb-card-title{
+  display:flex;
+  gap:13px;
+  align-items:flex-start;
+}
+.fb-icon{
+  width:42px;
+  height:42px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  flex:0 0 42px;
+  font-size:20px;
+}
+.fb-icon-building{background:var(--fb-warm)}
+.fb-icon-refrigerant{background:var(--fb-purple-soft)}
+.fb-icon-fleet{background:var(--fb-green-soft)}
+.fb-icon-source{background:var(--fb-blue-soft)}
+h2{
+  margin:0;
+  font-size:21px;
+  line-height:1.2;
+  letter-spacing:-.02em;
+}
+.fb-subtitle{
+  margin:4px 0 0;
+  color:var(--fb-muted);
+  font-size:13px;
+}
+.fb-pill{
+  flex:0 0 auto;
+  border-radius:999px;
+  padding:6px 9px;
+  background:var(--fb-green-soft);
+  color:var(--fb-green);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+.fb-card-body{padding:0 22px 22px}
+
+.fb-info{
+  background:#f8faf9;
+  border:1px solid var(--fb-line);
+  border-radius:13px;
+  padding:12px 13px;
+  margin-bottom:15px;
+  color:#55635c;
+  font-size:12px;
+}
+.fb-info strong{color:var(--fb-ink)}
+
+.fb-table-scroll{
+  overflow-x:auto;
+  border:1px solid var(--fb-line);
+  border-radius:13px;
+}
+table{
+  width:100%;
+  min-width:760px;
+  border-collapse:separate;
+  border-spacing:0;
+}
+th{
+  background:#f8faf9;
+  color:#738079;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  text-align:left;
+  padding:10px;
+  border-bottom:1px solid var(--fb-line);
+}
+td{
+  padding:9px 10px;
+  border-bottom:1px solid #edf1ef;
+  vertical-align:top;
+}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover{background:#fcfdfc}
+
+input,select{
+  width:100%;
+  min-height:40px;
+  padding:9px 10px;
+  color:var(--fb-ink);
+  background:#fff;
+  border:1px solid #dce3df;
+  border-radius:9px;
+  outline:none;
+  transition:.15s ease;
+}
+input:focus,select:focus{
+  border-color:var(--fb-green-2);
+  box-shadow:0 0 0 3px rgba(45,135,100,.10);
+}
+.fb-factor-note{
+  margin-top:4px;
+  font-size:9px;
+  line-height:1.35;
+  color:#7b8781;
+}
+.fb-row-result{
+  font-weight:750;
+  white-space:nowrap;
+  padding-top:18px;
+}
+
+.fb-add{
+  margin-top:12px;
+  border:0;
+  border-radius:10px;
+  padding:9px 12px;
+  background:var(--fb-ink);
+  color:#fff;
+  font-size:12px;
+  font-weight:750;
+}
+.fb-remove{
+  border:0;
+  border-radius:8px;
+  padding:7px 9px;
+  background:#f5f6f5;
+  color:#6e7773;
+  font-size:11px;
+}
+.fb-remove:hover{
+  color:var(--fb-danger);
+  background:#fff0ee;
+}
+
+.fb-subtotal{
+  margin-top:12px;
+  border-top:1px solid var(--fb-line);
+  padding-top:13px;
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  font-size:13px;
+}
+.fb-subtotal strong:last-child{
+  color:var(--fb-green);
+  font-size:17px;
+}
+
+.fb-sticky{
+  position:sticky;
+  top:88px;
+  display:grid;
+  gap:14px;
+}
+.fb-summary{
+  background:var(--fb-ink);
+  color:#fff;
+  border-radius:var(--fb-radius);
+  padding:21px;
+  box-shadow:var(--fb-shadow);
+}
+.fb-summary-label{
+  color:#afbbb5;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  font-weight:750;
+}
+.fb-total{
+  margin:5px 0 18px;
+  font-size:38px;
+  font-weight:850;
+  letter-spacing:-.04em;
+}
+.fb-mini-results{
+  display:grid;
+  gap:9px;
+}
+.fb-mini-row{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding-top:9px;
+  border-top:1px solid rgba(255,255,255,.12);
+  color:#d5ded9;
+  font-size:12px;
+}
+.fb-mini-row strong{color:#fff}
+
+.fb-stack{
+  display:flex;
+  height:8px;
+  margin:15px 0 4px;
+  background:rgba(255,255,255,.12);
+  border-radius:999px;
+  overflow:hidden;
+}
+.fb-stack span{height:100%;transition:width .28s ease}
+
+.fb-sidebar-note{
+  background:var(--fb-paper);
+  border:1px solid var(--fb-line);
+  border-radius:15px;
+  padding:16px;
+  font-size:12px;
+  color:var(--fb-muted);
+}
+.fb-sidebar-note strong{
+  display:block;
+  color:var(--fb-ink);
+  margin-bottom:5px;
+}
+
+.fb-source-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:11px;
+}
+.fb-source{
+  padding:14px;
+  border:1px solid var(--fb-line);
+  background:#fbfcfb;
+  border-radius:13px;
+}
+.fb-source h3{
+  margin:0 0 6px;
+  font-size:14px;
+}
+.fb-source p{
+  margin:0 0 8px;
+  color:var(--fb-muted);
+  font-size:11px;
+}
+.fb-source a{
+  color:var(--fb-green);
+  text-decoration:none;
+  font-size:11px;
+  font-weight:750;
+  margin-right:8px;
+}
+.fb-source a:hover{text-decoration:underline}
+
+.fb-details{
+  border-top:1px solid var(--fb-line);
+}
+.fb-details details{border-bottom:1px solid var(--fb-line)}
+.fb-details details:last-child{border-bottom:0}
+.fb-details summary{
+  list-style:none;
+  cursor:pointer;
+  padding:15px 0;
+  font-size:13px;
+  font-weight:750;
+}
+.fb-details summary::-webkit-details-marker{display:none}
+.fb-details summary::after{
+  content:"+";
+  float:right;
+  color:var(--fb-green);
+}
+.fb-details details[open] summary::after{content:"−"}
+.fb-details p{
+  margin:0 0 15px;
+  color:var(--fb-muted);
+  font-size:12px;
+}
+
+.fb-footer-note{
+  margin-top:26px;
+  padding-top:24px;
+  border-top:1px solid var(--fb-line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+}
+.fb-footer-note p{
+  margin:4px 0 0;
+  color:var(--fb-muted);
+  font-size:13px;
+}
+.fb-link-button{
+  text-decoration:none;
+  white-space:nowrap;
+  background:var(--fb-green);
+  color:#fff;
+  border-radius:999px;
+  padding:10px 14px;
+  font-size:12px;
+  font-weight:750;
+}
+
+.fb-site-footer{
+  padding:24px 0 0;
+  color:#7b8580;
+  font-size:12px;
+}
+
+@media(max-width:960px){
+  .fb-layout{grid-template-columns:1fr}
+  .fb-sticky{position:static;grid-row:1}
+  .fb-hero{grid-template-columns:1fr}
+  .fb-source-grid{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .fb-site-nav,.fb-wrap{width:min(100% - 20px,var(--fb-max))}
+  .fb-nav-links{gap:12px;font-size:12px}
+  .fb-nav-links a:nth-child(2){display:none}
+  .fb-wrap{padding-top:34px}
+  .fb-progress{grid-template-columns:repeat(2,1fr)}
+  .fb-card-head{padding:18px 16px 13px}
+  .fb-card-body{padding:0 16px 18px}
+  .fb-card-head{flex-direction:column}
+  .fb-pill{align-self:flex-start}
+  .fb-footer-note{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:430px){
+  .fb-progress{grid-template-columns:1fr 1fr}
+  .fb-nav-links a:nth-child(3){display:none}
+  h1{font-size:40px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="fb-site-header">
+  <nav class="fb-site-nav" aria-label="Main navigation">
+    <a class="fb-brand" href="https://firatbarca.com/">Firat Barca.</a>
+    <div class="fb-nav-links">
+      <a href="https://firatbarca.com/">Home</a>
+      <a href="https://firatbarca.com/blog/index.html">Writing</a>
+      <a href="https://firatbarca.com/solutions/index.html">Solutions</a>
+    </div>
+  </nav>
+</header>
+
+<main class="fb-wrap">
+  <div class="fb-breadcrumb"><a href="https://firatbarca.com/solutions/index.html">Solutions</a> / Scope 1 calculator</div>
+
+  <section class="fb-hero">
+    <div>
+      <span class="fb-eyebrow">Interactive ESG tool</span>
+      <h1>Scope 1 emissions, without the spreadsheet feeling.</h1>
+      <p class="fb-lead">Calculate direct emissions from building fuels, refrigerant leakage, and your own fleet. The tool starts with selected UK 2026 factors, but every factor can be changed for the country, year, and reporting method you use.</p>
+      <div class="fb-actions">
+        <button class="fb-btn fb-btn-primary" type="button" onclick="loadExample()">Try an example</button>
+        <button class="fb-btn fb-btn-secondary" type="button" onclick="clearActivity()">Clear activity data</button>
+        <button class="fb-btn fb-btn-quiet" type="button" onclick="resetUKDefaults()">Reset UK factors</button>
+      </div>
+    </div>
+    <div class="fb-hero-note">
+      <strong>The formula is simple.</strong>
+      Activity data × emission factor = emissions. The important part is choosing the right boundary, units, factor source, and reporting year.
+    </div>
+  </section>
+
+  <div class="fb-progress" aria-label="Calculator steps">
+    <div class="fb-progress-item"><b>01 Buildings</b>Stationary combustion</div>
+    <div class="fb-progress-item"><b>02 Refrigerants</b>Fugitive emissions</div>
+    <div class="fb-progress-item"><b>03 Own fleet</b>Mobile combustion</div>
+    <div class="fb-progress-item"><b>04 Review</b>Total Scope 1</div>
+  </div>
+
+  <div class="fb-layout">
+
+    <div class="fb-main">
+
+      <section class="fb-card" id="buildings">
+        <div class="fb-card-head">
+          <div class="fb-card-title">
+            <div class="fb-icon fb-icon-building" aria-hidden="true">🏢</div>
+            <div>
+              <h2>Buildings</h2>
+              <p class="fb-subtitle">Fuel burned in boilers, heaters, furnaces, generators, and other equipment.</p>
+            </div>
+          </div>
+          <span class="fb-pill">Stationary combustion</span>
+        </div>
+        <div class="fb-card-body">
+          <div class="fb-info"><strong>Starting point:</strong> Natural gas uses an editable UK Government 2026 factor. Replace it when another factor is more appropriate for your activity.</div>
+
+          <div class="fb-table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Source</th>
+                  <th>Activity</th>
+                  <th>Unit</th>
+                  <th>Emission factor</th>
+                  <th>Emissions</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="buildingRows"></tbody>
+            </table>
+          </div>
+
+          <button class="fb-add" type="button" onclick="addStandard('buildingRows')">+ Add building fuel</button>
+          <div class="fb-subtotal"><strong>Building fuel subtotal</strong><strong id="buildingSubtotal">0 t CO₂e</strong></div>
+        </div>
+      </section>
+
+      <section class="fb-card" id="refrigerants">
+        <div class="fb-card-head">
+          <div class="fb-card-title">
+            <div class="fb-icon fb-icon-refrigerant" aria-hidden="true">❄️</div>
+            <div>
+              <h2>Refrigerant leakage</h2>
+              <p class="fb-subtitle">Direct leakage from air conditioning, refrigeration, chillers, and heat pumps.</p>
+            </div>
+          </div>
+          <span class="fb-pill">Fugitive emissions</span>
+        </div>
+        <div class="fb-card-body">
+          <div class="fb-info"><strong>Choose the refrigerant:</strong> The calculator fills a default GWP100. Enter the kilograms leaked. You can edit the GWP if your reporting framework requires another basis.</div>
+
+          <div class="fb-table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Refrigerant</th>
+                  <th>Leakage kg</th>
+                  <th>GWP100</th>
+                  <th>Emissions</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="refrigerantRows"></tbody>
+            </table>
+          </div>
+
+          <button class="fb-add" type="button" onclick="addRefrigerant()">+ Add refrigerant</button>
+          <div class="fb-subtotal"><strong>Refrigerant subtotal</strong><strong id="refrigerantSubtotal">0 t CO₂e</strong></div>
+        </div>
+      </section>
+
+      <section class="fb-card" id="fleet">
+        <div class="fb-card-head">
+          <div class="fb-card-title">
+            <div class="fb-icon fb-icon-fleet" aria-hidden="true">🚗</div>
+            <div>
+              <h2>Own fleet</h2>
+              <p class="fb-subtitle">Fuel burned by vehicles and mobile equipment inside your organizational boundary.</p>
+            </div>
+          </div>
+          <span class="fb-pill">Mobile combustion</span>
+        </div>
+        <div class="fb-card-body">
+          <div class="fb-info"><strong>Starting point:</strong> Petrol and diesel use editable UK Government 2026 average biofuel blend factors. Replace them for another country or method where appropriate.</div>
+
+          <div class="fb-table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Fuel or vehicle group</th>
+                  <th>Activity</th>
+                  <th>Unit</th>
+                  <th>Emission factor</th>
+                  <th>Emissions</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="fleetRows"></tbody>
+            </table>
+          </div>
+
+          <button class="fb-add" type="button" onclick="addStandard('fleetRows')">+ Add fleet fuel</button>
+          <div class="fb-subtotal"><strong>Own fleet subtotal</strong><strong id="fleetSubtotal">0 t CO₂e</strong></div>
+
+          <div class="fb-info" style="margin-top:14px"><strong>Electric vehicles:</strong> Purchased electricity used to charge company electric vehicles is normally reported in Scope 2 rather than Scope 1 fuel combustion.</div>
+        </div>
+      </section>
+
+      <section class="fb-card">
+        <div class="fb-card-head">
+          <div class="fb-card-title">
+            <div class="fb-icon fb-icon-source" aria-hidden="true">🌍</div>
+            <div>
+              <h2>Where should emission factors come from?</h2>
+              <p class="fb-subtitle">There is no single global database that is automatically correct for every operation.</p>
+            </div>
+          </div>
+          <span class="fb-pill">UK · EU · US · Global</span>
+        </div>
+
+        <div class="fb-card-body">
+          <div class="fb-source-grid">
+            <div class="fb-source">
+              <h3>United Kingdom</h3>
+              <p>UK Government GHG Conversion Factors published by DESNZ. These are still often called DEFRA factors.</p>
+              <a href="https://www.gov.uk/government/collections/government-conversion-factors-for-company-reporting" target="_blank" rel="noopener">UK Government factors ↗</a>
+            </div>
+
+            <div class="fb-source">
+              <h3>European Union</h3>
+              <p>Check an appropriate national source for the country and reporting purpose.</p>
+              <a href="https://www.kobize.pl/" target="_blank" rel="noopener">Poland ↗</a>
+              <a href="https://affichage-environnemental.ademe.fr/node/45" target="_blank" rel="noopener">France ↗</a>
+              <a href="https://www.umweltbundesamt.de/en/publikationen/co2-emission-factors-for-fossil-fuels-0" target="_blank" rel="noopener">Germany ↗</a>
+              <a href="https://www.miteco.gob.es/en/calidad-y-evaluacion-ambiental/temas/sistema-espanol-de-inventario-sei-/inventario-gases-efecto-invernadero.html" target="_blank" rel="noopener">Spain ↗</a>
+              <a href="https://co2emissiefactoren.nl/" target="_blank" rel="noopener">Netherlands ↗</a>
+            </div>
+
+            <div class="fb-source">
+              <h3>United States</h3>
+              <p>The US EPA GHG Emission Factors Hub provides default factors for organizational greenhouse gas reporting.</p>
+              <a href="https://www.epa.gov/climateleadership/ghg-emission-factors-hub" target="_blank" rel="noopener">EPA Factors Hub ↗</a>
+            </div>
+
+            <div class="fb-source">
+              <h3>Other countries</h3>
+              <p>Check national authorities first. GHG Protocol and IPCC guidance can support methodology and factor selection where appropriate.</p>
+              <a href="https://ghgprotocol.org/calculation-tools-and-guidance" target="_blank" rel="noopener">GHG Protocol ↗</a>
+              <a href="https://www.ipcc-nggip.iges.or.jp/public/2006gl/" target="_blank" rel="noopener">IPCC ↗</a>
+            </div>
+          </div>
+
+          <div class="fb-details" style="margin-top:18px">
+            <details>
+              <summary>How do I choose the right factor?</summary>
+              <p>Check the geography, reporting year, fuel or activity, unit, gases included, GWP basis, intended use, and the requirements of your reporting framework. Document the source and version used.</p>
+            </details>
+            <details>
+              <summary>What does refrigerant GWP mean?</summary>
+              <p>Global Warming Potential compares the warming effect of a greenhouse gas with carbon dioxide over a defined time horizon. One kilogram of a refrigerant with a GWP100 of 1,430 corresponds to 1,430 kilograms of CO₂e under that GWP basis.</p>
+            </details>
+            <details>
+              <summary>Why are the factors editable?</summary>
+              <p>The prefilled values are useful starting points, not universal answers. A formal inventory should use the factor that fits the activity, location, reporting year, and reporting framework.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <aside class="fb-sticky">
+      <section class="fb-summary" aria-live="polite">
+        <div class="fb-summary-label">Live result</div>
+        <div class="fb-total" id="totalScope1">0 t CO₂e</div>
+
+        <div class="fb-mini-results">
+          <div class="fb-mini-row"><span>Building fuels</span><strong id="sumBuilding">0 t</strong></div>
+          <div class="fb-mini-row"><span>Refrigerants</span><strong id="sumRefrig">0 t</strong></div>
+          <div class="fb-mini-row"><span>Own fleet</span><strong id="sumFleet">0 t</strong></div>
+        </div>
+
+        <div class="fb-stack" aria-hidden="true">
+          <span id="stackB" style="background:#d59452"></span>
+          <span id="stackR" style="background:#8072ca"></span>
+          <span id="stackF" style="background:#4a9a76"></span>
+        </div>
+      </section>
+
+      <div class="fb-sidebar-note">
+        <strong>Before you report the result</strong>
+        Confirm the organizational boundary, factor source, reporting year, units, greenhouse gases included, and GWP basis.
+      </div>
+
+      <div class="fb-sidebar-note">
+        <strong>Scope 2 is separate</strong>
+        Purchased electricity, including electricity used for company electric vehicles, normally moves to Scope 2.
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="fb-footer-note">
+    <div>
+      <strong>Continue with purchased electricity</strong>
+      <p>Connect this calculator to the Scope 2 article and calculator on firatbarca.com.</p>
+    </div>
+    <a class="fb-link-button" href="/blog/location-based-or-market-based/">Read the Scope 2 article</a>
+  </section>
+
+  <footer class="fb-site-footer">© Firat Barca · Sustainability & ESG</footer>
+</main>
+
+<script>
+const UK_DEFAULTS = {
+  naturalGas: 0.18231,
+  petrol: 2.07500,
+  diesel: 2.58354
+};
+
+const REFRIGERANTS = {
+  "R32": 675,
+  "R134a": 1430,
+  "R410A": 2088,
+  "R449A": 1396,
+  "R454B": 466,
+  "R744 (CO₂)": 1,
+  "R290 (propane)": 3,
+  "R600a (isobutane)": 3
+};
+
+function numberValue(el){
+  const v = parseFloat(el.value);
+  return Number.isFinite(v) ? v : 0;
+}
+
+function formatNumber(v){
+  return v.toLocaleString(undefined,{maximumFractionDigits:3});
+}
+
+function createInput(value, placeholder, type="text"){
+  const el = document.createElement("input");
+  el.value = value ?? "";
+  el.placeholder = placeholder;
+  el.type = type;
+  if(type === "number"){
+    el.min = "0";
+    el.step = "any";
+  }
+  el.addEventListener("input", calculate);
+  return el;
+}
+
+function createRemoveButton(row){
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "fb-remove";
+  btn.textContent = "Remove";
+  btn.addEventListener("click",()=>{
+    row.remove();
+    calculate();
+  });
+  return btn;
+}
+
+function addStandard(targetId, data={}){
+  const row = document.createElement("tr");
+
+  const name = createInput(data.name || "", "Example: Natural gas");
+  const activity = createInput(data.activity ?? "", "0", "number");
+  const unit = createInput(data.unit || "", "litres, kWh, m³");
+  const ef = createInput(data.ef ?? "", "0", "number");
+
+  [name,activity,unit].forEach(el=>{
+    const td = document.createElement("td");
+    td.appendChild(el);
+    row.appendChild(td);
+  });
+
+  const efTd = document.createElement("td");
+  efTd.appendChild(ef);
+  if(data.note){
+    const note = document.createElement("div");
+    note.className = "fb-factor-note";
+    note.textContent = data.note;
+    efTd.appendChild(note);
+  }
+  row.appendChild(efTd);
+
+  const output = document.createElement("td");
+  output.className = "fb-row-result";
+  output.textContent = "0 t CO₂e";
+  row.appendChild(output);
+
+  const removeTd = document.createElement("td");
+  removeTd.appendChild(createRemoveButton(row));
+  row.appendChild(removeTd);
+
+  row._activity = activity;
+  row._ef = ef;
+  row._output = output;
+
+  document.getElementById(targetId).appendChild(row);
+  calculate();
+}
+
+function addRefrigerant(data={}){
+  const row = document.createElement("tr");
+
+  const select = document.createElement("select");
+  [
+    ["","Select refrigerant"],
+    ...Object.keys(REFRIGERANTS).map(x=>[x,x]),
+    ["Other / custom","Other / custom"]
+  ].forEach(([value,label])=>{
+    const opt = document.createElement("option");
+    opt.value = value;
+    opt.textContent = label;
+    select.appendChild(opt);
+  });
+
+  const selected = data.name || "";
+  select.value = Object.prototype.hasOwnProperty.call(REFRIGERANTS,selected) ? selected : "";
+
+  const leakage = createInput(data.leakage ?? "", "0", "number");
+  const gwp = createInput(
+    data.gwp ?? (REFRIGERANTS[select.value] ?? ""),
+    "Enter GWP",
+    "number"
+  );
+
+  select.addEventListener("change",()=>{
+    if(Object.prototype.hasOwnProperty.call(REFRIGERANTS,select.value)){
+      gwp.value = REFRIGERANTS[select.value];
+    }else if(select.value === "Other / custom"){
+      gwp.value = "";
+      gwp.focus();
+    }
+    calculate();
+  });
+
+  [select,leakage,gwp].forEach(el=>{
+    const td = document.createElement("td");
+    td.appendChild(el);
+    row.appendChild(td);
+  });
+
+  const output = document.createElement("td");
+  output.className = "fb-row-result";
+  output.textContent = "0 t CO₂e";
+  row.appendChild(output);
+
+  const removeTd = document.createElement("td");
+  removeTd.appendChild(createRemoveButton(row));
+  row.appendChild(removeTd);
+
+  row._activity = leakage;
+  row._ef = gwp;
+  row._output = output;
+
+  document.getElementById("refrigerantRows").appendChild(row);
+  calculate();
+}
+
+function sectionTotal(id){
+  let total = 0;
+  document.querySelectorAll("#"+id+" tr").forEach(row=>{
+    const tonnes = numberValue(row._activity) * numberValue(row._ef) / 1000;
+    total += tonnes;
+    row._output.textContent = formatNumber(tonnes) + " t CO₂e";
+  });
+  return total;
+}
+
+function calculate(){
+  const building = sectionTotal("buildingRows");
+  const refrigerants = sectionTotal("refrigerantRows");
+  const fleet = sectionTotal("fleetRows");
+  const total = building + refrigerants + fleet;
+
+  document.getElementById("buildingSubtotal").textContent = formatNumber(building) + " t CO₂e";
+  document.getElementById("refrigerantSubtotal").textContent = formatNumber(refrigerants) + " t CO₂e";
+  document.getElementById("fleetSubtotal").textContent = formatNumber(fleet) + " t CO₂e";
+
+  document.getElementById("sumBuilding").textContent = formatNumber(building) + " t";
+  document.getElementById("sumRefrig").textContent = formatNumber(refrigerants) + " t";
+  document.getElementById("sumFleet").textContent = formatNumber(fleet) + " t";
+  document.getElementById("totalScope1").textContent = formatNumber(total) + " t CO₂e";
+
+  const base = total || 1;
+  document.getElementById("stackB").style.width = (building/base*100) + "%";
+  document.getElementById("stackR").style.width = (refrigerants/base*100) + "%";
+  document.getElementById("stackF").style.width = (fleet/base*100) + "%";
+}
+
+function loadUKDefaults(){
+  document.getElementById("buildingRows").innerHTML = "";
+  document.getElementById("fleetRows").innerHTML = "";
+
+  addStandard("buildingRows",{
+    name:"Natural gas",
+    unit:"kWh, Gross CV",
+    ef:UK_DEFAULTS.naturalGas,
+    note:"UK Government 2026 default. kg CO₂e per kWh. Editable."
+  });
+
+  addStandard("fleetRows",{
+    name:"Petrol, average biofuel blend",
+    unit:"litres",
+    ef:UK_DEFAULTS.petrol,
+    note:"UK Government 2026 default. kg CO₂e per litre. Editable."
+  });
+
+  addStandard("fleetRows",{
+    name:"Diesel, average biofuel blend",
+    unit:"litres",
+    ef:UK_DEFAULTS.diesel,
+    note:"UK Government 2026 default. kg CO₂e per litre. Editable."
+  });
+}
+
+function resetUKDefaults(){
+  const buildingActivities = [...document.querySelectorAll("#buildingRows tr")].map(r=>r._activity?.value || "");
+  const fleetActivities = [...document.querySelectorAll("#fleetRows tr")].map(r=>r._activity?.value || "");
+
+  loadUKDefaults();
+
+  [...document.querySelectorAll("#buildingRows tr")].forEach((r,i)=>{
+    if(buildingActivities[i] !== undefined) r._activity.value = buildingActivities[i];
+  });
+  [...document.querySelectorAll("#fleetRows tr")].forEach((r,i)=>{
+    if(fleetActivities[i] !== undefined) r._activity.value = fleetActivities[i];
+  });
+  calculate();
+}
+
+function clearActivity(){
+  document.querySelectorAll("#buildingRows input[type='number'],#fleetRows input[type='number']").forEach((el)=>{
+    const td = el.closest("td");
+    const isEF = td && td.cellIndex === 3;
+    if(!isEF) el.value = "";
+  });
+
+  document.querySelectorAll("#refrigerantRows tr").forEach(row=>{
+    if(row._activity) row._activity.value = "";
+  });
+  calculate();
+}
+
+function loadExample(){
+  loadUKDefaults();
+  document.getElementById("refrigerantRows").innerHTML = "";
+
+  const buildingRow = document.querySelector("#buildingRows tr");
+  if(buildingRow) buildingRow._activity.value = 50000;
+
+  const fleetRows = document.querySelectorAll("#fleetRows tr");
+  if(fleetRows[1]) fleetRows[1]._activity.value = 10000;
+
+  addRefrigerant({name:"R134a", leakage:5, gwp:1430});
+  calculate();
+
+  document.getElementById("buildings").scrollIntoView({behavior:"smooth",block:"start"});
+}
+
+loadUKDefaults();
+addRefrigerant({name:"R134a",gwp:1430});
+calculate();
+</script>
+
+</body>
+</html>

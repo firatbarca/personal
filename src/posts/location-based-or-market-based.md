@@ -145,6 +145,10 @@ When reviewing an electricity emission factor, ask:
 
 Electricity consumption is usually the easy part. Understanding the emission factor is the real work.
 
+## Try the calculators
+
+For a hands-on calculation, use the [Scope 2 calculator](/calculators/scope-2/) to compare location-based and market-based results, or the [Scope 1 calculator](/calculators/scope-1/) to work through stationary combustion, refrigerant leakage and an organisation's own fleet. The tools are practical starting points; verify factors, boundaries and reporting requirements before using a result in a formal inventory.
+
 ## A note on the Scope 2 revision
 
 The 2015 Scope 2 Guidance remains the published basis for the requirements described above. GHG Protocol is revising its corporate standards, and its 2025–26 consultation included proposed changes to both the location-based and market-based methods. Those proposals are not yet final requirements.
