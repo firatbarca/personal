@@ -155,6 +155,8 @@ The 2015 Scope 2 Guidance remains the published basis for the requirements descr
 
 GHG Protocol published a [summary of Scope 2 consultation feedback](https://ghgprotocol.org/scope-2-public-consultation-feedback) in 2026. Anyone applying the guidance should check the latest primary material before making a reporting decision.
 
+If you want to work through the numbers with your own data, [try the Scope 2 calculator](/calculators/scope-2/). For direct emissions from fuels, refrigerants and an organisation's own fleet, use the [Scope 1 calculator](/calculators/scope-1/). Both are practical starting points, so document your factors and check the results before using them in a formal inventory.
+
 ## Further reading
 
 - [GHG Protocol Scope 2 Guidance](https://ghgprotocol.org/scope-2-guidance)
