@@ -134,11 +134,87 @@ A refrigerant can have different published GWP values because different IPCC Ass
 
 For example:
 
-| Source | HFC 134a GWP100 | HFC 32 GWP100 |
-| --- | ---: | ---: |
-| IPCC AR4 | 1,430 | 675 |
-| IPCC AR5 | 1,300 | 677 |
-| IPCC AR6 | 1,530 | 771 |
+<style>
+  .gwp-table-wrap {
+    margin: 1.5rem 0 2rem;
+    overflow-x: auto;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+  }
+  .gwp-table {
+    width: 100%;
+    min-width: 460px;
+    border-collapse: collapse;
+    color: var(--ink-2);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .gwp-table caption {
+    padding: 1rem 1.15rem .8rem;
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    text-align: left;
+  }
+  .gwp-table th,
+  .gwp-table td {
+    padding: .8rem 1.15rem;
+    border-top: 1px solid var(--line);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .gwp-table th:first-child,
+  .gwp-table td:first-child {
+    text-align: left;
+  }
+  .gwp-table thead th {
+    color: var(--soft);
+    background: var(--accent-soft);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+  }
+  .gwp-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, .28);
+  }
+  .gwp-table tbody tr:last-child {
+    color: var(--ink);
+    font-weight: 700;
+  }
+</style>
+
+<div class="gwp-table-wrap">
+  <table class="gwp-table">
+    <caption>100-year GWP by IPCC assessment report</caption>
+    <thead>
+      <tr>
+        <th scope="col">Source</th>
+        <th scope="col">HFC 134a GWP100</th>
+        <th scope="col">HFC 32 GWP100</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">IPCC AR4</th>
+        <td>1,430</td>
+        <td>675</td>
+      </tr>
+      <tr>
+        <th scope="row">IPCC AR5</th>
+        <td>1,300</td>
+        <td>677</td>
+      </tr>
+      <tr>
+        <th scope="row">IPCC AR6</th>
+        <td>1,530</td>
+        <td>771</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 The [GHG Protocol GWP reference](https://ghgprotocol.org/sites/default/files/2024-08/Global-Warming-Potential-Values%20%28August%202024%29.pdf) provides these values together.
 
