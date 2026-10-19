@@ -1,6 +1,6 @@
 ---
 title: "ESRS: Turning Double Materiality into Reportable Information"
-date: 2026-09-01T09:00
+date: 2026-10-18T09:00
 tag: ESG Regulation
 summary: "What ESRS require, how double materiality works, and how impacts, risks, opportunities and datapoints become a sustainability statement."
 cover: /assets/blog/esrs-double-materiality-reportable-information.jpg
