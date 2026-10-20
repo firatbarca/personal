@@ -1,0 +1,38 @@
+{
+  "recorded_on": "2026-10-20",
+  "project": "Bragi Meter & Invoice",
+  "source": "Prepared from Firat Barca\u2019s Bragi application workspace for the owner-requested project page.",
+  "screenshots": "Actual frontend captures using mocked API responses and fictional test records. No customer records.",
+  "brand_assets": "Derived from the Bragi app-logo.png supplied in the project workspace.",
+  "covers": "Original HTML/CSS compositions rendered from the supplied logo and synthetic-data screenshots. No stock photography or third-party endorsements.",
+  "files": [
+    {
+      "path": "src/solutions/bragi/assets/bragi-analysis.webp",
+      "sha256": "91a062e675f23dd3a3483cd7868cfb3acb1a9522d885210d98628a6b0bb14a7d"
+    },
+    {
+      "path": "src/solutions/bragi/assets/bragi-audit.webp",
+      "sha256": "f0e420f0d1cc0ca8020618737e876d2b27d4e24967ba60af4de4e8984c4fe5c8"
+    },
+    {
+      "path": "src/solutions/bragi/assets/bragi-card.webp",
+      "sha256": "f031447b0efd9a249ceb568527d6eb3079e8bb6a65d166d48ed010eb86352249"
+    },
+    {
+      "path": "src/solutions/bragi/assets/bragi-cover.jpg",
+      "sha256": "0894065c420ee3b61159e7f0694ecdd3c51bf2df54e4ac9e8f7dcb3a336eb4d7"
+    },
+    {
+      "path": "src/solutions/bragi/assets/bragi-icon.png",
+      "sha256": "36867a223abc537ef416342f26345d36c888af827deb42f85c97535802054796"
+    },
+    {
+      "path": "src/solutions/bragi/assets/bragi-logo.png",
+      "sha256": "1da5477d1c6e6fc86304b74d30766f8a619a13175097f063ff682922bb6f3f00"
+    },
+    {
+      "path": "src/solutions/bragi/assets/bragi-readings.webp",
+      "sha256": "6d434bbf501b4bfe1aa566123d7e2f9f9802389356f1992466c21a12cd247e68"
+    }
+  ]
+}

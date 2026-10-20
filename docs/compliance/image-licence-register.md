@@ -69,3 +69,13 @@ photographer and current licence URL under `docs/compliance/image-sources/` when
 it downloads a new cover. Keep the source record and a dated licence copy. Do not
 assume that this proves the provenance of images downloaded before the control was
 added.
+
+## Bragi project assets — 20 October 2026
+
+The files under `src/solutions/bragi/assets/` were prepared from Firat Barca’s
+Bragi project for the owner-requested portfolio page. Screenshots show the actual
+frontend with fictional test records supplied through API fixtures. Logo/icon
+variants derive from the application’s supplied brand asset; the cover images
+are original HTML/CSS compositions using those assets. No stock photographs or
+customer documents were added. File hashes and provenance are recorded in
+`image-sources/bragi-product-assets.json`.
